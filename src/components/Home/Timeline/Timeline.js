@@ -1,6 +1,6 @@
 const Timeline = () => {
   return (
-    <section id='education'>
+    <section id='timeline'>
       <div className='inner-width'>
         <h1 className='section-title'>Timeline</h1>
         <div className='time-line'>

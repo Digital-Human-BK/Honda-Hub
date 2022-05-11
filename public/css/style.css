@@ -132,13 +132,13 @@ padding: 18px 0;
 }
 
 #home  .content h1::after{
-  content: "Believe in";
-  animation: textanim 6s linear infinite;
+  content: "Welcome to";
+  animation: textanim 5s linear infinite;
 }
 
 @keyframes textanim{  
   50%{
-    content: "\"The power of dreams\"";
+    content: "Honda Hub";
   }
 }
 
@@ -502,7 +502,7 @@ section.dark .section-title::after{
   color: #fff;
 }
 
-.nameField, .emailField{
+.nameField, .emailField, .passwordField{
   max-width: calc(50% - 10px);
 }
 
@@ -519,7 +519,8 @@ section.dark .section-title::after{
   font-size: 16px;
   border: 2px solid #48dbfb;
   padding: 0;
-  margin-left: auto;
+  /* margin-left: auto; */
+  margin: auto;
   cursor: pointer;
   transition: .3s linear;
 }
@@ -529,16 +530,27 @@ section.dark .section-title::after{
   color: #fff;
 }
 
-footer{
+footer, header{
   background-color: #353b48;
   color: #fff;
   padding: 80px 0;
   text-align: center;
 }
 
+.already{
+  text-align: center;
+  margin: 10px auto;
+}
+
 .copyright{
   margin-bottom: 20px;
   font-size:  15px;
+}
+
+.copyright a, .already a{
+  font-size: 16px;
+  color: #48dbfb;
+  font-weight: 500;
 }
 
 .goTop{
@@ -555,12 +567,6 @@ footer{
   cursor: pointer;
   outline: none;
   display: none;
-}
-
-.copyright a{
-  font-size: 16px;
-  color: #48dbfb;
-  font-weight: 500;
 }
 
 @media screen and (max-width: 970px){

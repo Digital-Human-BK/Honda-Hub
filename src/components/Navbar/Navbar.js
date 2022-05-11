@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 const Navbar = () => {
   const [navStyle, setNavStyle] = useState('navbar');
@@ -19,19 +21,19 @@ const Navbar = () => {
   return (
     <nav className={navStyle}>
       <div className='inner-width'>
-        <a href='#home' className='logo'></a>
+        <HashLink to='/#home' className='logo'></HashLink>
         <button className='menu-toggler active'>
           <span></span>
           <span></span>
           <span></span>
         </button>
         <div className='navbar-menu active'>
-          <a href='#home'>Home</a>
-          <a href='#about'>About</a>
-          <a href='#quotes'>Quotes</a>
-          <a href='#education'>Timeline</a>
-          <a href='#works'>Works</a>
-          <a href='#contact'>Contact</a>
+          <HashLink to='/#home'>Home</HashLink>
+          <HashLink to='/#about'>About</HashLink>
+          <HashLink to='/#quotes'>Quotes</HashLink>
+          <HashLink to='/#timeline'>Timeline</HashLink>
+          <Link to='/login'>Login</Link>
+          <Link to='/register'>Register</Link>
         </div>
       </div>
     </nav>
