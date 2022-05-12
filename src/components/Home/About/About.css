@@ -1,0 +1,38 @@
+.about-content{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-pic{
+  width: 300px;
+  margin-right: 100px;
+}
+
+.about-text{
+  flex: 1;
+}
+
+.about-text h3 {
+  margin: 10px 0;
+  color: #444;
+  font-size: 1.7rem;
+}
+
+.about-text h3 span:nth-child(1):after,
+.about-text h3 span:nth-child(2):after{
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #444;
+  border-radius: 50%;
+  margin: 0 14px;
+}
+
+.about-text p{
+  font-size: 1.3rem;
+  text-align: justify;
+  line-height: 1.5rem;
+  margin-top: 20px;
+}

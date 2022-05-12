@@ -1,0 +1,18 @@
+.sign{
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+.sign-title{
+  color: #fff;
+  font-size: 40px;
+  margin: 180px 0  80px 0;
+}
+
+#login{
+  height: 100vh;
+  min-height: 500px;
+  background: url(/public/img/s2000v2.jpg) no-repeat center center/cover;
+  background-attachment: fixed;
+}

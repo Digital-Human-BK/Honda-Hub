@@ -1,0 +1,68 @@
+#home{
+  height: 100vh;
+  min-height: 500px;
+  background: url(/public/img/s2000v1.jpg) no-repeat center center/cover;
+  background-attachment: fixed;
+}
+
+#home .inner-width{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+#home .content{
+  width: 100%;
+  color: #fff;
+}
+
+#home .content h1{
+  font-size: 4rem;
+  margin-bottom: 60px;
+}
+
+#home  .content h1::after{
+  content: "Welcome to";
+  animation: textanim 5s linear infinite;
+}
+
+@keyframes textanim{  
+  50%{
+    content: "Honda Hub";
+  }
+}
+
+.sm a{
+  color: #fff;
+  font-size: 1.6rem;
+  margin: 0 10px;
+}
+
+.sm a:hover{
+  color: #48dbfb;
+}
+
+#home .buttons{
+  margin-top: 60px;
+}
+
+#home .buttons a{
+  display: inline-block;
+  color: #48dbfb;
+  margin: 15px 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 180px;
+  border: 1px solid #48dbfb;
+  border-radius: 6px;
+  padding: 14px 0;
+  transition: .2s linear;
+}
+
+#home .buttons a:hover,
+#home .buttons a:nth-child(2){
+  background: #48dbfb;
+  color: #fff;
+}

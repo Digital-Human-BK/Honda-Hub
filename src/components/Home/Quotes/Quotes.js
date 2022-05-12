@@ -1,3 +1,5 @@
+import './Quotes.css';
+
 const Quotes = () => {
   return (
     <section id='quotes' className='dark'>

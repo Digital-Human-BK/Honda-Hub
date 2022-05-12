@@ -1,0 +1,73 @@
+.navbar {
+  position: fixed;
+  background: transparent;
+  width: 100%;
+  padding: 30px 0;
+  top: 0;
+  z-index: 10;
+  transition: 0.3s linear;
+}
+ 
+.navbar .inner-width{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo{
+  width: 56px;
+  height: 44px;
+  background: url(/public/img/RPC-JP_Logo.png) no-repeat center center/cover;
+}
+
+.menu-toggler{
+  background: none;
+  width: 30px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  z-index: 9;
+  display: none;
+}
+
+.menu-toggler span{
+  display: block;
+  height: 3px;
+  background: #fff;
+  margin: 6px 0;
+  position: relative;
+  transition: 0.3s linear;
+
+}
+
+.navbar-menu a{
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-left: 30px;
+  transition: .2s linear;
+}
+
+.navbar-menu a:hover{
+  color: #48dbfb !important;
+}
+
+.sticky{
+background: #fff;
+padding: 18px 0;
+}
+
+.sticky .logo{
+  background: url(/public/img/RPC-JP_LogoBlack.png) no-repeat center center/cover;
+}
+
+.sticky .navbar-menu a{
+  color: #111;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.sticky .menu-toggler span{
+  background: #111;
+}

@@ -1,0 +1,46 @@
+.time-line{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.block{
+  width: calc(50% - 20px);
+  background: #fff;
+  border: 1px solid #ddd;
+  margin: 10px 0;
+  padding: 30px;
+  position: relative;
+}
+
+.block::before{
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 120%;
+  background: #ddd;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.block::after{
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #48dbfb;
+  left: -28px;
+  top: 30px;
+  border-radius: 50%;
+}
+
+.block h4{
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.block p{
+  font-weight: 500;
+  color: #444;
+}

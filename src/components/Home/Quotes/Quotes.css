@@ -1,0 +1,36 @@
+.quotes{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;  
+}
+
+.quote{
+  width: calc(33% - 20px);
+  text-align: center;
+  border: 1px solid #48dbfb;
+  border-radius: 6px;
+  margin: 20px 0;
+  padding: 40px 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: .3s linear;
+}
+
+.quote i{
+  color: #48dbfb;
+  font-size: 40px;
+  margin-bottom: 20px;
+  transition: .3s linear;
+}
+
+.quote h4{
+  text-align: right;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.quote:hover,
+.quote:hover i{
+  color: #333;
+  background: #48dbfb;
+}

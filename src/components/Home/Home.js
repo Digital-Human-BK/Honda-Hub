@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+import './Home.css'
 import About from './About';
 import Quotes from './Quotes';
 import Timeline from './Timeline';

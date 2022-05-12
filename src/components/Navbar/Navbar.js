@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
+import './Navbar.css'
+
 const Navbar = () => {
   const [navStyle, setNavStyle] = useState('navbar');
 

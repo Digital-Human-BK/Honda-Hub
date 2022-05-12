@@ -1,9 +1,5 @@
-import Header from "../Header";
-
 const Catalog = () => {
   return (
-    <>
-    <Header/>
     <section id='catalog'>
       <div className='inner-width'>
         <h1 className='section-title'>Famous Models</h1>
@@ -85,7 +81,6 @@ const Catalog = () => {
         </div>
       </div>
     </section>
-    </>
   );
 };
 
