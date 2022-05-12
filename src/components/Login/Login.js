@@ -1,29 +1,25 @@
 import { Link } from 'react-router-dom';
 
-import Header from '../Header';
-
 const Login = () => {
   return (
-    <>
-      <Header />
-      <section id='login'>
-        <div className='inner-width'>
-          <h1 className='section-title'>LOGIN</h1>
+      <section id='login' className='dark'>
+        <div className='sign'>
+          <h1 className='sign-title'>LOGIN</h1>
           
-            <form action='POST' class='contact-form'>
+            <form className='contact-form'>
               <input
                 type='email'
-                class='emailField'
+                className='field'
                 name='email'
                 placeholder='Your Email'
               />
               <input
                 type='password'
-                class='passwordField'
+                className='field'
                 name='password'
                 placeholder='Your Password'
               />
-              <input type='submit' value='Login' class='btn' />
+              <input type='submit' value='Login' className='btn' />
             </form>
             <p className='already'>
               Don't have account?<Link to='/register'> Register here</Link>
@@ -31,7 +27,6 @@ const Login = () => {
           
         </div>
       </section>
-    </>
   );
 };
 
