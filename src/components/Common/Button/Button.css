@@ -1,0 +1,21 @@
+.commonBtn{
+  display: block;
+  width: 180px;
+  font-size: 1rem;
+  background-color: #353b48;
+  border: 2px solid #353b48;
+  border-radius: 6px;
+  padding: 14px;
+  margin: auto;
+  color: #fff;
+  cursor: pointer;
+}
+
+.disableBtn{
+  opacity: 40%;
+}
+
+.commonBtn:hover{
+  color: #48dbfb;
+  opacity: 90%;
+}

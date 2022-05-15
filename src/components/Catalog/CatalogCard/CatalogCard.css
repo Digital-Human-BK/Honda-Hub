@@ -1,16 +1,15 @@
 .catalog-card{
   width: calc(33% - 20px);
   text-align: center;
-  border: 3px solid #353b48;
+  border-radius: 6px; 
   background-color: #353b48;
   color: #fff;
-  border-radius: 6px;
   cursor: pointer;
   margin-bottom: 30px;
 }
 
 .catalog-card img {
-  border-radius: 2px;
+  border-radius: 6px 6px 0 0;
   width: 100%;
 }
 
@@ -23,4 +22,5 @@
 
 .catalog-card:hover{
   color: #48dbfb;
+  opacity: 90%;
 }

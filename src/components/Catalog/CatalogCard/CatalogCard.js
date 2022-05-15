@@ -4,9 +4,14 @@ import './CatalogCard.css';
 
 const CatalogCard = ({ name }) => {
   return (
-    <Link to='/carModel' className='catalog-card'>
-      <img className='carImage' src={`/img/catalog-${name}.jpg`} alt={name} />
-      <h4>{name}</h4>     
+    <Link to={'/catalog/' + name} className='catalog-card'>
+      <img
+        className='carImage'
+        src={`/img/catalog-${name}.jpg`}
+        onError={(e)=>{e.target.onerror = null; e.target.src='/img/noImg.jpg'}}
+        alt={name}
+      />
+      <h4>{name}</h4>
     </Link>
   );
 };

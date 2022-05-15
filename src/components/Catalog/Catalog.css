@@ -2,6 +2,18 @@
   min-height: 500px;
 }
 
+.catalog-err{
+  width: 70%;
+  font-size: 24px;
+  background-color: #48dbfb;
+  border-radius: 6px;
+  padding: 10px;
+  margin: auto;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+
 .dark-head{
   background-color: #353b48;
   height: 100px;
@@ -13,6 +25,8 @@
   text-align: center;
   margin-bottom: 50px;
 }
+
+
 
 .catalog-cars{
   display: flex;
