@@ -1,11 +1,13 @@
 import { useState } from 'react';
 
+import { getAllModels } from '../../services/catalogService';
 import './Catalog.css';
 
 import CatalogCard from './CatalogCard';
 import Button from '../Common/Button';
-import { getAllModels } from '../../services/catalogService';
 import LoadingSpinner from '../Common/LoadingSpinner';
+import DarkHeader from '../Common/DarkHeader';
+import Notification from '../Common/Notification';
 
 const defaultModels = ['NSX', 'S2000', 'Integra', 'Civic', 'Accord', 'Prelude'];
 
@@ -18,8 +20,8 @@ const Catalog = () => {
     try {
       setIsLoading(true);
       const modelsData = await getAllModels();
-      
-      if (modelsData.data.length === 0) {
+
+      if (modelsData.data && modelsData.data.length === 0) {
         throw new Error('Could not load data. Please try again later');
       }
 
@@ -31,23 +33,30 @@ const Catalog = () => {
     } catch (err) {
       setError(err.message);
       setIsLoading(false);
+      setTimeout(() => {
+        setError(null);
+      }, 5000);
     }
   };
 
   return (
     <>
-      <div className='dark-head'></div>
+      <DarkHeader />
       <section id='catalog'>
         <div className='inner-width'>
-          <h1 className='catalog-title'>FAMOUS MODELS</h1>
+          <h1 className='section-title'>Models</h1>
           <div className='catalog-cars'>
             {models.map((carModel) => (
-              <CatalogCard key={carModel} name={carModel} />
+              <CatalogCard key={carModel} model={carModel} />
             ))}
           </div>
-          {isLoading && <LoadingSpinner/>}
-          {error && <h4 className='catalog-err'>{error}</h4>}
-          <Button value={'See All'} disabled={isLoading} handler={fetchAllModels} />
+          {isLoading && <LoadingSpinner />}
+          {error && <Notification>{error}</Notification>}
+          <Button
+            value={'See All'}
+            disabled={isLoading}
+            handler={fetchAllModels}
+          />
         </div>
       </section>
     </>

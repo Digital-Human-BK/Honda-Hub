@@ -7,7 +7,7 @@ const API_ENDPOINTS = {
 
 const API_HEADERS = {
   'X-RapidAPI-Host': 'cars-specs-automotive-catalog.p.rapidapi.com',
-  'X-RapidAPI-Key': 'a31c9c567emshffc4774bd10c76fp13ae14jsn16d11fdf10f8',
+  'X-RapidAPI-Key': 'ce9beadf68mshe4169f98bb40f51p133c56jsn58115cce96ee',
 };
 
 export const getAllModels = () => request(API_ENDPOINTS.allModels);

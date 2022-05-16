@@ -1,0 +1,11 @@
+.inline-notification{
+  width: 70%;
+  font-size: 24px;
+  background-color: #48dbfb;
+  border-radius: 6px;
+  padding: 10px;
+  margin: auto;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}

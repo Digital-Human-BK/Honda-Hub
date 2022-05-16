@@ -7,6 +7,7 @@ import Catalog from './components/Catalog';
 import Forum from './components/Forum';
 import Login from './components/Login';
 import Register from './components/Register';
+import DetailsByModel from './components/Catalog/DetailsByModel';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/catalog' element={<Catalog />} />
+        <Route path='/catalog/:model' element={<DetailsByModel />} />
+        <Route path='/catalog/:model/:gen' element={<DetailsByModel />} />
+        <Route path='/catalog/:model/:gen/:engine' element={<DetailsByModel />} />
         <Route path='/forum' element={<Forum />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
