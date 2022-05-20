@@ -5,13 +5,13 @@ const Footer = () => {
     <footer>
       <div className='inner-width'>
         <div className='copyright'>
-          &copy;
+          &copy;{' '}
           <a
             href='https://github.com/Digital-Human-BK/Honda-Hub'
             target='_blank'
             rel='noreferrer noopener'
           >
-            Honda Hub
+            2022 Honda Hub
           </a>{' '}
           | React project by{' '}
           <a

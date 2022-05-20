@@ -1,0 +1,47 @@
+.details-content {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.details-pic {
+  width: 400px;
+  border-radius: 5px;
+  margin-right: 50px;
+}
+
+.details-text {
+  flex: 1;
+}
+
+.details-text h3 {
+  margin: 10px 0;
+  color: #444;
+  font-size: 1.7rem;
+}
+
+.details-text p {
+  font-size: 1.3rem;
+  text-align: justify;
+  line-height: 1.5rem;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  background-color: #fff7f0;
+  padding: 5px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td{
+  width: 50%;
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #ddd;
+}

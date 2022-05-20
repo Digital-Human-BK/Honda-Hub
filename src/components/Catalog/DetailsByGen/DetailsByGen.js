@@ -1,15 +1,15 @@
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 // import { getModel } from '../../../services/catalogService';
 
-import './DetailsByModel.css';
+import './DetailsByGen.css';
 
 import DarkHeader from '../../Common/DarkHeader';
-import GenCard from './GenCard';
+import EngineCard from './EngineCard';
 // import Loader from '../../Common/Loader';
 
-const data = {
+const fetchedData = {
   data: {
     id: 's2000',
     brand: 'Honda',
@@ -563,8 +563,10 @@ const data = {
     ],
   },
 };
-const DetailsByModel = () => {
-  const { model } = useParams();
+
+const DetailsByGen = () => {
+  const { model, gen } = useParams();
+  const [data, setData] = useState({});
   // const [data, setData] = useState([]);
   // const [isLoading, setIsLoading] = useState(false);
 
@@ -584,12 +586,21 @@ const DetailsByModel = () => {
   //   getModelData();
   // }, [model]);
 
+  useEffect(() => {
+    const filteredData = fetchedData.data.generations.filter(
+      (x) => x.id.replace(/_/g, '-') === gen
+    );
+    setData(filteredData[0]);
+  }, [gen]);
+
+  console.log(data.engines);
+
   const content = (
     <>
       <DarkHeader />
-      <section id='details'>
+      <section id='genr-details'>
         <div className='inner-width'>
-          <h1 className='section-title'>Honda {model}</h1>
+          <h1 className='section-title'>{data.name}</h1>
 
           <img
             src={`/img/catalog-${model}.jpg`}
@@ -598,15 +609,16 @@ const DetailsByModel = () => {
           />
           <div className='about-text'>
             <h2 className='view-message'>
-              Choose a generation of Honda {model} from the list below to
-              see additional specifications.
+              Choose engine modification from the list below to see the full
+              specifications.
             </h2>
             <br />
-            {data.data.generations.map((generation) => (
-              <GenCard
-                key={generation.id}
+            {data.engines?.map((engine) => (
+              <EngineCard
+                key={engine.id}
+                engine={engine}
                 model={model}
-                generation={generation}
+                gen={gen}
               />
             ))}
           </div>
@@ -619,4 +631,4 @@ const DetailsByModel = () => {
   // return <>{isLoading ? <Loader /> : content}</>;
 };
 
-export default DetailsByModel;
+export default DetailsByGen;

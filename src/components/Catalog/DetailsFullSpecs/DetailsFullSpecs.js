@@ -1,15 +1,17 @@
-// import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-
-// import { getModel } from '../../../services/catalogService';
-
-import './DetailsByModel.css';
-
+import { useParams, useLocation } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+import { useState, useEffect } from 'react';
 import DarkHeader from '../../Common/DarkHeader';
-import GenCard from './GenCard';
-// import Loader from '../../Common/Loader';
 
-const data = {
+import './DetailsFullSpecs.css';
+import GeneralTable from './GeneralTable';
+import PerformanceTable from './PerformanceTable';
+import EngineTable from './EngineTable';
+import WeightTable from './WeightTable';
+import DimensionsTable from './DimensionsTable';
+import DrivetrainBrakesSuspensionTable from './DrivetrainBrakesWheelsTable';
+
+const fetchedData = {
   data: {
     id: 's2000',
     brand: 'Honda',
@@ -563,60 +565,60 @@ const data = {
     ],
   },
 };
-const DetailsByModel = () => {
-  const { model } = useParams();
-  // const [data, setData] = useState([]);
-  // const [isLoading, setIsLoading] = useState(false);
 
-  // useEffect(() => {
-  //   setIsLoading(true);
+const DetailsFullSpecs = () => {
+  const { model, gen, engine } = useParams();
+  const location = useLocation();
+  console.log(location);
+  const [data, setData] = useState({});
 
-  //   const getModelData = async () => {
-  //     try {
-  //       const jsonData = await getModel(model);
-  //       setData(jsonData.data.generations);
-  //       setIsLoading(false);
-  //     } catch (err) {
-  //       setIsLoading(false);
-  //     }
-  //   };
+  useEffect(() => {
+    const filterToGen = fetchedData.data.generations.filter(
+      (x) => x.id.replace(/_/g, '-') === gen
+    );
+    const filterToEngine = filterToGen[0].engines.filter(
+      (e) => e.id === engine
+    );
+    setData(filterToEngine[0]);
+  }, [gen, engine]);
 
-  //   getModelData();
-  // }, [model]);
-
-  const content = (
+  return (
     <>
       <DarkHeader />
-      <section id='details'>
+      <section id='full-specs'>
         <div className='inner-width'>
-          <h1 className='section-title'>Honda {model}</h1>
-
-          <img
-            src={`/img/catalog-${model}.jpg`}
-            className='about-pic'
-            alt={model}
-          />
-          <div className='about-text'>
-            <h2 className='view-message'>
-              Choose a generation of Honda {model} from the list below to
-              see additional specifications.
-            </h2>
-            <br />
-            {data.data.generations.map((generation) => (
-              <GenCard
-                key={generation.id}
-                model={model}
-                generation={generation}
-              />
-            ))}
+          <div className='details-content'>
+            <img
+              src={`/img/catalog-${model}.jpg`}
+              className='details-pic'
+              alt={model}
+            />
+            <div className='details-text'>
+              <h2>Honda {data.generation}</h2>
+              <br />
+              <h3>Engine: {' '}
+                <span>{data.modification_engine}</span> -{' '}
+                <span>{data.engine_specs?.engine_model_code}</span> -{' '} 
+                <span>{data.engine_specs?.valvetrain}</span>
+              </h3>
+              <p>General information</p>
+              <GeneralTable data={data} />
+              <p>Performance specs</p>
+              <PerformanceTable data={data} />
+              <p>Engine Specs</p>
+              <EngineTable data={data} />
+              <p>Space, Volume and weights</p>
+              <WeightTable data={data} />
+              <p>Dimensions</p>
+              <DimensionsTable data={data} />
+              <p>Drivetrain, brakes and suspension specs</p>
+              <DrivetrainBrakesSuspensionTable data={data} />
+            </div>
           </div>
         </div>
       </section>
     </>
   );
-  return content;
-
-  // return <>{isLoading ? <Loader /> : content}</>;
 };
 
-export default DetailsByModel;
+export default DetailsFullSpecs;
