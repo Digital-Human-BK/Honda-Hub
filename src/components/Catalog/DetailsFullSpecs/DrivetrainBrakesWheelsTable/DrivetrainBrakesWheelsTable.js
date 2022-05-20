@@ -4,7 +4,7 @@ const DrivetrainBrakesWheelsTable = ({ data }) => {
     <table id='dbs-specs'>
       <tbody>
         <tr>
-          <td>Drivetrain Architecture</td>
+          <td>Drivetrain architecture</td>
           <td>{specs?.drivetrain_architecture}</td>
         </tr>
         <tr>
@@ -12,7 +12,7 @@ const DrivetrainBrakesWheelsTable = ({ data }) => {
           <td>{specs?.drive_wheel}</td>
         </tr>
         <tr>
-          <td>Number of Gears</td>
+          <td>Number of gears</td>
           <td>{specs?.number_of_gears_manual_transmission || specs?.number_of_gears_automatic_transmission}</td>
         </tr>
         <tr>

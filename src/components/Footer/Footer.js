@@ -19,7 +19,7 @@ const Footer = () => {
             target='_blank'
             rel='noreferrer noopener'
           >
-            Biser Karadzhov
+            Biser Karadzhov <i className="fa-brands fa-react"></i>
           </a>
         </div>
         <div className='sm'>

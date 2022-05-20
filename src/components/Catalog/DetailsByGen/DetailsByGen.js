@@ -592,9 +592,7 @@ const DetailsByGen = () => {
     );
     setData(filteredData[0]);
   }, [gen]);
-
-  console.log(data.engines);
-
+  
   const content = (
     <>
       <DarkHeader />

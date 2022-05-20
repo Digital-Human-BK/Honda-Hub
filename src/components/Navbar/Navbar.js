@@ -34,6 +34,7 @@ const Navbar = () => {
           <HashLink to='/#about'>About</HashLink>
           <HashLink to='/#quotes'>Quotes</HashLink>
           <HashLink to='/#timeline'>Timeline</HashLink>
+          <Link to='/catalog'>Catalog</Link>
           <Link to='/login'>Login</Link>
           <Link to='/register'>Register</Link>
         </div>

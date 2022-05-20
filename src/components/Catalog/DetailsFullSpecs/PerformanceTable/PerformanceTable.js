@@ -4,7 +4,7 @@ const PerformanceTable = ({ data }) => {
     <table id='performance-specs'>
       <tbody>
         <tr>
-          <td>Fuel Type</td>
+          <td>Fuel type</td>
           <td>{specs?.fuel_type}</td>
         </tr>
         <tr>
@@ -29,7 +29,7 @@ const PerformanceTable = ({ data }) => {
           </td>
         </tr>
         <tr>
-          <td>Emission Standard</td>
+          <td>Emission standard</td>
           <td>{specs?.emission_standard}</td>
         </tr>
         <tr>
@@ -41,21 +41,21 @@ const PerformanceTable = ({ data }) => {
           <td>{specs?.weight_to_torque_ratio}</td>
         </tr>
         <tr>
-          <td>Fuel Consumption - urban</td>
+          <td>Fuel consumption - urban</td>
           <td>
             {specs?.fuel_consumption_economy_urban.value}{' '}
             {specs?.fuel_consumption_economy_urban.unit}
           </td>
         </tr>
         <tr>
-          <td>Fuel Consumption - extra urban</td>
+          <td>Fuel consumption - extra urban</td>
           <td>
             {specs?.fuel_consumption_economy_extra_urban.value}{' '}
             {specs?.fuel_consumption_economy_extra_urban.unit}
           </td>
         </tr>
         <tr>
-          <td>Fuel Consumption - combined</td>
+          <td>Fuel consumption - combined</td>
           <td>
             {specs?.fuel_consumption_economy_combined.value}{' '}
             {specs?.fuel_consumption_economy_combined.unit}

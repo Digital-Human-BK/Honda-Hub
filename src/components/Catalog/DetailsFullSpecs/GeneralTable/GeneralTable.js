@@ -29,7 +29,7 @@ const GeneralTable = ({ data }) => {
           <td>{data.general_information?.end_of_production} year</td>
         </tr>
         <tr>
-          <td>Powertrain Architecture</td>
+          <td>Powertrain architecture</td>
           <td>{data.general_information?.powertrain_architecture}</td>
         </tr>
         <tr>

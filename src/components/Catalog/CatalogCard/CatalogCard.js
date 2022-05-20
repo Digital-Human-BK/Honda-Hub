@@ -11,7 +11,7 @@ const CatalogCard = ({ model }) => {
         onError={(e)=>{e.target.onerror = null; e.target.src='/img/noImg.jpg'}}
         alt={model}
       />
-      <h4>{model}</h4>
+      <h4>{model} </h4>
     </Link>
   );
 };

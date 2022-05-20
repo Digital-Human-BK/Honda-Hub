@@ -4,21 +4,21 @@ const WeightTable = ({ data }) => {
     <table id='weight-specs'>
       <tbody>
         <tr>
-          <td>Kerb Weight</td>
+          <td>Kerb weight</td>
           <td>
             {specs?.kerb_weight.value}{' '}
             {specs?.kerb_weight.unit}
           </td>
         </tr>
         <tr>
-          <td>Max Weight</td>
+          <td>Max weight</td>
           <td>
             {specs?.max_weight.value}{' '}
             {specs?.max_weight.unit}
           </td>
         </tr>
         <tr>
-          <td>Max Load</td>
+          <td>Max load</td>
           <td>
             {specs?.max_load.value}{' '}
             {specs?.max_load.unit}

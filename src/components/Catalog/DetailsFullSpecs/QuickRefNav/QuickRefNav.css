@@ -1,0 +1,31 @@
+.quick-ref {
+  padding: 10px;
+  color: #48dbfb;
+  line-height: 1.5rem;
+  background-color: #353b48;  
+  border-radius: 5px;
+  width: 400px;
+  margin:20px 50px 20px 0;
+}
+
+.quick-ref p {
+  padding: 5px;
+  font-size: 1.4rem;
+}
+
+.quick-ref li{
+  padding-left: 10px;
+  font-size: 1.1rem;
+}
+
+.quick-ref a {
+  color: #fff;
+}
+
+.quick-ref i{
+  color: #48dbfb;
+}
+
+.quick-ref a:hover{
+  color: #48dbfb;
+}

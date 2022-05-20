@@ -39,7 +39,7 @@ const EngineTable = ({ data }) => {
           </td>
         </tr>
         <tr>
-          <td>Engine Model Code</td>
+          <td>Engine model mode</td>
           <td>
             {specs?.engine_model_code}
           </td>
@@ -64,14 +64,14 @@ const EngineTable = ({ data }) => {
           </td>
         </tr>
         <tr>
-          <td>Cylinder Bore</td>
+          <td>Cylinder sore</td>
           <td>
             {specs?.cylinder_bore.value}{' '}
             {specs?.cylinder_bore.unit}
           </td>
         </tr>
         <tr>
-          <td>Piston Stroke</td>
+          <td>Piston stroke</td>
           <td>
             {specs?.piston_stroke.value}{' '}
             {specs?.piston_stroke.unit}
@@ -90,13 +90,13 @@ const EngineTable = ({ data }) => {
           </td>
         </tr>
         <tr>
-          <td>Fuel System</td>
+          <td>Fuel system</td>
           <td>
             {specs?.fuel_system}
           </td>
         </tr>
         <tr>
-          <td>Engine Aspiration</td>
+          <td>Engine aspiration</td>
           <td>
             {specs?.engine_aspiration}
           </td>

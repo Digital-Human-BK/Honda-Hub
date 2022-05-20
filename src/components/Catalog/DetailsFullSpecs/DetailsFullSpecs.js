@@ -1,5 +1,4 @@
-import { useParams, useLocation } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
+import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import DarkHeader from '../../Common/DarkHeader';
 
@@ -10,6 +9,7 @@ import EngineTable from './EngineTable';
 import WeightTable from './WeightTable';
 import DimensionsTable from './DimensionsTable';
 import DrivetrainBrakesSuspensionTable from './DrivetrainBrakesWheelsTable';
+import QuickRefNav from './QuickRefNav';
 
 const fetchedData = {
   data: {
@@ -568,8 +568,6 @@ const fetchedData = {
 
 const DetailsFullSpecs = () => {
   const { model, gen, engine } = useParams();
-  const location = useLocation();
-  console.log(location);
   const [data, setData] = useState({});
 
   useEffect(() => {
@@ -588,30 +586,34 @@ const DetailsFullSpecs = () => {
       <section id='full-specs'>
         <div className='inner-width'>
           <div className='details-content'>
-            <img
-              src={`/img/catalog-${model}.jpg`}
-              className='details-pic'
-              alt={model}
-            />
+            <div id='side-content'>
+              <img
+                src={`/img/catalog-${model}.jpg`}
+                className='details-pic'
+                alt={model}
+              />
+              <QuickRefNav />
+            </div>
+
             <div className='details-text'>
               <h2>Honda {data.generation}</h2>
               <br />
-              <h3>Engine: {' '}
-                <span>{data.modification_engine}</span> -{' '}
-                <span>{data.engine_specs?.engine_model_code}</span> -{' '} 
+              <h3>
+                Engine: <span>{data.modification_engine}</span> -{' '}
+                <span>{data.engine_specs?.engine_model_code}</span> -{' '}
                 <span>{data.engine_specs?.valvetrain}</span>
               </h3>
               <p>General information</p>
               <GeneralTable data={data} />
               <p>Performance specs</p>
               <PerformanceTable data={data} />
-              <p>Engine Specs</p>
+              <p>Engine specs</p>
               <EngineTable data={data} />
-              <p>Space, Volume and weights</p>
+              <p>Space, Volume and Weights</p>
               <WeightTable data={data} />
               <p>Dimensions</p>
               <DimensionsTable data={data} />
-              <p>Drivetrain, brakes and suspension specs</p>
+              <p>Drivetrain, Brakes and Suspension specs</p>
               <DrivetrainBrakesSuspensionTable data={data} />
             </div>
           </div>
