@@ -29,13 +29,13 @@ const Catalog = () => {
         ...new Set([...defaultModels, ...modelsData.data[0].models]),
       ];
       setModels(newData);
-      setIsLoading(false);
     } catch (err) {
       setError(err.message);
-      setIsLoading(false);
       setTimeout(() => {
         setError(null);
       }, 5000);
+    } finally {
+      setIsLoading(false);
     }
   };
 
