@@ -6,24 +6,24 @@ const EngineTable = ({ data }) => {
         <tr>
           <td>Power</td>
           <td>
-            {specs?.power.value}
-            {specs?.power.unit} @ {specs?.power.acquired_at_rpm}rpm
+            {specs?.power?.value}
+            {specs?.power?.unit} @ {specs?.power?.acquired_at_rpm}rpm
           </td>
         </tr>
         <tr>
           <td>Power per litre</td>
           <td>
-            {specs?.power_per_litre.value}{' '}
-            {specs?.power_per_litre.unit}
+            {specs?.power_per_litre?.value}{' '}
+            {specs?.power_per_litre?.unit}
           </td>
         </tr>
         <tr>
           <td>Torque</td>
           <td>
             {specs?.torque.value}{' '}
-            {specs?.torque.unit} @{' '}
-            {specs?.torque.acquired_at_rpm.min || specs?.torque.acquired_at_rpm} - {' '}
-            {specs?.torque.acquired_at_rpm.max || specs?.torque.acquired_at_rpm}
+            {specs?.torque?.unit} @{' '}
+            {specs?.torque?.acquired_at_rpm.min || specs?.torque?.acquired_at_rpm} - {' '}
+            {specs?.torque?.acquired_at_rpm.max || specs?.torque?.acquired_at_rpm}
           </td>
         </tr>
         <tr>
@@ -47,8 +47,8 @@ const EngineTable = ({ data }) => {
         <tr>
           <td>Engine displacement</td>
           <td>
-            {specs?.engine_displacement.value}{' '}
-            {specs?.engine_displacement.unit}
+            {specs?.engine_displacement?.value}{' '}
+            {specs?.engine_displacement?.unit}
           </td>
         </tr>
         <tr>
@@ -66,15 +66,15 @@ const EngineTable = ({ data }) => {
         <tr>
           <td>Cylinder sore</td>
           <td>
-            {specs?.cylinder_bore.value}{' '}
-            {specs?.cylinder_bore.unit}
+            {specs?.cylinder_bore?.value}{' '}
+            {specs?.cylinder_bore?.unit}
           </td>
         </tr>
         <tr>
           <td>Piston stroke</td>
           <td>
-            {specs?.piston_stroke.value}{' '}
-            {specs?.piston_stroke.unit}
+            {specs?.piston_stroke?.value}{' '}
+            {specs?.piston_stroke?.unit}
           </td>
         </tr>
         <tr>

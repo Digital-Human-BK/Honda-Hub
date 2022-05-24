@@ -10,22 +10,22 @@ const PerformanceTable = ({ data }) => {
         <tr>
           <td>Acceleration 0-100km/h</td>
           <td>
-            {specs?.acceleration_0_100_km_h.value}{' '}
-            {specs?.acceleration_0_100_km_h.unit}
+            {specs?.acceleration_0_100_km_h?.value}{' '}
+            {specs?.acceleration_0_100_km_h?.unit}
           </td>
         </tr>
         <tr>
           <td>Acceleration 0-62mph</td>
           <td>
-            {specs?.acceleration_0_62_mph.value}{' '}
-            {specs?.acceleration_0_62_mph.unit}
+            {specs?.acceleration_0_62_mph?.value}{' '}
+            {specs?.acceleration_0_62_mph?.unit}
           </td>
         </tr>
         <tr>
           <td>Maximum speed</td>
           <td>
-            {specs?.maximum_speed.value}{' '}
-            {specs?.maximum_speed.unit}
+            {specs?.maximum_speed?.value}{' '}
+            {specs?.maximum_speed?.unit}
           </td>
         </tr>
         <tr>
@@ -43,22 +43,22 @@ const PerformanceTable = ({ data }) => {
         <tr>
           <td>Fuel consumption - urban</td>
           <td>
-            {specs?.fuel_consumption_economy_urban.value}{' '}
-            {specs?.fuel_consumption_economy_urban.unit}
+            {specs?.fuel_consumption_economy_urban?.value}{' '}
+            {specs?.fuel_consumption_economy_urban?.unit}
           </td>
         </tr>
         <tr>
           <td>Fuel consumption - extra urban</td>
           <td>
-            {specs?.fuel_consumption_economy_extra_urban.value}{' '}
-            {specs?.fuel_consumption_economy_extra_urban.unit}
+            {specs?.fuel_consumption_economy_extra_urban?.value}{' '}
+            {specs?.fuel_consumption_economy_extra_urban?.unit}
           </td>
         </tr>
         <tr>
           <td>Fuel consumption - combined</td>
           <td>
-            {specs?.fuel_consumption_economy_combined.value}{' '}
-            {specs?.fuel_consumption_economy_combined.unit}
+            {specs?.fuel_consumption_economy_combined?.value}{' '}
+            {specs?.fuel_consumption_economy_combined?.unit}
           </td>
         </tr>
       </tbody>

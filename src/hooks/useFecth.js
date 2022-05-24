@@ -9,11 +9,19 @@ const useFetch = (id) => {
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
-      setError(null)
+      setError(null);
       try {
         const response = await fetch(modelUrl + id, options);
+        if (response.status === 429) {
+          const errResponse = await response.json();
+          console.error(errResponse.message);
+          throw new Error(
+            'Too Many Requests! Limit 5 per minute. Please try again later.'
+          );
+        }
+
         const jsonData = await response.json();
-        if(jsonData.msg) {
+        if (jsonData.msg) {
           console.error(jsonData.msg);
           throw new Error('Something went wrong. Please try again later.');
         }

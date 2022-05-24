@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 
 import useFetch from '../../../hooks/useFecth';
+import { filterToGen } from '../../../helpers/dataTransform';
 import './DetailsByGen.css';
 
 import DarkHeader from '../../Common/DarkHeader';
@@ -11,16 +12,11 @@ import Notification from '../../Common/Notification';
 const DetailsByGen = () => {
   const { model, gen } = useParams();
   const { data, isLoading, error } = useFetch(model);
-  console.log(data);
 
   if (isLoading || data.generations === undefined) {
     return <Loader />;
   }
-
-  const filteredData = data.generations.filter(
-    (x) => x.id.replace(/_/g, '-') === gen
-  );
-  const generationData = filteredData[0];
+  const generationData = filterToGen(data, gen);
 
   return (
     <>

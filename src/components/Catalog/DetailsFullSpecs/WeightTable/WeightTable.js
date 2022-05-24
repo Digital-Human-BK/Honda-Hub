@@ -6,36 +6,36 @@ const WeightTable = ({ data }) => {
         <tr>
           <td>Kerb weight</td>
           <td>
-            {specs?.kerb_weight.value}{' '}
-            {specs?.kerb_weight.unit}
+            {specs?.kerb_weight?.value}{' '}
+            {specs?.kerb_weight?.unit}
           </td>
         </tr>
         <tr>
           <td>Max weight</td>
           <td>
-            {specs?.max_weight.value}{' '}
-            {specs?.max_weight.unit}
+            {specs?.max_weight?.value}{' '}
+            {specs?.max_weight?.unit}
           </td>
         </tr>
         <tr>
           <td>Max load</td>
           <td>
-            {specs?.max_load.value}{' '}
-            {specs?.max_load.unit}
+            {specs?.max_load?.value}{' '}
+            {specs?.max_load?.unit}
           </td>
         </tr>
         <tr>
           <td>Trunk {'('}boot{')'} space - minimum</td>
           <td>
-            {specs?.trunk_boot_space_minimum.value}{' '}
-            {specs?.trunk_boot_space_minimum.unit}
+            {specs?.trunk_boot_space_minimum?.value}{' '}
+            {specs?.trunk_boot_space_minimum?.unit}
           </td>
         </tr>
         <tr>
           <td>Fuel tank capacity</td>
           <td>
-            {specs?.fuel_tank_capacity.value}{' '}
-            {specs?.fuel_tank_capacity.unit}
+            {specs?.fuel_tank_capacity?.value}{' '}
+            {specs?.fuel_tank_capacity?.unit}
           </td>
         </tr>
       </tbody>
