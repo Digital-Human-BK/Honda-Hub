@@ -10,6 +10,8 @@ import Register from './components/Register';
 import DetailsByModel from './components/Catalog/DetailsByModel';
 import DetailsByGen from './components/Catalog/DetailsByGen';
 import DetailsFullSpecs from './components/Catalog/DetailsFullSpecs';
+import NotFound from './components/NotFound';
+import Error from './components/Error';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
         <Route path='/forum' element={<Forum />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/error' element={<Error/>}/>
+        <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
     </>

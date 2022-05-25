@@ -1,8 +1,9 @@
 import { useParams } from 'react-router-dom';
-// import { useState, useEffect } from 'react';
+
+import './DetailsFullSpecs.css';
 
 import useFetch from '../../../hooks/useFecth';
-import './DetailsFullSpecs.css';
+import { filterToEngine } from '../../../helpers/dataTransform';
 
 import DarkHeader from '../../Common/DarkHeader';
 import GeneralTable from './GeneralTable';
@@ -13,29 +14,21 @@ import DimensionsTable from './DimensionsTable';
 import DrivetrainBrakesSuspensionTable from './DrivetrainBrakesWheelsTable';
 import QuickRefNav from './QuickRefNav';
 import Loader from '../../Common/Loader';
-import { filterToEngine } from '../../../helpers/dataTransform';
+import Error from '../../Error';
 
 const DetailsFullSpecs = () => {
   const { model, gen, engine } = useParams();
-  // const [data, setData] = useState({});
   const { data, isLoading, error } = useFetch(model);
+
+  if (error) {
+    return <Error>{error.message}</Error>;
+  }
 
   if (isLoading || data.generations === undefined) {
     return <Loader />;
   }
 
   const engineData = filterToEngine(data, gen, engine);
-  console.log(engineData);
-
-  // useEffect(() => {
-  //   const filterToGen = fetchedData.data.generations.filter(
-  //     (x) => x.id.replace(/_/g, '-') === gen
-  //   );
-  //   const filterToEngine = filterToGen[0].engines.filter(
-  //     (e) => e.id === engine
-  //   );
-  //   setData(filterToEngine[0]);
-  // }, [gen, engine]);
 
   return (
     <>

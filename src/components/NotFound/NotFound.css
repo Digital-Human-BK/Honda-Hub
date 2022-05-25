@@ -1,0 +1,49 @@
+#not-found{
+  height: 100vh;
+  min-height: 500px;
+  background: url(/public/img/NSXv2.jpg) no-repeat center center/cover;
+  background-attachment: fixed;
+}
+
+#not-found .inner-width{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+#not-found .content{
+  width: 100%;
+  color: #fff;
+}
+
+#not-found .content h1{
+  font-size: 6rem;
+}
+#not-found .content p{
+  font-size: 1.5rem;
+}
+
+#not-found .buttons{
+  margin-top: 60px;
+}
+
+#not-found .buttons a{
+  display: inline-block;
+  color: #48dbfb;
+  margin: 15px 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 180px;
+  border: 1px solid #48dbfb;
+  border-radius: 6px;
+  padding: 14px 0;
+  transition: .2s linear;
+}
+
+#not-found .buttons a:hover,
+#not-found .buttons a:nth-child(2){
+  background: #48dbfb;
+  color: #fff;
+}

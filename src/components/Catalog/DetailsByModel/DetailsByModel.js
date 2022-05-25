@@ -1,16 +1,21 @@
 import { useParams } from 'react-router-dom';
 
-import useFetch from '../../../hooks/useFecth';
 import './DetailsByModel.css';
+
+import useFetch from '../../../hooks/useFecth';
 
 import DarkHeader from '../../Common/DarkHeader';
 import GenCard from './GenCard';
 import Loader from '../../Common/Loader';
-import Notification from '../../Common/Notification';
+import Error from '../../Error';
 
 const DetailsByModel = () => {
   const { model } = useParams();
   const { data, isLoading, error } = useFetch(model);
+
+  if (error) {
+    return <Error>{error.message}</Error>;
+  }
 
   if (isLoading) {
     return <Loader />;
@@ -33,7 +38,6 @@ const DetailsByModel = () => {
               additional specifications.
             </h2>
             <br />
-            {error && <Notification>{error.message}</Notification>}
             {data.generations?.map((generation) => (
               <GenCard
                 key={generation.id}

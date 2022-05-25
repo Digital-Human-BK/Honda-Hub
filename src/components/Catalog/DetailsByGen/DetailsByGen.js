@@ -1,21 +1,28 @@
 import { useParams } from 'react-router-dom';
 
+import './DetailsByGen.css';
+
 import useFetch from '../../../hooks/useFecth';
 import { filterToGen } from '../../../helpers/dataTransform';
-import './DetailsByGen.css';
 
 import DarkHeader from '../../Common/DarkHeader';
 import EngineCard from './EngineCard';
 import Loader from '../../Common/Loader';
 import Notification from '../../Common/Notification';
+import Error from '../../Error';
 
 const DetailsByGen = () => {
   const { model, gen } = useParams();
   const { data, isLoading, error } = useFetch(model);
 
+  if (error) {
+    return <Error>{error.message}</Error>;
+  }
+
   if (isLoading || data.generations === undefined) {
     return <Loader />;
   }
+
   const generationData = filterToGen(data, gen);
 
   return (

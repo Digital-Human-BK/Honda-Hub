@@ -20,7 +20,7 @@ const EngineTable = ({ data }) => {
         <tr>
           <td>Torque</td>
           <td>
-            {specs?.torque.value}{' '}
+            {specs?.torque?.value}{' '}
             {specs?.torque?.unit} @{' '}
             {specs?.torque?.acquired_at_rpm.min || specs?.torque?.acquired_at_rpm} - {' '}
             {specs?.torque?.acquired_at_rpm.max || specs?.torque?.acquired_at_rpm}

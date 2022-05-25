@@ -1,0 +1,41 @@
+#error-page{
+  height: 100vh;
+  min-height: 500px;
+  background: url(/public/img/engine.jpg) no-repeat center center/cover;
+  background-attachment: fixed;
+}
+
+#error-page .inner-width{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+#error-page .content{
+  width: 100%;
+  color: #fff;
+}
+
+#error-page .content h1{
+  font-size: 3rem;
+}
+
+#error-page .buttons{
+  margin-top: 60px;
+}
+
+#error-page .buttons a{
+  display: inline-block;
+  background: #48dbfb;
+  color: #fff;
+  margin: 15px 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 180px;
+  border: 1px solid #48dbfb;
+  border-radius: 6px;
+  padding: 14px 0;
+  transition: .2s linear;
+}
