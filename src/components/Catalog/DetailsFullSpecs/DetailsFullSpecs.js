@@ -39,6 +39,7 @@ const DetailsFullSpecs = () => {
             <div id='side-content'>
               <img
                 src={`/img/catalog-${model}.jpg`}
+                onError={(e)=>{e.target.onerror = null; e.target.src='/img/noImg.jpg'}}
                 className='details-pic'
                 alt={model}
               />

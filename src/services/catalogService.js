@@ -1,4 +1,4 @@
-import { BASE_URL, API_ENDPOINTS, options } from '../util/api';
+import { BASE_URL, API_ENDPOINTS, options } from '../api/carApi';
 
 export const getAllModels = () => request(API_ENDPOINTS.allModels);
 

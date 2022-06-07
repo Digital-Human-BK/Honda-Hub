@@ -3,31 +3,47 @@ import { Link } from 'react-router-dom';
 import './Register.css';
 
 const Register = () => {
+  const registerHandler = async (ev) => {
+    ev.preventDefault();
+
+    const formData = new FormData(ev.target);
+
+    const username = formData.get('username').trim();
+    const email = formData.get('email').trim().toLocaleLowerCase();
+    const password = formData.get('password').trim();
+
+    
+  };
+
   return (
     <section id='register' className='dark'>
       <div className='sign'>
         <h1 className='sign-title'>REGISTER</h1>
         <div className='content'>
-          <form className='contact-form'>
+          <form className='contact-form' onSubmit={registerHandler}>
             <input
+              required
               type='text'
               name='username'
               className='field'
-              placeholder='Your Username'
+              placeholder='Username'
             />
             <input
+              required
               type='email'
               name='email'
               className='field'
-              placeholder='Your Email'
+              placeholder='Email'
             />
             <input
+              required
               type='password'
               className='halfField'
               name='password'
-              placeholder='Your Password'
+              placeholder='Password'
             />
             <input
+              required
               type='password'
               className='halfField'
               name='repass'

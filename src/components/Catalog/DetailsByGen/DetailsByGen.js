@@ -33,6 +33,7 @@ const DetailsByGen = () => {
           <h1 className='section-title'>{generationData.name}</h1>
           <img
             src={`/img/catalog-${model}.jpg`}
+            onError={(e)=>{e.target.onerror = null; e.target.src='/img/noImg.jpg'}}
             className='about-pic'
             alt={model}
           />

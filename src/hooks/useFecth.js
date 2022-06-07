@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { modelUrl, options } from '../util/api';
+import { modelUrl, options } from '../util/carApi';
 
 const useFetch = (id) => {
   const [data, setData] = useState({});

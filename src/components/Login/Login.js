@@ -3,23 +3,37 @@ import { Link } from 'react-router-dom';
 import './Login.css';
 
 const Login = () => {
+  const loginHandler = async (ev) => {
+    ev.preventDefault();
+
+    const formData = new FormData(ev.target);
+
+    const email = formData.get('email').trim().toLocaleLowerCase();
+    const password = formData.get('password').trim();
+
+
+
+
+    
+  };
+
   return (
     <section id='login' className='dark'>
       <div className='sign'>
         <h1 className='sign-title'>LOGIN</h1>
 
-        <form className='contact-form'>
+        <form className='contact-form' onSubmit={loginHandler}>
           <input
             type='email'
             className='field'
             name='email'
-            placeholder='Your Email'
+            placeholder='Email'
           />
           <input
             type='password'
             className='field'
             name='password'
-            placeholder='Your Password'
+            placeholder='Password'
           />
           <input type='submit' value='Login' className='btn' />
         </form>
