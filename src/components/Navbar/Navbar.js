@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import useAuthContext from '../../hooks/useAuthContext';
 
-import './Navbar.css'
+import './Navbar.css';
 
 const Navbar = () => {
+  const { user, onLogout } = useAuthContext();
   const [navStyle, setNavStyle] = useState('navbar');
 
   const navbarChange = () => {
@@ -19,6 +21,20 @@ const Navbar = () => {
     window.addEventListener('scroll', navbarChange);
     return () => window.removeEventListener('scroll', navbarChange);
   }, []);
+
+  const guestNav = (
+    <>
+      <Link to='/login'>Login</Link>
+      <Link to='/register'>Register</Link>
+    </>
+  );
+
+  const userNav = (
+    <>
+      <Link to='/profile'><i className="fa-solid fa-user-ninja"></i> {user.username}</Link>
+      <Link to='#' onClick={onLogout}>Logout</Link>
+    </>
+  );
 
   return (
     <nav className={navStyle}>
@@ -35,8 +51,7 @@ const Navbar = () => {
           <HashLink to='/#quotes'>Quotes</HashLink>
           <HashLink to='/#timeline'>Timeline</HashLink>
           <Link to='/catalog'>Catalog</Link>
-          <Link to='/login'>Login</Link>
-          <Link to='/register'>Register</Link>
+          {user.username ? userNav : guestNav}
         </div>
       </div>
     </nav>

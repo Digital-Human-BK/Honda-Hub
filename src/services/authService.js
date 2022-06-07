@@ -35,10 +35,11 @@ export async function login(data) {
 }
 
 export const logout = async (token) => {
-  const res = await fetch(BASE_URL + '/logout', {
-    headers: {
-      
-    },
-  });
-  console.log(res);
+  // const res = await fetch(BASE_URL + '/logout', {
+  //   headers: {
+
+  //   },
+  // });
+  // console.log(res);
+  localStorage.removeItem('user');
 };

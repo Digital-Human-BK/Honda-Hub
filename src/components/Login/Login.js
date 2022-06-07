@@ -11,9 +11,6 @@ const Login = () => {
     const email = formData.get('email').trim().toLocaleLowerCase();
     const password = formData.get('password').trim();
 
-
-
-
     
   };
 
