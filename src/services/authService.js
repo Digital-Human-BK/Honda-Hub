@@ -1,7 +1,7 @@
-import { BASE_URL, AUTH_ENDPOINTS } from '../api/forumApi';
+import { HOST, AUTH_ENDPOINTS } from '../api/forumApi';
 
 export async function register(data) {
-  const response = await fetch(BASE_URL + AUTH_ENDPOINTS.register, {
+  const response = await fetch(HOST + AUTH_ENDPOINTS.register, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -11,14 +11,14 @@ export async function register(data) {
 
   if (response.ok === false) {
     const error = await response.json();
-    throw new Error(error.message);
+    throw error;
   }
 
   return response.json();
 }
 
 export async function login(data) {
-  const response = await fetch(BASE_URL + AUTH_ENDPOINTS.login, {
+  const response = await fetch(HOST + AUTH_ENDPOINTS.login, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ export async function login(data) {
 
   if (response.ok === false) {
     const error = await response.json();
-    throw new Error(error.message);
+    throw error;
   }
 
   return response.json();

@@ -62,7 +62,7 @@
 
 .field{
   max-width: 100%;
-  opacity: 85%;
+  opacity: 80%;
 }
 
 .halfField{
@@ -125,4 +125,11 @@
   min-height: 500px;
   background: url(/public/img/s2000v3.jpg) no-repeat center center/cover;
   background-attachment: fixed;
+}
+
+.auth-error {
+  background-color: #353b48;
+  opacity: 80%;
+  color: #fff;
+  border-radius: 4px;
 }

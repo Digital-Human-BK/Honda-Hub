@@ -1,17 +1,27 @@
 import { Link } from 'react-router-dom';
 
-import './Home.css'
+import './Home.css';
 import About from './About';
 import Quotes from './Quotes';
 import Timeline from './Timeline';
+import useAuthContext from '../../hooks/useAuthContext';
 
 const Home = () => {
+  const { user } = useAuthContext();
+
+  let greetingMsg = (
+    <h1>Hello <span className='greeting-name'>Stranger</span>!</h1>
+  )
+
+  if(user.username) {
+    greetingMsg = <h1>Hello <span className='greeting-name'>{user.username}</span>!</h1>
+  }
   return (
     <>
       <section id='home'>
         <div className='inner-width'>
           <div className='content'>
-            <h1></h1>
+            {greetingMsg}
             <div className='sm'>
               <a
                 href='https://github.com/Digital-Human-BK'

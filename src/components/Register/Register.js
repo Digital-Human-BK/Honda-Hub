@@ -1,8 +1,16 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 import './Register.css';
+import useAuthContext from '../../hooks/useAuthContext';
+import { register } from '../../services/authService';
+import { validateRegister } from '../../helpers/validator';
 
 const Register = () => {
+  const navigate = useNavigate();
+  const { onSign } = useAuthContext();
+  const [error, setError] = useState(null);
+
   const registerHandler = async (ev) => {
     ev.preventDefault();
 
@@ -11,8 +19,19 @@ const Register = () => {
     const username = formData.get('username').trim();
     const email = formData.get('email').trim().toLocaleLowerCase();
     const password = formData.get('password').trim();
+    const repass = formData.get('password').trim();
 
-    
+    try {
+      setError(null);
+      validateRegister({ username, email, password, repass });
+      const authData = await register({ username, email, password });
+      onSign(authData);
+      navigate('/');
+      ev.target.reset();
+    } catch (err) {
+      console.log(err.message);
+      setError(err);
+    }
   };
 
   return (
@@ -20,30 +39,29 @@ const Register = () => {
       <div className='sign'>
         <h1 className='sign-title'>REGISTER</h1>
         <div className='content'>
+          <ul className='auth-error'>
+            {error && error.map((e, i) => <li key={i}>{e.msg}</li>)}
+          </ul>
           <form className='contact-form' onSubmit={registerHandler}>
             <input
-              required
               type='text'
               name='username'
               className='field'
               placeholder='Username'
             />
             <input
-              required
               type='email'
               name='email'
               className='field'
               placeholder='Email'
             />
             <input
-              required
               type='password'
               className='halfField'
               name='password'
               placeholder='Password'
             />
             <input
-              required
               type='password'
               className='halfField'
               name='repass'
