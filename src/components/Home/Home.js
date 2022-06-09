@@ -10,11 +10,26 @@ const Home = () => {
   const { user } = useAuthContext();
 
   let greetingMsg = (
-    <h1>Hello <span className='greeting-name'>Stranger</span>!</h1>
-  )
+    <h1>
+      Welcome{' '}
+      <span className='glitch'>
+        <span aria-hidden='true'>Stranger</span>Stranger
+        <span aria-hidden='true'>Stranger</span>
+      </span>
+    </h1>
+  );
 
-  if(user.username) {
-    greetingMsg = <h1>Hello <span className='greeting-name'>{user.username}</span>!</h1>
+  if (user.username) {
+    greetingMsg = (
+      <h1>
+        Welcome{' '}
+        <span className='glitch'>
+          <span aria-hidden='true'>{user.username}</span>
+          {user.username}
+          <span aria-hidden='true'>{user.username}</span>
+        </span>
+      </h1>
+    );
   }
   return (
     <>

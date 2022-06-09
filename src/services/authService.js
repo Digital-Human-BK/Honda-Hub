@@ -9,7 +9,7 @@ export async function register(data) {
     body: JSON.stringify(data),
   });
 
-  if (response.ok === false) {
+  if (response.status !== 201) {
     const error = await response.json();
     throw error;
   }

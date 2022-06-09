@@ -2,9 +2,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 import './Register.css';
-import useAuthContext from '../../hooks/useAuthContext';
 import { register } from '../../services/authService';
 import { validateRegister } from '../../helpers/validator';
+import { mapErrors } from '../../helpers/mappers';
+import useAuthContext from '../../hooks/useAuthContext';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -19,18 +20,22 @@ const Register = () => {
     const username = formData.get('username').trim();
     const email = formData.get('email').trim().toLocaleLowerCase();
     const password = formData.get('password').trim();
-    const repass = formData.get('password').trim();
+    const repass = formData.get('repass').trim();
 
     try {
       setError(null);
       validateRegister({ username, email, password, repass });
+
       const authData = await register({ username, email, password });
       onSign(authData);
+
       navigate('/');
       ev.target.reset();
+      
     } catch (err) {
-      console.log(err.message);
-      setError(err);
+      const error = mapErrors(err);
+      console.log(error);
+      setError(error);
     }
   };
 
@@ -38,7 +43,6 @@ const Register = () => {
     <section id='register' className='dark'>
       <div className='sign'>
         <h1 className='sign-title'>REGISTER</h1>
-        <div className='content'>
           <ul className='auth-error'>
             {error && error.map((e, i) => <li key={i}>{e.msg}</li>)}
           </ul>
@@ -72,7 +76,7 @@ const Register = () => {
           <p className='already'>
             Already registered?<Link to='/login'> Login here</Link>
           </p>
-        </div>
+        
       </div>
     </section>
   );
