@@ -1,15 +1,19 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 import './Login.css';
+import useAuthContext from '../../hooks/useAuthContext';
 import { login } from '../../services/authService';
 import { validateLogin } from '../../helpers/validator';
-import useAuthContext from '../../hooks/useAuthContext';
 import { mapErrors } from '../../helpers/mappers';
 
 const Login = () => {
   const navigate = useNavigate();
-  const { onSign } = useAuthContext();
+  const location = useLocation();
+  console.log(location);
+  const from = location.state?.from?.pathname || '/';
+
+  const { onAuth } = useAuthContext();
   const [error, setError] = useState(null);
 
   const loginHandler = async (ev) => {
@@ -25,11 +29,10 @@ const Login = () => {
       validateLogin({ email, password });
 
       const authData = await login({ email, password });
-      onSign(authData);
+      onAuth(authData);
 
-      navigate('/');
       ev.target.reset();
-
+      navigate(from, { replace: true });
     } catch (err) {
       const error = mapErrors(err);
       console.log(error);

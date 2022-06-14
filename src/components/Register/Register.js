@@ -2,14 +2,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 import './Register.css';
+import useAuthContext from '../../hooks/useAuthContext';
 import { register } from '../../services/authService';
 import { validateRegister } from '../../helpers/validator';
 import { mapErrors } from '../../helpers/mappers';
-import useAuthContext from '../../hooks/useAuthContext';
 
 const Register = () => {
   const navigate = useNavigate();
-  const { onSign } = useAuthContext();
+  const { onAuth } = useAuthContext();
   const [error, setError] = useState(null);
 
   const registerHandler = async (ev) => {
@@ -27,10 +27,10 @@ const Register = () => {
       validateRegister({ username, email, password, repass });
 
       const authData = await register({ username, email, password });
-      onSign(authData);
+      onAuth(authData);
 
-      navigate('/');
       ev.target.reset();
+      navigate('/');
       
     } catch (err) {
       const error = mapErrors(err);

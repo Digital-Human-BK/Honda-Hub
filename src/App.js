@@ -13,6 +13,7 @@ import DetailsByGen from './components/Catalog/DetailsByGen';
 import DetailsFullSpecs from './components/Catalog/DetailsFullSpecs';
 import NotFound from './components/NotFound';
 import Error from './components/Error';
+import RequireAuth from './components/RequireAuth';
 
 function App() {
   return (
@@ -24,10 +25,14 @@ function App() {
         <Route path='/catalog/:model' element={<DetailsByModel />} />
         <Route path='/catalog/:model/:gen' element={<DetailsByGen />} />
         <Route path='/catalog/:model/:gen/:engine' element={<DetailsFullSpecs />} />
-        <Route path='/forum' element={<Forum />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/error' element={<Error/>}/>
+        
+        <Route element={<RequireAuth/>}>
+          <Route path='/forum' element={<Forum />} />
+        </Route>
+
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />

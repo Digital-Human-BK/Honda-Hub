@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
   const [user, setUser] = useLocalStorage('user', guest);
 
-  const onSign = (authData) => {
+  const onAuth = (authData) => {
     setUser(authData);
   };
 
@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, onSign, onLogout }}>
+    <AuthContext.Provider value={{ user, onAuth, onLogout }}>
       {children}
     </AuthContext.Provider>
   );
