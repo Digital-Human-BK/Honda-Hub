@@ -11,23 +11,14 @@ const Home = () => {
 
   let greetingMsg = (
     <h1>
-      Welcome{' '}
-      <span className='glitch'>
-        <span aria-hidden='true'>Stranger</span>Stranger
-        <span aria-hidden='true'>Stranger</span>
-      </span>
+      Welcome <span className='greeting-name'>Stranger</span>
     </h1>
   );
 
   if (user.username) {
     greetingMsg = (
       <h1>
-        Welcome{' '}
-        <span className='glitch'>
-          <span aria-hidden='true'>{user.username}</span>
-          {user.username}
-          <span aria-hidden='true'>{user.username}</span>
-        </span>
+        Welcome <span className='greeting-name'>{user.username}</span>
       </h1>
     );
   }

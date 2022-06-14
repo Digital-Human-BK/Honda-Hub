@@ -10,7 +10,6 @@ import { mapErrors } from '../../helpers/mappers';
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
   const from = location.state?.from?.pathname || '/';
 
   const { onAuth } = useAuthContext();
