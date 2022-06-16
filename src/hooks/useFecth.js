@@ -16,7 +16,7 @@ const useFetch = (id) => {
           const errResponse = await response.json();
           console.error(errResponse.message);
           throw new Error(
-            'Too Many Requests! Limit 5 per minute. Please try again later.'
+            'Too Many Requests! Limit 5 per minute or 100 per month. Please try again later.'
           );
         }
 
