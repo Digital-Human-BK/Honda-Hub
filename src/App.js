@@ -31,6 +31,7 @@ function App() {
         
         <Route element={<RequireAuth/>}>
           <Route path='/forum' element={<Forum />} />
+          <Route path='/forum/new-post' element={<Forum />} />
         </Route>
 
         <Route path='*' element={<NotFound />} />

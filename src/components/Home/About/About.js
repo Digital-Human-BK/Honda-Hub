@@ -4,7 +4,7 @@ const About = () => {
   return (
     <section id='about'>
       <div className='inner-width'>
-        <h1 className='section-title'>About</h1>
+        <h2 className='section-title'>About</h2>
         <div className='about-content'>
           <img src='/img/sh.jpg' className='about-pic' alt='Soichiro Honda' />
           <div className='about-text'>

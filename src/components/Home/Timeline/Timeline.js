@@ -4,7 +4,7 @@ const Timeline = () => {
   return (
     <section id='timeline'>
       <div className='inner-width'>
-        <h1 className='section-title'>Timeline</h1>
+        <h2 className='section-title'>Timeline</h2>
         <div className='time-line'>
           <div className='block'>
             <h4>1906</h4>

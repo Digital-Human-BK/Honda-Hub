@@ -4,7 +4,7 @@ const Quotes = () => {
   return (
     <section id='quotes' className='dark'>
       <div className='inner-width'>
-        <h1 className='section-title'>Quotes</h1>
+        <h2 className='section-title'>Quotes</h2>
         <div className='quotes'>
           <div className='quote'>
             <i className='fas fa-award'></i>

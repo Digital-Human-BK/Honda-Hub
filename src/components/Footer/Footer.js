@@ -15,7 +15,7 @@ const Footer = () => {
           </a>{' '}
           | React project by{' '}
           <a
-            href='https://github.com/Digital-Human-BK/Honda-Hub'
+            href='https://github.com/Digital-Human-BK'
             target='_blank'
             rel='noreferrer noopener'
           >
