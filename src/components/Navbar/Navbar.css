@@ -20,9 +20,10 @@
   background: url(/public/img/RPC-JP_Logo.png) no-repeat center center/cover;
 }
 
-.last-common {
-  padding-right: 30px;
-  border-right: 1px solid ;
+.divider {
+  padding-left: 30px;
+  margin: 0 10px;
+  border-right: 1px solid #fff;
 }
 
 .menu-toggler {
@@ -75,4 +76,8 @@
 
 .sticky .menu-toggler span {
   background: #111;
+}
+
+.sticky .navbar-menu .divider {
+  border-color: #111;
 }

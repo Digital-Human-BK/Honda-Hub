@@ -6,7 +6,7 @@ const Error = ({ children }) => {
     <section id='error-page'>
       <div className='inner-width'>
         <div className='content'>
-          <h1>{children}</h1>
+          <h1>{children ? children : 'Something went wrong!'}</h1>
           <div className='buttons'>
             <Link to='/'>Go Home</Link>
           </div>

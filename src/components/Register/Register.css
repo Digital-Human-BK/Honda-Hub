@@ -86,10 +86,10 @@
   width: 180px;
   background-color: transparent;
   color: #48dbfb;
-  font-size: 16px;
+  font-size: 1.2rem;
+  font-weight: 500;
   border: 2px solid #48dbfb;
   padding: 0;
-  /* margin-left: auto; */
   margin: auto;
   cursor: pointer;
   transition: 0.3s linear;
