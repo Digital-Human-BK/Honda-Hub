@@ -1,0 +1,70 @@
+.hero {
+  height: 70vh;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.1)),
+    url('/public/img/hero-nsx.jpg') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.forum-title {
+  color: #fff;
+  font-size: 3rem;
+  margin: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.accent {
+  color: #48dbfb;
+}
+
+
+.search {
+  width: 50%;
+  position: relative;
+}
+
+.search-bar {
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+  padding-left: 20px;
+  padding-right: 70px;
+  margin-bottom: 3rem;
+  color: #48dbfb;
+  background-color: #353b48;
+  opacity: 80%;
+  font-size: 20px;
+  outline: none;
+}
+
+.search-bar:focus {
+  border: 2px solid #48dbfb;
+}
+
+.search-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 40px;
+  width: 60px;
+  border-radius: 20px;
+  border: 2px solid #48dbfb;
+  background-color: #48dbfb;
+  color: #353b48;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.search-btn i {
+  font-size: 1.2rem;
+}
+
+.search-btn:hover{
+  color: #fff;
+}

@@ -51,6 +51,7 @@ const Navbar = () => {
           <HashLink to='/#quotes'>Quotes</HashLink>
           <HashLink to='/#timeline'>Timeline</HashLink>
           <Link to='/catalog'>Catalog</Link>
+          <Link className='last-common' to='/forum'>Forum</Link>
           {user.username ? userNav : guestNav}
         </div>
       </div>

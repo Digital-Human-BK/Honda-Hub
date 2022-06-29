@@ -7,20 +7,25 @@
   z-index: 10;
   transition: 0.3s linear;
 }
- 
-.navbar .inner-width{
+
+.navbar .inner-width {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.logo{
+.logo {
   width: 56px;
   height: 44px;
   background: url(/public/img/RPC-JP_Logo.png) no-repeat center center/cover;
 }
 
-.menu-toggler{
+.last-common {
+  padding-right: 30px;
+  border-right: 1px solid ;
+}
+
+.menu-toggler {
   background: none;
   width: 30px;
   border: none;
@@ -31,43 +36,43 @@
   display: none;
 }
 
-.menu-toggler span{
+.menu-toggler span {
   display: block;
   height: 3px;
   background: #fff;
   margin: 6px 0;
   position: relative;
   transition: 0.3s linear;
-
 }
 
-.navbar-menu a{
+.navbar-menu a {
   color: #fff;
   font-size: 1.2rem;
   font-weight: 600;
   margin-left: 30px;
-  transition: .2s linear;
+  transition: 0.2s linear;
 }
 
-.navbar-menu a:hover{
+.navbar-menu a:hover {
   color: #48dbfb !important;
 }
 
-.sticky{
-background: #fff;
-padding: 18px 0;
+.sticky {
+  background: #fff;
+  padding: 18px 0;
 }
 
-.sticky .logo{
-  background: url(/public/img/RPC-JP_LogoBlack.png) no-repeat center center/cover;
+.sticky .logo {
+  background: url(/public/img/RPC-JP_LogoBlack.png) no-repeat center
+    center/cover;
 }
 
-.sticky .navbar-menu a{
+.sticky .navbar-menu a {
   color: #111;
   font-weight: 600;
   font-size: 1.2rem;
 }
 
-.sticky .menu-toggler span{
+.sticky .menu-toggler span {
   background: #111;
 }

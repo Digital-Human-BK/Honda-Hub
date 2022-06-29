@@ -21,6 +21,7 @@
 #home .content h1 {
   font-size: 4rem;
   margin-bottom: 60px;
+  text-shadow: 2px 2px 4px #000;
 }
 
 .greeting-name {

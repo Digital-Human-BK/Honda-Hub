@@ -1,13 +1,13 @@
 /* Form in general */
 
-.contact-info{
+.contact-info {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 60px;
 }
 
-.contact-info .item{
+.contact-info .item {
   width: calc(33% - 20px);
   height: 160px;
   background-color: #353b48;
@@ -15,27 +15,28 @@
   text-align: center;
   border-radius: 4px;
   cursor: pointer;
-  transition: .3s linear;
+  transition: 0.3s linear;
 }
 
-.contact-info i{
+.contact-info i {
   display: block;
   font-size: 40px;
   line-height: 120px;
   height: 100px;
 }
 
-.contact-info .item:hover{
+.contact-info .item:hover {
   background-color: #48dbfb;
 }
 
-.contact-form{
+.contact-form {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.contact-form input, .contact-form textarea{
+.contact-form input,
+.contact-form textarea {
   width: 100%;
   height: 50px;
   margin: 10px 0 10px 0;
@@ -48,35 +49,40 @@
   color: #48dbfb;
 }
 
-::-webkit-input-placeholder{
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 2px solid #48dbfb;
+}
+
+::-webkit-input-placeholder {
   color: #48dbfb;
 }
-:focus::-webkit-input-placeholder{
+:focus::-webkit-input-placeholder {
   color: #48dbfb;
   opacity: 0.7;
 }
 
-::-moz-placeholder{
+::-moz-placeholder {
   color: #48dbfb;
 }
 
-.field{
+.field {
   max-width: 100%;
   opacity: 80%;
 }
 
-.halfField{
+.halfField {
   max-width: calc(50% - 10px);
   opacity: 80%;
 }
 
-.messageField{
+.messageField {
   min-height: 200px;
   resize: vertical;
   max-height: 1000px;
 }
 
-.contact-form .btn{
+.contact-form .btn {
   width: 180px;
   background-color: transparent;
   color: #48dbfb;
@@ -86,41 +92,42 @@
   /* margin-left: auto; */
   margin: auto;
   cursor: pointer;
-  transition: .3s linear;
+  transition: 0.3s linear;
 }
 
-.contact-form .btn:hover{
+.contact-form .btn:hover {
   background-color: #48dbfb;
   color: #fff;
 }
 
-.already{
+.already {
   text-align: center;
   margin: 10px auto;
   color: #fff;
   font-size: 18px;
 }
 
-.already a{
+.already a {
   font-size: 18px;
   color: #48dbfb;
   font-weight: 500;
 }
 
 /* Register */
-.sign{
+.sign {
   max-width: 500px;
   margin: auto;
   text-align: center;
 }
 
-.sign-title{
+.sign-title {
   color: #fff;
   font-size: 40px;
   margin-top: 140px;
+  text-shadow: 2px 2px 4px #000;
 }
 
-#register{
+#register {
   height: 100vh;
   min-height: 500px;
   background: url(/public/img/s2000v3.jpg) no-repeat center center/cover;
