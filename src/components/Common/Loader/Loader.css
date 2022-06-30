@@ -1,6 +1,6 @@
 .wrapper{
   height: 100vh;
-  background-color: #f1f1f1;
+  background-color: var(--clr-bg);
 }
 
 .ring
@@ -12,16 +12,16 @@
   width:150px;
   height:150px;
   background:transparent;
-  border:3px solid #353b48;
+  border:3px solid var(--clr-bg-dark);
   border-radius:50%;
   text-align:center;
   line-height:150px;
   font-family:sans-serif;
   font-size:20px;
-  color:#48dbfb;
+  color:var(--clr-accent);
   letter-spacing:4px;
   text-transform:uppercase;
-  text-shadow:0 0 10px #48dbfb;
+  text-shadow:0 0 10px var(--clr-accent);
   box-shadow:0 0 20px rgba(0,0,0,.5);
 }
 .ring:before
@@ -33,8 +33,8 @@
   width:100%;
   height:100%;
   border:3px solid transparent;
-  border-top:3px solid #48dbfb;
-  border-right:3px solid #48dbfb;
+  border-top:3px solid var(--clr-accent);
+  border-right:3px solid var(--clr-accent);
   border-radius:50%;
   animation:animateC 2s linear infinite;
 }
@@ -57,10 +57,10 @@
   width:16px;
   height:16px;
   border-radius:50%;
-  background:#48dbfb;
+  background:var(--clr-accent);
   top:-6px;
   right:-8px;
-  box-shadow:0 0 20px #48dbfb;
+  box-shadow:0 0 20px var(--clr-accent);
 }
 @keyframes animateC
 {

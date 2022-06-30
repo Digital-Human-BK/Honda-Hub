@@ -3,9 +3,10 @@
   text-align: center;
   border-radius: 6px; 
   background-color: #353b48;
-  color: #fff;
+  color: var(--clr-primary);
   cursor: pointer;
-  margin-bottom: 30px;
+  margin-bottom: 1.8rem;
+  transition: 0.2s linear;
 }
 
 .catalog-card img {
@@ -15,12 +16,13 @@
 
 .catalog-card h4{
   text-align: center;
-  margin-top: 10px;
+  margin-top: 0.65rem;
+  margin-bottom: 1rem;
   font-size: 1.5rem;
-  margin-bottom: 15px;
 }
 
 .catalog-card:hover{
-  color: #48dbfb;
-  opacity: 90%;
+  color: var(--clr-accent);
+  transform: scale(1.05);
+  opacity: 95%;
 }

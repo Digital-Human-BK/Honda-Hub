@@ -28,7 +28,7 @@ const DetailsByGen = () => {
   return (
     <>
       <DarkHeader />
-      <section id='genr-details'>
+      <section id='gen-details'>
         <div className='inner-width'>
           <h1 className='section-title'>{generationData.name}</h1>
           <img

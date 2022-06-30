@@ -1,3 +1,7 @@
+#full-specs {
+  background: url(/public/img/risingsun.png) no-repeat center center/cover;
+}
+
 .details-content {
   display: flex;
   align-items: flex-start;
@@ -16,7 +20,7 @@
 
 .details-text h3 {
   margin: 10px 0;
-  color: #444;
+  color: var(--clr-font-gray);
   font-size: 1.7rem;
 }
 
@@ -25,8 +29,8 @@
   text-align: justify;
   line-height: 1.5rem;
   margin-top: 20px;
-  border: 1px solid #ddd;
-  background-color: #fff7f0;
+  border: 1px solid var(--clr-table);
+  background-color: var(--clr-catalog-item);
   padding: 5px;
 }
 
@@ -35,13 +39,13 @@ table {
   width: 100%;
 }
 
-td{
+td {
   width: 50%;
-  border: 1px solid #ddd;
+  border: 1px solid var(--clr-table);
   text-align: left;
   padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #ddd;
+  background-color: var(--clr-table);
 }

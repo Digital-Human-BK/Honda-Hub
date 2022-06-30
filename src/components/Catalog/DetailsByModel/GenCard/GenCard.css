@@ -1,20 +1,20 @@
 .sub-model{
   display: block;
   width: 100%;
-  color: #111;
+  color: var(--clr-secondary);
   font-size: 1.3rem;
-  border: 3px solid #353b48;
+  border: 3px solid var(--clr-bg-dark);
   border-radius: 3px;  
   margin-bottom: 10px;
   padding: 10px;
 }
 
 .sub-model h4{
-  padding-bottom: 15px;
+  padding-bottom: 1rem;
 }
 
 .sub-model i{  
-  color: #48dbfb;
+  color: var(--clr-accent);
 }
 
 .sub-model p{
@@ -26,11 +26,11 @@
 
 .sub-model p strong {
   margin-left: 5%;
-  color: #48dbfb;
+  color: var(--clr-accent);
 }
 
 .sub-model:hover{
   cursor: pointer;
-  background-color: #353b48;
-  color: #fff;
+  background-color: var(--clr-bg-dark);
+  color: var(--clr-primary);
 }

@@ -1,5 +1,6 @@
 #catalog{
   min-height: 500px;
+  background: url(/public/img/risingsun.png) no-repeat center center/cover ;
 }
 
 .catalog-cars{

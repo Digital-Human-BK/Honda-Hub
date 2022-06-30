@@ -1,5 +1,6 @@
 #forum {
   background-color: #f1f1f1;
+  background: url(/public/img/risingsun.png) no-repeat center center/cover ;
 }
 
 .hero {
@@ -22,7 +23,7 @@
 }
 
 .accent {
-  color: #48dbfb;
+  color: var(--clr-accent);
 }
 
 .search {
@@ -97,6 +98,7 @@
 }
 
 .new-post-btn i {
+  font-size: 1.1rem;
   padding-right: 1rem;
 }
 
@@ -128,10 +130,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 3rem;
   color: #48dbfb;
   border-radius: 6px;
   background-color: #353b48;
+}
+
+.item__icon i {
+  font-size: 3rem;
 }
 
 .item__info {
@@ -170,7 +175,7 @@
 
 .topics__desc {
   color: #fff;
-  font: 1.2rem;
+  font-size: 1.2rem;
   letter-spacing: 1px;
   font-weight: 500;
 }

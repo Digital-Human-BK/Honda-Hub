@@ -1,11 +1,12 @@
-#error-page{
+#error-page {
   height: 100vh;
   min-height: 500px;
-  background: url(/public/img/engine.jpg) no-repeat center center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),
+    url(/public/img/engine.jpg) no-repeat center center/cover;
   background-attachment: fixed;
 }
 
-#error-page .inner-width{
+#error-page .inner-width {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,29 +14,34 @@
   text-align: center;
 }
 
-#error-page .content{
+#error-page .content {
   width: 100%;
-  color: #fff;
+  color: var(--clr-primary);
 }
 
-#error-page .content h1{
+#error-page .content h1 {
   font-size: 3rem;
 }
 
-#error-page .buttons{
+#error-page .buttons {
   margin-top: 60px;
 }
 
-#error-page .buttons a{
+#error-page .buttons a {
   display: inline-block;
-  background: #48dbfb;
-  color: #fff;
-  margin: 15px 30px;
-  font-size: 1rem;
+  background: transparent;
+  color: var(--clr-accent);
+  margin: 1rem 2rem;
+  font-size: 1.1rem;
   font-weight: 500;
-  width: 180px;
-  border: 1px solid #48dbfb;
+  width: 11.5rem;
+  border: 2px solid var(--clr-accent);
   border-radius: 6px;
-  padding: 14px 0;
-  transition: .2s linear;
+  padding: 0.875rem 0;
+  transition: 0.2s linear;
+}
+
+#error-page .buttons a:hover {
+  color: var(--clr-primary);
+  background-color: var(--clr-accent);
 }

@@ -1,4 +1,4 @@
 .dark-header{
-  background-color: #353b48;
+  background-color: var(--clr-bg-dark);
   height: 100px;
 }

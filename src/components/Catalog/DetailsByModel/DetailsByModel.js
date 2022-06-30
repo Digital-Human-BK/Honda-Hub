@@ -24,7 +24,7 @@ const DetailsByModel = () => {
   return (
     <>
       <DarkHeader />
-      <section id='details'>
+      <section id='model-details'>
         <div className='inner-width'>
           <h1 className='section-title'>Honda {model}</h1>
           <img

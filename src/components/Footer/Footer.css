@@ -1,17 +1,17 @@
 footer{
-  background-color: #353b48;
-  color: #fff;
-  padding: 40px 0;
+  background-color: var(--clr-bg-dark);
+  color: var(--clr-primary);
+  padding: 2.5rem 0;
   text-align: center;
 }
 
 .copyright{
-  margin-bottom: 20px;
-  font-size:  18px;
+  margin-bottom: 1.25rem;
+  font-size:  1.2rem;
 }
 
 .copyright a{
-  font-size: 18px;
-  color: #48dbfb;
+  font-size: 1.2rem;
+  color: var(--clr-accent);
   font-weight: 500;
 }

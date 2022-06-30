@@ -1,3 +1,7 @@
+#timeline {
+  background: url(/public/img/risingsun.png) no-repeat center center/cover ;
+}
+
 .time-line{
   display: flex;
   justify-content: space-between;
@@ -6,10 +10,11 @@
 
 .block{
   width: calc(50% - 20px);
-  background: #fff;
+  background: rgba(255, 255, 255, 0.6);
   border: 1px solid #ddd;
+  box-shadow: 5px 5px 15px 3px #d1d1d1;
   margin: 10px 0;
-  padding: 30px;
+  padding: 1.7rem 2rem;
   position: relative;
 }
 
@@ -29,7 +34,7 @@
   position: absolute;
   width: 16px;
   height: 16px;
-  background: #48dbfb;
+  background: var(--clr-accent);
   left: -28px;
   top: 30px;
   border-radius: 50%;
@@ -37,10 +42,11 @@
 
 .block h4{
   font-size: 1.2rem;
-  margin: 10px 0;
+  margin-bottom: 1rem;
 }
 
 .block p{
   font-weight: 500;
-  color: #444;
+  color: var(--clr-font-gray);
+  line-height: 1.4;
 }

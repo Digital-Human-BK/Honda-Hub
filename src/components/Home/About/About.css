@@ -1,3 +1,7 @@
+#about {
+  background: url(/public/img/risingsun.png) no-repeat center center/cover;
+}
+
 .about-content{
   display: flex;
   align-items: center;
@@ -14,8 +18,7 @@
 }
 
 .about-text h3 {
-  margin: 10px 0;
-  color: #444;
+  color: var(--clr-font-gray);
   font-size: 1.7rem;
 }
 
@@ -25,7 +28,7 @@
   display: inline-block;
   width: 10px;
   height: 10px;
-  background: #444;
+  background: var(--clr-font-gray);
   border-radius: 50%;
   margin: 0 14px;
 }
@@ -34,5 +37,5 @@
   font-size: 1.3rem;
   text-align: justify;
   line-height: 1.5rem;
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }

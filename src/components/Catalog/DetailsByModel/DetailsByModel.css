@@ -1,46 +1,13 @@
+#model-details {
+  background: url(/public/img/risingsun.png) no-repeat center center/cover ;
+}
+
 .view-message{
   width: 100%;
-  background-color: #fff7f0;
+  background-color: var(--clr-catalog-item);
   font-size: 1.2rem;
-  border: 2px solid #353b48;
+  border: 2px solid var(--clr-bg-dark);
   border-radius: 3px;
   padding: 5px 10px;
   margin-top: 5px;
-}
-
-.sub-model{
-  display: block;
-  width: 100%;
-  color: #111;
-  font-size: 1.3rem;
-  border: 3px solid #353b48;
-  border-radius: 3px;  
-  margin-bottom: 10px;
-  padding: 10px;
-}
-
-.sub-model h4{
-  padding-bottom: 15px;
-}
-
-.sub-model i{  
-  color: #48dbfb;
-}
-
-.sub-model p{
-  padding: 5px;
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-
-.sub-model p strong {
-  margin-left: 5%;
-  color: #48dbfb;
-}
-
-.sub-model:hover{
-  cursor: pointer;
-  background-color: #353b48;
-  color: #fff;
 }

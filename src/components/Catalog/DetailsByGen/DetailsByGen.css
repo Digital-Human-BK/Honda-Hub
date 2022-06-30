@@ -1,4 +1,8 @@
-.view-message{
+#gen-details {
+  background: url(/public/img/risingsun.png) no-repeat center center/cover;
+}
+
+.view-message {
   width: 100%;
   background-color: #fff7f0;
   font-size: 1.2rem;

@@ -1,21 +1,22 @@
-.commonBtn{
+.common-btn{
   display: block;
-  width: 180px;
-  font-size: 1rem;
-  background-color: #353b48;
-  border: 2px solid #353b48;
+  width: 11.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background-color: var(--clr-bg-dark);
+  border: 2px solid var(--clr-bg-dark);
   border-radius: 6px;
-  padding: 14px;
+  padding: 0.875rem 0;
   margin: auto;
-  color: #fff;
+  color: var(--clr-primary);
   cursor: pointer;
 }
 
-.disableBtn{
+.disable-btn{
   opacity: 40%;
 }
 
-.commonBtn:hover{
-  color: #48dbfb;
+.common-btn:hover{
+  color: var(--clr-accent);
   opacity: 90%;
 }
