@@ -53,7 +53,7 @@ const Catalog = () => {
           {isLoading && <LoadingSpinner />}
           {error && <Notification>{error}</Notification>}
           <Button
-            value={'See All'}
+            value={'All Models'}
             disabled={isLoading}
             handler={fetchAllModels}
           />
