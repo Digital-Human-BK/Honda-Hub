@@ -7,5 +7,6 @@ export const AUTH_ENDPOINTS = {
 }
 
 export const FORUM_ENDPOINTS = {
-  
+  postsCount: '/posts-count',
+  searchPosts: '/search'
 }

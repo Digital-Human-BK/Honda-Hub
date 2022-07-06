@@ -1,34 +1,37 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
+import { getPostsCount } from '../../services/forumService';
+
 import './Forum.css';
+import Header from './Header';
+import ForumHeading from './ForumHeading';
 
 const Forum = () => {
+  const [categoryCount, setCategoryCount] = useState({
+    general: '- -',
+    problems: '- -',
+    events: '- -',
+  });
+
+  useEffect(() => {
+    try {
+      const fetchCounts = async () => {
+        const countData = await getPostsCount();
+        setCategoryCount(countData);
+      };
+      fetchCounts();
+    } catch (err) {
+      console.error(err.message);
+    }
+  }, []);
+
   return (
     <>
-      <header className='hero'>
-        <h1 className='forum-title'>
-          Welcome to the <span className='accent'>Honda Hub Forum</span>
-        </h1>
-        <form className='search-form' method='GET'>
-          <input
-            className='search'
-            type='search'
-            name='search'
-            id='search'
-            placeholder='Search your topic here'
-          />
-          <button className='search-btn'>
-            <i className='fa-solid fa-magnifying-glass'></i>
-          </button>
-        </form>
-      </header>
+      <Header />
       <section id='forum'>
         <div className='inner-width'>
-          <div className='categories-heading'>
-            <h2 className='categories-title'>Categories</h2>
-            <Link className='new-post-btn' to='/forum/new-post'>
-              <i className='fa-solid fa-plus'></i>NEW POST
-            </Link>
-          </div>
+          <ForumHeading title={'Categories'} />
           <ul className='categories'>
             <li>
               <Link to='/forum/general' className='categories__item'>
@@ -38,13 +41,12 @@ const Forum = () => {
                 <div className='item__info'>
                   <h3 className='item__title'>General Discussions</h3>
                   <p className='item__desc'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Qui, eos!
+                    Discuss anything about your favorite car make.
                   </p>
                 </div>
                 <div className='item__topics'>
-                  <p className='topics__count'>07</p>
-                  <p className='topics__desc'>Topics</p>
+                  <p className='topics__count'>{categoryCount.general}</p>
+                  <p className='topics__desc'>Posts</p>
                 </div>
               </Link>
             </li>
@@ -58,31 +60,31 @@ const Forum = () => {
                     Technical Problems and Service
                   </h3>
                   <p className='item__desc'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Qui, eos!
+                    Car is broken or needs servicing? This is the place to help
+                    each other.
                   </p>
                 </div>
                 <div className='item__topics'>
-                  <p className='topics__count'>11</p>
-                  <p className='topics__desc'>Topics</p>
+                  <p className='topics__count'>{categoryCount.problems}</p>
+                  <p className='topics__desc'>Posts</p>
                 </div>
               </Link>
             </li>
             <li>
-              <Link to='meetings-events' className='categories__item'>
+              <Link to='/forum/events' className='categories__item'>
                 <div className='item__icon'>
                   <i className='fa-solid fa-flag-checkered'></i>
                 </div>
                 <div className='item__info'>
                   <h3 className='item__title'>Meetings and Events</h3>
                   <p className='item__desc'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Qui, eos!
+                    Meet other honda enthusiasts, learn about future events and
+                    meetings.
                   </p>
                 </div>
                 <div className='item__topics'>
-                  <p className='topics__count'>03</p>
-                  <p className='topics__desc'>Topics</p>
+                  <p className='topics__count'>{categoryCount.events}</p>
+                  <p className='topics__desc'>Posts</p>
                 </div>
               </Link>
             </li>

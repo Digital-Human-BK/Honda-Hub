@@ -10,7 +10,8 @@ import { mapErrors } from '../../helpers/mappers';
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || '/';
+
+  const from = (location.state?.from?.pathname + location.state?.from?.search) || '/';
 
   const { onAuth } = useAuthContext();
   const [error, setError] = useState(null);

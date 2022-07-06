@@ -14,6 +14,7 @@ import DetailsFullSpecs from './components/Catalog/DetailsFullSpecs';
 import NotFound from './components/NotFound';
 import Error from './components/Error';
 import RequireAuth from './components/RequireAuth';
+import Search from './components/Forum/Search';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         
         <Route element={<RequireAuth/>}>
           <Route path='/forum' element={<Forum />} />
+          <Route path='/search' element={<Search />} />
           <Route path='/forum/new-post' element={<Forum />} />
         </Route>
 
