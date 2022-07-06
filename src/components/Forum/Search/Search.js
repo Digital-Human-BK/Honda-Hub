@@ -23,7 +23,12 @@ const Search = () => {
     fecthResult();
   }, [query]);
 
-  
+  const noResultsMsg = (
+    <h3 className='no-result'>
+      No results for{' '}
+      <span className='no-result--accent'>&lsquo;{query}&rsquo;</span>
+    </h3>
+  );
 
   return (
     <>
@@ -34,7 +39,7 @@ const Search = () => {
           <ul className='posts-list'>
             {searchData && searchData.length > 0
               ? searchData.map((data) => <Post key={data._id} data={data} />)
-              : 'No results'}
+              : noResultsMsg}
           </ul>
         </div>
       </section>

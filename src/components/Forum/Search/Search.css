@@ -1,0 +1,12 @@
+.posts-list {
+  margin-top: 4rem;
+}
+
+.no-result {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.no-result--accent {
+  color: var(--clr-font-gray);
+}

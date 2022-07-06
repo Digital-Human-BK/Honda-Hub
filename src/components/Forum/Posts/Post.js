@@ -27,7 +27,7 @@ const Post = ({ data }) => {
         </div>
 
         <div className='post__side-info'>
-          <p className='post__category'>Posted in {category}</p>
+          <p className='post__category'>Posted in <strong>{category}</strong></p>
           <p className='post__created'>Created at: {date}, {time}</p>
         </div>
       </Link>

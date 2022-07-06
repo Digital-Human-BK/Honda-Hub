@@ -62,11 +62,13 @@
   color: var(--clr-font-gray);
 }
 
-.post__category {
-  text-transform: capitalize;
+.post__side-info {
+  width: 260px;
+  min-width: 260px;
+  padding-left: 1rem;
 }
 
-.post__side-info {
-  min-width: 250px;
-  padding-left: 1rem;
+.post__category {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
 }

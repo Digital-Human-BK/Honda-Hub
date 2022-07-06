@@ -10,7 +10,7 @@ export const filterToEngine = (data, gen, engine) => {
 export const parseCategory = (category) => {
   const parseTo = {
     general: 'General Discussions',
-    problems: 'Technical Problems and Service',
+    problems: 'Technical Problems',
     events: 'Meetings and Events'
   }
   return parseTo[category];

@@ -11,7 +11,7 @@ const Home = () => {
 
   let greetingMsg = (
     <h1>
-      Welcome <span className='greeting-name'>Dreamer_</span>
+      Welcome <span className='greeting-name'>Dreamer</span>
     </h1>
   );
 

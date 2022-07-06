@@ -23,7 +23,7 @@
 }
 
 .categories__item:hover{
-  border-left: 1.5rem solid var(--clr-accent);
+  border-left: 1rem solid var(--clr-accent);
 }
 
 .item__icon {
@@ -55,6 +55,7 @@
 }
 
 .item__desc {
+  font-size: 1.2rem;
   color: #696969;
 }
 
