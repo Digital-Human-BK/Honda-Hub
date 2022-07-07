@@ -8,5 +8,10 @@ export const AUTH_ENDPOINTS = {
 
 export const FORUM_ENDPOINTS = {
   postsCount: '/posts-count',
-  searchPosts: '/search'
+  searchPosts: '/search',
+
+  //all the routes below require ID at the end!!!
+  
+  categories: '/categories/',
+  post: '/posts/'
 }

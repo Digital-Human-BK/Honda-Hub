@@ -1,20 +1,24 @@
 import { Routes, Route } from 'react-router-dom';
 
 import { AuthProvider } from './contexts/AuthProvider';
+
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Footer from './components/Footer';
-import Catalog from './components/Catalog';
-import Forum from './components/Forum';
 import Login from './components/Login';
 import Register from './components/Register';
+import Error from './components/Error';
+import NotFound from './components/NotFound';
+
+import Catalog from './components/Catalog';
 import DetailsByModel from './components/Catalog/DetailsByModel';
 import DetailsByGen from './components/Catalog/DetailsByGen';
 import DetailsFullSpecs from './components/Catalog/DetailsFullSpecs';
-import NotFound from './components/NotFound';
-import Error from './components/Error';
+
 import RequireAuth from './components/RequireAuth';
+import Forum from './components/Forum';
 import Search from './components/Forum/Search';
+import ForumCategory from './components/Forum/ForumCategory';
 
 function App() {
   return (
@@ -32,7 +36,9 @@ function App() {
         
         <Route element={<RequireAuth/>}>
           <Route path='/forum' element={<Forum />} />
+          <Route path='/forum/:id' element={<Forum />} />
           <Route path='/search' element={<Search />} />
+          <Route path='/categories/:category' element={<ForumCategory />} />
           <Route path='/forum/new-post' element={<Forum />} />
         </Route>
 

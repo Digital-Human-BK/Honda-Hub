@@ -1,23 +1,48 @@
-import { HOST, FORUM_ENDPOINTS } from "../api/forumApi";
+import { HOST, FORUM_ENDPOINTS } from '../api/forumApi';
 
-export async function getPostsCount(){
-  const response = await fetch(HOST + FORUM_ENDPOINTS.postsCount);
+export async function getPostsCount() {
+  try {
+    const response = await fetch(HOST + FORUM_ENDPOINTS.postsCount);
 
-  if (response.status !== 200) {
-    const error = await response.json();
-    throw error;
+    if (response.ok === false) {
+      const error = await response.json();
+      throw error;
+    }
+
+    return response.json();
+  } catch (err) {
+    throw new Error(err);
   }
+}
 
-  return response.json();
-};
+export async function getSearchResults(query) {
+  try {
+    const response = await fetch(
+      HOST + FORUM_ENDPOINTS.searchPosts + `?term=${query}`
+    );
 
-export async function getSearchResults(query){
-  const response = await fetch(HOST + FORUM_ENDPOINTS.searchPosts + `?term=${query}`);
+    if (response.ok === false) {
+      const error = await response.json();
+      throw error;
+    }
 
-  if (response.status !== 200) {
-    const error = await response.json();
-    throw error;
+    return response.json();
+  } catch (err) {
+    throw new Error(err);
   }
+}
 
-  return response.json();
-};
+export async function getCategoryPosts(category) {
+  try {
+    const response = await fetch(HOST + FORUM_ENDPOINTS.categories + category);
+
+    if (response.ok === false) {
+      const error = await response.json();
+      throw error;
+    }
+
+    return response.json();
+  } catch (err) {
+    throw new Error(err);
+  }
+}

@@ -62,7 +62,7 @@ export const validateLogin = (body) => {
   }
   if (PWD_REGEX.test(password) === false && password !== '') {
     errors.push({
-      msg: 'Password 5 to 20 characters, latin letters and numbers only',
+      msg: 'Invalid password',
     });
   }
 

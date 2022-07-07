@@ -2,25 +2,39 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import { getSearchResults } from '../../../services/forumService';
+import { mapErrors } from '../../../helpers/mappers';
 
 import './Search.css';
 import Header from '../Header';
 import ForumHeading from '../ForumHeading';
-import Post from '../Posts';
+import Post from '../Post';
+import LoadingSpinner from '../../Common/LoadingSpinner';
+import Notification from '../../Common/Notification';
 
 const Search = () => {
   const [searchParams] = useSearchParams();
   const query = searchParams.get('term').trim();
 
   const [searchData, setSearchData] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fecthResult = async () => {
-      const searchResult = await getSearchResults(query);
-      setSearchData(searchResult);
-      console.log(searchResult);
+    const fecthSearchResults = async () => {
+      try {
+        setIsLoading(true);
+        setError(null);
+        const searchResult = await getSearchResults(query);
+        setSearchData(searchResult);
+      } catch (err) {
+        console.log(err);
+        const error = mapErrors(err);
+        setError(error[0].msg);
+      } finally {
+        setIsLoading(false);
+      }
     };
-    fecthResult();
+    fecthSearchResults();
   }, [query]);
 
   const noResultsMsg = (
@@ -36,10 +50,16 @@ const Search = () => {
       <section id='search'>
         <div className='inner-width'>
           <ForumHeading title={'Search results'} />
+          {isLoading && <LoadingSpinner />}
           <ul className='posts-list'>
-            {searchData && searchData.length > 0
-              ? searchData.map((data) => <Post key={data._id} data={data} />)
-              : noResultsMsg}
+            {
+              searchData &&
+              searchData.length > 0 &&
+              searchData.map((data) => <Post key={data._id} data={data} />)
+            }
+
+            {error && <Notification>{error}</Notification>}
+            {!error && !isLoading && searchData.length === 0 && noResultsMsg}
           </ul>
         </div>
       </section>

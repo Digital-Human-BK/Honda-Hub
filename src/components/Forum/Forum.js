@@ -34,7 +34,7 @@ const Forum = () => {
           <ForumHeading title={'Categories'} />
           <ul className='categories'>
             <li>
-              <Link to='/forum/general' className='categories__item'>
+              <Link to='/categories/general' className='categories__item'>
                 <div className='item__icon'>
                   <i className='fa-solid fa-comments'></i>
                 </div>
@@ -51,14 +51,12 @@ const Forum = () => {
               </Link>
             </li>
             <li>
-              <Link to='/forum/problems' className='categories__item'>
+              <Link to='/categories/problems' className='categories__item'>
                 <div className='item__icon'>
                   <i className='fa-solid fa-car-burst'></i>
                 </div>
                 <div className='item__info'>
-                  <h3 className='item__title'>
-                    Technical Problems and Service
-                  </h3>
+                  <h3 className='item__title'>Technical Problems</h3>
                   <p className='item__desc'>
                     Car is broken or needs servicing? This is the place to help
                     each other.
@@ -71,7 +69,7 @@ const Forum = () => {
               </Link>
             </li>
             <li>
-              <Link to='/forum/events' className='categories__item'>
+              <Link to='/categories/events' className='categories__item'>
                 <div className='item__icon'>
                   <i className='fa-solid fa-flag-checkered'></i>
                 </div>
