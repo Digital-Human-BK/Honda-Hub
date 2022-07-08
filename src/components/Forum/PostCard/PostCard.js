@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { mapCategories, mapIcons } from '../../../helpers/dataTransform';
+import { mapCategories, mapIcons } from '../../../helpers/mappers';
 
 import './PostCard.css';
 

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import './DetailsFullSpecs.css';
 
 import useFetch from '../../../hooks/useFecth';
-import { filterToEngine } from '../../../helpers/dataTransform';
+import { filterToEngine } from '../../../helpers/mappers';
 
 import DarkHeader from '../../Common/DarkHeader';
 import GeneralTable from './GeneralTable';

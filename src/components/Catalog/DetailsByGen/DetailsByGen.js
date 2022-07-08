@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import './DetailsByGen.css';
 
 import useFetch from '../../../hooks/useFecth';
-import { filterToGen } from '../../../helpers/dataTransform';
+import { filterToGen } from '../../../helpers/mappers';
 
 import DarkHeader from '../../Common/DarkHeader';
 import EngineCard from './EngineCard';
