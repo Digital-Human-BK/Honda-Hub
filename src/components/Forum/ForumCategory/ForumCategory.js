@@ -1,14 +1,15 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-import ForumHeading from '../ForumHeading';
-import Header from '../Header';
-import Post from '../Post';
-import LoadingSpinner from '../../Common/LoadingSpinner';
-import Notification from '../../Common/Notification';
-import { parseCategory } from '../../../helpers/dataTransform';
+import { mapCategories } from '../../../helpers/dataTransform';
 import { mapErrors } from '../../../helpers/mappers';
 import { getCategoryPosts } from '../../../services/forumService';
+
+import ForumHeading from '../ForumHeading';
+import Header from '../Header';
+import PostCard from '../PostCard';
+import LoadingSpinner from '../../Common/LoadingSpinner';
+import Notification from '../../Common/Notification';
 
 const ForumCategory = () => {
   const { category } = useParams();
@@ -34,20 +35,21 @@ const ForumCategory = () => {
     };
     fetchCategoryPosts();
   }, [category]);
+
   return (
     <>
       <Header />
       <section id='category'>
         <div className='inner-width'>
-          <ForumHeading title={parseCategory(category)} />
+          <ForumHeading title={mapCategories(category)} />
           {isLoading && <LoadingSpinner />}
           <ul className='posts-list'>
-            {postsData &&
+            {
+              postsData &&
               postsData.length > 0 &&
-              postsData.map((data) => <Post key={data._id} data={data} />)}
+              postsData.map((data) => <PostCard key={data._id} data={data} />)}
 
             {error && <Notification>{error}</Notification>}
-            {/* {!error && !isLoading && postsData.length === 0 && noResultsMsg} */}
           </ul>
         </div>
       </section>

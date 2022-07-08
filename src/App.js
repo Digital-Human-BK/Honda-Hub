@@ -19,6 +19,7 @@ import RequireAuth from './components/RequireAuth';
 import Forum from './components/Forum';
 import Search from './components/Forum/Search';
 import ForumCategory from './components/Forum/ForumCategory';
+import ForumPost from './components/Forum/ForumPost';
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
         
         <Route element={<RequireAuth/>}>
           <Route path='/forum' element={<Forum />} />
-          <Route path='/forum/:id' element={<Forum />} />
+          <Route path='/forum/:id' element={<ForumPost />} />
           <Route path='/search' element={<Search />} />
           <Route path='/categories/:category' element={<ForumCategory />} />
           <Route path='/forum/new-post' element={<Forum />} />

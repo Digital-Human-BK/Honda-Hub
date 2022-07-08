@@ -7,11 +7,35 @@ export const filterToEngine = (data, gen, engine) => {
   return generation.engines.filter((e) => e.id === engine)[0];
 };
 
-export const parseCategory = (category) => {
+export const mapCategories = (category) => {
   const parseTo = {
     general: 'General Discussions',
     problems: 'Technical Problems',
-    events: 'Meetings and Events'
-  }
+    events: 'Meetings and Events',
+  };
   return parseTo[category];
-}
+};
+
+export const mapIcons = (category) => {
+  const icons = {
+    general: 'fa-solid fa-comments',
+    problems: 'fa-solid fa-car-burst',
+    events: 'fa-solid fa-flag-checkered',
+  };
+  return icons[category];
+};
+
+export const mapDate = (rawDate) => {
+  const formatDate = new Date(rawDate);
+  const date = formatDate.toLocaleString('en-GB', {
+    year: 'numeric',
+    month: 'short',
+    day: '2-digit',
+  });
+  const time = formatDate.toLocaleTimeString('en-GB');
+
+  return {
+    date,
+    time,
+  };
+};

@@ -28,7 +28,7 @@
 
 .item__icon {
   height: 6rem;
-  flex-basis: 6rem;
+  width: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;

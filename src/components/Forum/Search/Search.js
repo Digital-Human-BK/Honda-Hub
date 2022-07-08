@@ -7,7 +7,7 @@ import { mapErrors } from '../../../helpers/mappers';
 import './Search.css';
 import Header from '../Header';
 import ForumHeading from '../ForumHeading';
-import Post from '../Post';
+import PostCard from '../PostCard';
 import LoadingSpinner from '../../Common/LoadingSpinner';
 import Notification from '../../Common/Notification';
 
@@ -55,7 +55,7 @@ const Search = () => {
             {
               searchData &&
               searchData.length > 0 &&
-              searchData.map((data) => <Post key={data._id} data={data} />)
+              searchData.map((data) => <PostCard key={data._id} data={data} />)
             }
 
             {error && <Notification>{error}</Notification>}
