@@ -37,6 +37,9 @@ const ForumNewPost = () => {
       const errors = mapErrors(err);
       setError(errors);
       setIsLoading(false);
+      setTimeout(() => {
+        setError(null);
+      }, 5000);
     }
   };
 
@@ -47,11 +50,11 @@ const ForumNewPost = () => {
         <div className='inner-width'>
           <h1 className='new-post-heading'>Create new Post</h1>
 
-          {error && (
-            <ul className='auth-error'>
+          {error && 
+            <ul className='error-list large'>
               {error && error.map((e, i) => <li key={i}>{e.msg}</li>)}
             </ul>
-          )}
+          }
           {isLoading && <LoadingSpinner />}
 
           <form className='post-form' onSubmit={submitHandler} method='POST'>

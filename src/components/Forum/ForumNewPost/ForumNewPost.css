@@ -63,3 +63,9 @@
   justify-content: flex-end;
   gap: 2rem;
 }
+
+.large {
+  box-shadow: 5px 5px 5px 2px #afafaf;
+  font-size: 1.2rem;
+  text-align: center;
+}

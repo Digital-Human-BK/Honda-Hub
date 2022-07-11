@@ -44,9 +44,11 @@ const Login = () => {
     <section id='login' className='dark'>
       <div className='sign'>
         <h1 className='sign-title'>LOGIN</h1>
-        <ul className='auth-error'>
-          {error && error.map((e, i) => <li key={i}>{e.msg}</li>)}
-        </ul>
+        { error &&
+          <ul className='error-list'>
+            {error.map((e, i) => <li key={i}>{e.msg}</li>)}
+          </ul>
+        }
         <form className='contact-form' onSubmit={loginHandler}>
           <input
             type='email'

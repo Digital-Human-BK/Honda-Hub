@@ -20,14 +20,14 @@
 }
 
 
-.auth-error {
+.error-list {
   background-color: var(--clr-error);
   opacity: 80%;
   color: var(--clr-primary);
   border-radius: 4px;
 }
 
-.auth-error li {
+.error-list li {
   padding: 2px 20px;
 }
 

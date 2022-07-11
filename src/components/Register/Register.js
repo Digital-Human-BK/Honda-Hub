@@ -31,7 +31,6 @@ const Register = () => {
 
       ev.target.reset();
       navigate('/');
-      
     } catch (err) {
       const error = mapErrors(err);
       console.log(error);
@@ -43,40 +42,41 @@ const Register = () => {
     <section id='register' className='dark'>
       <div className='sign'>
         <h1 className='sign-title'>REGISTER</h1>
-          <ul className='auth-error'>
-            {error && error.map((e, i) => <li key={i}>{e.msg}</li>)}
+        {error &&
+          <ul className='error-list'>
+            {error.map((e, i) => <li key={i}>{e.msg}</li>)}
           </ul>
-          <form className='contact-form' onSubmit={registerHandler}>
-            <input
-              type='text'
-              name='username'
-              className='field'
-              placeholder='Username'
-            />
-            <input
-              type='email'
-              name='email'
-              className='field'
-              placeholder='Email'
-            />
-            <input
-              type='password'
-              className='halfField'
-              name='password'
-              placeholder='Password'
-            />
-            <input
-              type='password'
-              className='halfField'
-              name='repass'
-              placeholder='Repeat Password'
-            />
-            <input type='submit' value='Register' className='btn' />
-          </form>
-          <p className='already'>
-            Already registered?<Link to='/login'> Login here</Link>
-          </p>
-        
+        }
+        <form className='contact-form' onSubmit={registerHandler}>
+          <input
+            type='text'
+            name='username'
+            className='field'
+            placeholder='Username'
+          />
+          <input
+            type='email'
+            name='email'
+            className='field'
+            placeholder='Email'
+          />
+          <input
+            type='password'
+            className='halfField'
+            name='password'
+            placeholder='Password'
+          />
+          <input
+            type='password'
+            className='halfField'
+            name='repass'
+            placeholder='Repeat Password'
+          />
+          <input type='submit' value='Register' className='btn' />
+        </form>
+        <p className='already'>
+          Already registered?<Link to='/login'> Login here</Link>
+        </p>
       </div>
     </section>
   );
