@@ -1,8 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-import { mapCategories } from '../../../helpers/mappers';
-import { mapErrors } from '../../../helpers/mappers';
+import { mapCategories, mapErrors } from '../../../helpers/mappers';
 import { getCategoryPosts } from '../../../services/forumService';
 
 import ForumHeading from '../ForumHeading';

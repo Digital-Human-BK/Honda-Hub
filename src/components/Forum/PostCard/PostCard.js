@@ -1,18 +1,11 @@
 import { Link } from 'react-router-dom';
 
-import { mapCategories, mapIcons } from '../../../helpers/mappers';
+import { mapCategories, mapDate, mapIcons } from '../../../helpers/mappers';
 
 import './PostCard.css';
 
 const PostCard = ({ data }) => {
-  const formatDate = new Date(data.createdAt);
-  const date = formatDate.toLocaleString('en-GB', {
-    year: 'numeric',
-    month: 'short',
-    day: '2-digit',
-  });
-  const time = formatDate.toLocaleTimeString('en-GB');
-
+  const {date, time} = mapDate(data.createdAt);
   const category = mapCategories(data.category);
 
   return (

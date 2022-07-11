@@ -10,6 +10,7 @@ import Header from '../Header';
 import LoadingSpinner from '../../Common/LoadingSpinner';
 import Notification from '../../Common/Notification';
 import Post from '../Posts';
+import PostHeader from '../PostHeader';
 
 const ForumPost = () => {
   const { id } = useParams();
@@ -29,10 +30,12 @@ const ForumPost = () => {
           getPost(id),
           getComments(id),
         ]);
+        setPost(postData);
+        setComments(commentsData);
       } catch (err) {
         console.log(err);
-        const error = mapErrors(err);
-        setError(error[0].msg);
+        const errors = mapErrors(err);
+        setError(errors[0].msg);
       } finally {
         setIsLoading(false);
       }
@@ -46,7 +49,17 @@ const ForumPost = () => {
       <section id='forum-post'>
         <div className='inner-width'>
           {isLoading && <LoadingSpinner />}
-          <Post post={post} />
+          {error && <Notification>{error}</Notification>}
+
+          {!isLoading && !error && (
+            <PostHeader post={post} comments={comments.length} />
+          )}
+
+          {!isLoading && !error && <Post post={post} />}
+          
+          {!isLoading && !error &&
+            comments.map((comment, i) => <Post key={i} post={comment} /> )
+          }
         </div>
       </section>
     </>

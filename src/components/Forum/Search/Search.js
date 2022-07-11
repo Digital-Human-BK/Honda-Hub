@@ -28,8 +28,8 @@ const Search = () => {
         setSearchData(searchResult);
       } catch (err) {
         console.log(err);
-        const error = mapErrors(err);
-        setError(error[0].msg);
+        const errors = mapErrors(err);
+        setError(errors[0].msg);
       } finally {
         setIsLoading(false);
       }

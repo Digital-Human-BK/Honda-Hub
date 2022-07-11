@@ -23,7 +23,7 @@ export const mapIcons = (category) => {
   const icons = {
     general: 'fa-solid fa-comments',
     problems: 'fa-solid fa-car-burst',
-    events: 'fa-solid fa-flag-checkered',
+    events: 'fa-solid fa-users',
   };
   return icons[category];
 };

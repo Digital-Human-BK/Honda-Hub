@@ -11,7 +11,7 @@ export async function getPostsCount() {
 
     return response.json();
   } catch (err) {
-    throw new Error(err);
+    throw err;
   }
 }
 
@@ -28,7 +28,7 @@ export async function getSearchResults(query) {
 
     return response.json();
   } catch (err) {
-    throw new Error(err);
+    throw err;
   }
 }
 
@@ -43,7 +43,7 @@ export async function getCategoryPosts(category) {
 
     return response.json();
   } catch (err) {
-    throw new Error(err);
+    throw err;
   }
 }
 

@@ -71,7 +71,7 @@ const Forum = () => {
             <li>
               <Link to='/categories/events' className='categories__item'>
                 <div className='item__icon'>
-                  <i className='fa-solid fa-flag-checkered'></i>
+                  <i className='fa-solid fa-users'></i>
                 </div>
                 <div className='item__info'>
                   <h3 className='item__title'>Meetings and Events</h3>
