@@ -58,7 +58,29 @@ export async function getPost(postId) {
 
     return response.json();
   } catch (err) {
-    throw new Error(err);
+    throw err;
+  }
+}
+
+export async function createPost(data) {
+  console.log(data);
+  try {
+    const response = await fetch(HOST + FORUM_ENDPOINTS.post, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (response.ok === false) {
+      const error = await response.json();
+      throw error;
+    }
+
+    return response.json();
+  } catch (err) {
+    throw err;
   }
 }
 

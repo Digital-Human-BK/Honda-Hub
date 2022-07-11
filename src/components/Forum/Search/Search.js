@@ -20,7 +20,7 @@ const Search = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fecthSearchResults = async () => {
+    const fetchSearchResults = async () => {
       try {
         setIsLoading(true);
         setError(null);
@@ -34,7 +34,7 @@ const Search = () => {
         setIsLoading(false);
       }
     };
-    fecthSearchResults();
+    fetchSearchResults();
   }, [query]);
 
   const noResultsMsg = (

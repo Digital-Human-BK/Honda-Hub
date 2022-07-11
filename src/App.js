@@ -20,6 +20,7 @@ import Forum from './components/Forum';
 import Search from './components/Forum/Search';
 import ForumCategory from './components/Forum/ForumCategory';
 import ForumPost from './components/Forum/ForumPost';
+import ForumNewPost from './components/Forum/ForumNewPost';
 
 function App() {
   return (
@@ -40,7 +41,7 @@ function App() {
           <Route path='/forum/:id' element={<ForumPost />} />
           <Route path='/search' element={<Search />} />
           <Route path='/categories/:category' element={<ForumCategory />} />
-          <Route path='/forum/new-post' element={<Forum />} />
+          <Route path='/forum/new-post' element={<ForumNewPost />} />
         </Route>
 
         <Route path='*' element={<NotFound />} />

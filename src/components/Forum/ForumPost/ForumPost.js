@@ -11,6 +11,8 @@ import LoadingSpinner from '../../Common/LoadingSpinner';
 import Notification from '../../Common/Notification';
 import Post from '../Posts';
 import PostHeader from '../PostHeader';
+import NewCommentBtn from '../../Common/NewCommentBtn';
+import NewPostBtn from '../../Common/NewPostBtn';
 
 const ForumPost = () => {
   const { id } = useParams();
@@ -48,6 +50,10 @@ const ForumPost = () => {
       <Header />
       <section id='forum-post'>
         <div className='inner-width'>
+          <div className='post-buttons'>
+            <NewCommentBtn />
+            <NewPostBtn />
+          </div>
           {isLoading && <LoadingSpinner />}
           {error && <Notification>{error}</Notification>}
 
@@ -56,10 +62,12 @@ const ForumPost = () => {
           )}
 
           {!isLoading && !error && <Post post={post} />}
-          
-          {!isLoading && !error &&
-            comments.map((comment, i) => <Post key={i} post={comment} /> )
-          }
+
+          {!isLoading &&
+            !error &&
+            comments.map((comment, i) => <Post key={i} post={comment} />)}
+
+          {!isLoading && !error && <div id='comment'></div>}
         </div>
       </section>
     </>

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { mapCategories, mapErrors } from '../../../helpers/mappers';
 import { getCategoryPosts } from '../../../services/forumService';
 
+import './ForumCategory.css';
 import ForumHeading from '../ForumHeading';
 import Header from '../Header';
 import PostCard from '../PostCard';
@@ -47,6 +48,11 @@ const ForumCategory = () => {
               postsData &&
               postsData.length > 0 &&
               postsData.map((data) => <PostCard key={data._id} data={data} />)}
+
+            {
+              postsData &&
+              postsData.length === 0 &&
+              <h3 className='no-posts'>No posts yet.</h3>}  
 
             {error && <Notification>{error}</Notification>}
           </ul>

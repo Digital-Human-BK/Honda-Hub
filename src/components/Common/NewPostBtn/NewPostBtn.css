@@ -1,0 +1,35 @@
+.forum-btn {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  width: 12rem;
+  border-radius: 6px;
+  padding: 1rem 2rem;
+  transition: 0.2s linear;
+  cursor: pointer;
+}
+
+.forum-btn i {
+  font-size: 1.1rem;
+  padding-right: 1rem;
+}
+
+.btn-dark {
+  background-color: var(--clr-secondary);
+  color: var(--clr-primary);
+  border: 2px solid var(--clr-secondary);
+}
+
+.btn-dark:hover {
+  color: var(--clr-accent);
+}
+
+.btn-cancel {
+  background-color: var(--clr-error);
+  color: var(--clr-primary);
+  border: 2px solid var(--clr-error);
+}
+
+.btn-cancel:hover {
+  opacity: 0.9;
+}

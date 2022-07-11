@@ -1,0 +1,9 @@
+.btn-blue {
+  color: var(--clr-primary);
+  background-color: var(--clr-accent);
+  border: 2px solid var(--clr-accent);
+}
+
+.btn-blue:hover {
+  color: var(--clr-bg-dark);
+}
