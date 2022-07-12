@@ -70,3 +70,63 @@ export const validateLogin = (body) => {
     throw errors;
   }
 };
+
+export const validatePost = (body) => {
+  const title = body.title.trim();
+  const text = body.text.trim();
+  const category = body.category;
+  const author = body.author;
+
+  const categories = ['general', 'problems', 'events'];
+  const errors = [];
+
+  if (title === '') {
+    errors.push({ msg: 'Title is required' });
+  }
+  if (title.length > 0 && title.length < 3) {
+    errors.push({ msg: 'Title must be 3 to 80 characters long' });
+  }
+  if (title.length > 80) {
+    errors.push({ msg: 'Title must be 3 to 80 characters long' });
+  }
+  if (categories.includes(category) === false) {
+    errors.push({ msg: 'Invalid category' });
+  }
+  if (text === '') {
+    errors.push({ msg: 'Content required' });
+  }
+  if (text.length === 1) {
+    errors.push({ msg: 'Content must be 2 to 2000 characters long' });
+  }
+  if (text.length > 2000) {
+    errors.push({ msg: 'Content must be 2 to 2000 characters long' });
+  }
+  if (author === '') {
+    errors.push({ msg: 'No user' });
+  }
+
+  if (errors.length > 0) {
+    throw errors;
+  }
+};
+
+export const validateComment = (body) => {
+  const text = body.text.trim();
+  const author = body.author;
+
+  const errors = [];
+
+  if (text === '') {
+    errors.push({ msg: 'Content required' });
+  }
+  if (text.length > 1000) {
+    errors.push({ msg: 'Comment must be 1 to 1000 characters long' });
+  }
+  if (author === '') {
+    errors.push({ msg: 'No user' });
+  }
+
+  if (errors.length > 0) {
+    throw errors;
+  }
+};

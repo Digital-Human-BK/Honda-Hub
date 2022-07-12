@@ -4,9 +4,10 @@ import { useState } from 'react';
 import './ForumNewPost.css';
 import useAuthContext from '../../../hooks/useAuthContext';
 import { createPost } from '../../../services/forumService';
+import { mapErrors } from '../../../helpers/mappers';
+import { validatePost } from '../../../helpers/validator';
 
 import DarkHeader from '../../Common/DarkHeader';
-import { mapErrors } from '../../../helpers/mappers';
 import LoadingSpinner from '../../Common/LoadingSpinner';
 
 const ForumNewPost = () => {
@@ -26,11 +27,16 @@ const ForumNewPost = () => {
     const category = formData.get('category').trim();
     const author = user._id.trim();
 
+    const data = { title, text, category, author };
+
     try {
       setIsLoading(true);
       setError(null);
-      const post = await createPost({ title, text, category, author });
+      validatePost(data)
+      const post = await createPost(data);
+
       setIsLoading(false);
+      ev.target.reset();
       navigate('/forum/' + post._id);
     } catch (err) {
       console.log(err);

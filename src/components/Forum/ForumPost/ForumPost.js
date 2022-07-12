@@ -6,11 +6,11 @@ import { getComments, getPost } from '../../../services/forumService';
 
 import './ForumPost.css';
 import Header from '../Header';
-
+import PostHeader from '../PostHeader';
+import Post from '../Posts';
+import Comment from '../Comment';
 import LoadingSpinner from '../../Common/LoadingSpinner';
 import Notification from '../../Common/Notification';
-import Post from '../Posts';
-import PostHeader from '../PostHeader';
 import NewCommentBtn from '../../Common/NewCommentBtn';
 import NewPostBtn from '../../Common/NewPostBtn';
 
@@ -58,16 +58,14 @@ const ForumPost = () => {
           {error && <Notification>{error}</Notification>}
 
           {!isLoading && !error && (
-            <PostHeader post={post} comments={comments.length} />
+            <>
+              <PostHeader post={post} comments={comments.length} />
+              <Post post={post} />
+              {comments.map((comment, i) => <Post key={i} post={comment} />)}
+            </>
           )}
 
-          {!isLoading && !error && <Post post={post} />}
-
-          {!isLoading &&
-            !error &&
-            comments.map((comment, i) => <Post key={i} post={comment} />)}
-
-          {!isLoading && !error && <div id='comment'></div>}
+          {!isLoading && !error && <Comment post={post}/>}
         </div>
       </section>
     </>
