@@ -5,57 +5,46 @@
 }
 
 .post-form {
+  display: flex;
+  height: 600px;
   margin-top: 1rem;
   border-radius: 6px;
-  background-color: var(--clr-primary);
-  box-shadow: 5px 5px 5px 2px #d1d1d1;
+  background-color: #dde0e3;
+  box-shadow: 5px 5px 5px 2px #c1c1c1;
 }
 
-.form-heading {
+.post-form__img {
+  height: 100%;
+  width: 350px;
   border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-  padding: 1rem;
-  background-color: var(--clr-accent);
-  color: var(--clr-bg-dark);
+  border-bottom-left-radius: 6px;
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.1)),
+    url('/public/img/forum-civic.png') no-repeat center center/cover;
 }
 
-.form-inputs {
+.post-form__inputs {
   display: flex;
   flex-direction: column;
   padding: 2rem;
+  flex-grow: 2;
 }
 
-.form-inputs label {
-  font-size: 1.2rem;
-  color: var(--clr-bg-dark);
-}
-
-#form-title,
-#form-text {
+.form-title,
+.form-text,
+.form-category {
   padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   border-radius: 6px;
+  border: none;
   outline: none;
   font-size: 1.25rem;
   color: var(--clr-bg-dark);
-  border: 1px solid var(--clr-bg-dark);
+  background-color: var(--clr-primary);
 }
 
-#form-title:focus,
-#form-text:focus {
-  background-color: var(--clr-bg);
-}
-
-#form-category {
-  color: var(--clr-bg-dark);
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  padding: 0.25rem 0.5rem;
-}
-
-#form-text {
-  resize: vertical;
-  min-height: 250px;
+.form-text {
+  height: 300px;
+  resize: none;
 }
 
 .form-buttons {
@@ -65,7 +54,29 @@
 }
 
 .large {
-  box-shadow: 5px 5px 5px 2px #afafaf;
+  padding-left: 1rem;
   font-size: 1.2rem;
-  text-align: center;
+}
+
+
+.forum-inputs input::-webkit-input-placeholder,
+.forum-inputs textarea::-webkit-input-placeholder {
+  color: var(--clr-font-gray);
+}
+.forum-inputs input:focus::-webkit-input-placeholder,
+.forum-inputs textarea:focus::-webkit-input-placeholder {
+  color: var(--clr-font-gray);
+  opacity: 0.7;
+}
+
+.forum-inputs input::-moz-placeholder,
+.forum-inputs textarea::-moz-placeholder {
+  color: var(--clr-font-gray);
+  opacity: 1;
+}
+
+.forum-inputs input:focus::-moz-placeholder,
+.forum-inputs textarea:focus::-moz-placeholder {
+  color: var(--clr-font-gray);
+  opacity: 0.7;
 }

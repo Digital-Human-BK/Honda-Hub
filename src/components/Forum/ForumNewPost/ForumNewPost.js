@@ -32,7 +32,7 @@ const ForumNewPost = () => {
     try {
       setIsLoading(true);
       setError(null);
-      validatePost(data)
+      validatePost(data);
       const post = await createPost(data);
 
       ev.target.reset();
@@ -43,7 +43,7 @@ const ForumNewPost = () => {
       setError(errors);
       setTimeout(() => {
         setError(null);
-      }, 5000);
+      }, 3000);
     } finally {
       setIsLoading(false);
     }
@@ -54,31 +54,43 @@ const ForumNewPost = () => {
       <DarkHeader />
       <section id='new-post'>
         <div className='inner-width'>
-          <h1 className='new-post-heading'>Create new Post</h1>
+          <h1 className='section-title'>Create new Post</h1>
 
-          {error && 
+          {error && (
             <ul className='error-list large'>
               {error && error.map((e, i) => <li key={i}>{e.msg}</li>)}
             </ul>
-          }
+          )}
           {isLoading && <LoadingSpinner />}
 
-          <form className='post-form' onSubmit={submitHandler} method='POST'>
-            <h2 className='form-heading'>Post content</h2>
+          <form
+            className='post-form forum-inputs'
+            onSubmit={submitHandler}
+            method='POST'
+          >
+            <div className='post-form__img'></div>
+            <div className='post-form__inputs'>
+              <input
+                type='text'
+                className='form-title'
+                name='title'
+                maxLength='80'
+                placeholder='Enter post title'
+              />
 
-            <div className='form-inputs'>
-              <label htmlFor='form-title'>Title</label>
-              <input type='text' id='form-title' name='title' maxLength='80' />
-
-              <label htmlFor='form-category'>Choose Category</label>
-              <select name='category' id='form-category'>
+              <select name='category' className='form-category'>
+                <option defaultValue=''>Select category</option>
                 <option value='general'>General Discussion</option>
                 <option value='problems'>Technical Problems</option>
                 <option value='events'>Meetings and Events</option>
               </select>
 
-              <label htmlFor='form-text'>Content</label>
-              <textarea name='text' id='form-text' maxLength='2000'></textarea>
+              <textarea
+                name='text'
+                className='form-text'
+                maxLength='2000'
+                placeholder='Enter post content'
+              ></textarea>
 
               <div className='form-buttons'>
                 <button

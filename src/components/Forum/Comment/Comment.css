@@ -1,21 +1,10 @@
 #comment {
   display: flex;
-  align-items: flex-start;
   gap: 1.5rem;
-  padding: 1rem 1.5rem;
+  padding: 1.5rem;
   border-radius: 6px;
   background-color: #dde0e3;
   box-shadow: 5px 5px 5px 2px #c1c1c1;
-}
-
-.comment-username,
-.comment-text {
-  color: var(--clr-bg-dark);
-  font-weight: bold;
-}
-
-.comment-text {
-  margin-bottom: 0.3rem;
 }
 
 .comment-form {
@@ -27,7 +16,7 @@
 
 .arrow-left {
   position: absolute;
-  top: 42px;
+  top: 20px;
   left: -25px;
   width: 0;
   height: 0;
@@ -36,30 +25,24 @@
   border-right: 25px solid var(--clr-primary);
 }
 
-.comment-form label {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-bottom: 0.75rem;
-  color: var(--clr-bg-dark);
-}
-
-#comment-text {
-  resize: vertical;
+.comment-text {
+  resize: none;
   outline: none;
   border: none;
-  overflow: auto;
   border-radius: 6px;
   padding: 1rem 1rem;
   font-size: 1.1rem;
-  min-height: 85px;
-  height: 85px;
-  margin-bottom: 1rem;
+  min-height: 90px;
+  height: 90px;
 }
 
-#comment-text:focus {
+.expand-text {
   min-height: 200px;
+  max-height: 600px;
+  resize: vertical;
 }
 
 .comment-btn {
   margin-left: auto;
+  margin-top: 1rem;
 }

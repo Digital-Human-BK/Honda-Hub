@@ -110,6 +110,12 @@
 
 ::-moz-placeholder {
   color: var(--clr-accent);
+  opacity: 1;
+}
+
+:focus::-moz-placeholder {
+  color: var(--clr-accent);
+  opacity: 0.7;
 }
 
 .field {

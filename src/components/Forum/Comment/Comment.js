@@ -12,6 +12,7 @@ const Comment = ({ post, updateComments }) => {
   const { user } = useAuthContext();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [focused, setFocused] = useState(false);
 
   const submitHandler = async (ev) => {
     ev.preventDefault();
@@ -50,29 +51,38 @@ const Comment = ({ post, updateComments }) => {
 
   return (
     <>
-    {isLoading && <LoadingSpinner/>}
-    {error &&
-     <ul className='error-list'>
-        {error.map((e, i) => <li key={i}>{e.msg}</li>)}
-      </ul>
-    }
-    <div id='comment'>
-      <div className='post__user'>
-        <p className='comment-username'>Username</p>
-        <div className='user__avatar-wrapper'>
-          <img className='user__avatar' src='/img/avatar.png' alt='avatar' />
+      {isLoading && <LoadingSpinner />}
+      {error && (
+        <ul className='error-list'>
+          {error.map((e, i) => (
+            <li key={i}>{e.msg}</li>
+          ))}
+        </ul>
+      )}
+      <div id='comment' className='forum-inputs'>
+        <div className='post__user'>
+          <div className='user__avatar-wrapper'>
+            <img className='user__avatar' src='/img/avatar.png' alt='avatar' />
+          </div>
         </div>
-      </div>
-      <form onSubmit={submitHandler} className='comment-form' method='POST'>
-        <p className='comment-text'>Comment</p>
-        <textarea name='text' id='comment-text' ></textarea>
-        <button className='forum-btn btn-blue comment-btn' type='submit'>
-          COMMENT
-        </button>
+        <form onSubmit={submitHandler} className='comment-form' method='POST'>
+          <textarea
+            name='text'
+            className={`comment-text ${focused && 'expand-text'}`}
+            placeholder={`Comment here ${user.username}...`}
+            onFocus={() => setFocused(true)}
+          ></textarea>
+          {focused && 
+            <button
+              className='forum-btn btn-blue comment-btn'
+              type='submit'
+            >
+            COMMENT
+            </button>}
 
-        <div className='arrow-left'></div>
-      </form>
-    </div>
+          <div className='arrow-left'></div>
+        </form>
+      </div>
     </>
   );
 };
