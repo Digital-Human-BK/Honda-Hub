@@ -71,11 +71,11 @@ export const validateLogin = (body) => {
   }
 };
 
-export const validatePost = (body) => {
-  const title = body.title.trim();
-  const text = body.text.trim();
-  const category = body.category;
-  const author = body.author;
+export const validatePost = (data) => {
+  const title = data.title.trim();
+  const text = data.text.trim();
+  const category = data.category;
+  const author = data.author;
 
   const categories = ['general', 'problems', 'events'];
   const errors = [];
@@ -110,9 +110,9 @@ export const validatePost = (body) => {
   }
 };
 
-export const validateComment = (body) => {
-  const text = body.text.trim();
-  const author = body.author;
+export const validateComment = (data) => {
+  const text = data.text.trim();
+  const author = data.author;
 
   const errors = [];
 

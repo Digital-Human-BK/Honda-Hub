@@ -22,6 +22,10 @@ const ForumPost = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const updateComments = (updatedComments) =>{
+    setComments(updatedComments);
+  }
+
   useEffect(() => {
     const fetchPostAndComments = async () => {
       try {
@@ -65,7 +69,7 @@ const ForumPost = () => {
             </>
           )}
 
-          {!isLoading && !error && <Comment post={post}/>}
+          {!isLoading && !error && <Comment post={post} updateComments={updateComments}/>}
         </div>
       </section>
     </>

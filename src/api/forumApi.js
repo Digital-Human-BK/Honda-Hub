@@ -9,8 +9,9 @@ export const AUTH_ENDPOINTS = {
 export const FORUM_ENDPOINTS = {
   postsCount: '/posts-count',
   searchPosts: '/search',
-  categories: '/categories/', //+id
-  post: '/posts/', //+ id
+  categories: '/categories/', //+ category
+  post: '/posts/', //+ postId
+  postComments: '/post-comments/', //+ postId
   comments: '/comments',
 };
 

@@ -1,12 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-import './ForumNewPost.css';
 import useAuthContext from '../../../hooks/useAuthContext';
 import { createPost } from '../../../services/forumService';
 import { mapErrors } from '../../../helpers/mappers';
 import { validatePost } from '../../../helpers/validator';
 
+import './ForumNewPost.css';
 import DarkHeader from '../../Common/DarkHeader';
 import LoadingSpinner from '../../Common/LoadingSpinner';
 
@@ -35,17 +35,17 @@ const ForumNewPost = () => {
       validatePost(data)
       const post = await createPost(data);
 
-      setIsLoading(false);
       ev.target.reset();
       navigate('/forum/' + post._id);
     } catch (err) {
       console.log(err);
       const errors = mapErrors(err);
       setError(errors);
-      setIsLoading(false);
       setTimeout(() => {
         setError(null);
       }, 5000);
+    } finally {
+      setIsLoading(false);
     }
   };
 

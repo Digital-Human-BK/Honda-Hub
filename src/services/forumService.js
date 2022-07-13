@@ -1,29 +1,33 @@
-import { FORUM_ENDPOINTS, get, post } from '../api/forumApi';
+import * as api from '../api/forumApi';
 
 export async function getPostsCount() {
-  return get(FORUM_ENDPOINTS.postsCount);
+  return api.get(api.FORUM_ENDPOINTS.postsCount);
 }
 
 export async function getSearchResults(query) {
-  return get(FORUM_ENDPOINTS.searchPosts + `?term=${query}`);
+  return api.get(api.FORUM_ENDPOINTS.searchPosts + `?term=${query}`);
 }
 
 export async function getCategoryPosts(category) {
-  return get(FORUM_ENDPOINTS.categories + category);
+  return api.get(api.FORUM_ENDPOINTS.categories + category);
 }
 
 export async function getPost(postId) {
-  return get(FORUM_ENDPOINTS.post + postId);
+  return api.get(api.FORUM_ENDPOINTS.post + postId);
 }
 
 export async function createPost(data) {
-  return post(FORUM_ENDPOINTS.post, data);
+  return api.post(api.FORUM_ENDPOINTS.post, data);
 }
 
 //======================= Comments
 
+export async function getComments(postId) {
+  return api.get(api.FORUM_ENDPOINTS.postComments + postId);
+}
+
 export async function createComment(data) {
-  return post(FORUM_ENDPOINTS.comments, data);
+  return api.post(api.FORUM_ENDPOINTS.comments, data);
 }
 
 //======================= Old Code
@@ -110,23 +114,3 @@ export async function createComment(data) {
 //     throw err;
 //   }
 // }
-
-export async function getComments(postId) {
-  return [
-    {
-      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nam, voluptatum dolores illum unde architecto porro accusantium iste officia eum fuga velit, modi rem aliquam deserunt! Recusandae molestiae id asperiores!',
-      author: 'Chester Benington',
-      createdAt: '08/07/2022, at 16:54:22',
-    },
-    {
-      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nam, voluptatum dolores illum unde architecto porro accusantium iste officia eum fuga velit, modi rem aliquam deserunt! Recusandae molestiae id asperiores!',
-      author: 'Chris Cornell',
-      createdAt: '08/07/2022, at 16:54:22',
-    },
-    {
-      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nam, voluptatum dolores illum unde architecto porro accusantium iste officia eum fuga velit, modi rem aliquam deserunt! Recusandae molestiae id asperiores!',
-      author: 'Geroge Michael',
-      createdAt: '08/07/2022, at 16:54:22',
-    },
-  ];
-}
