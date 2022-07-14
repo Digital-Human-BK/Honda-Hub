@@ -20,6 +20,10 @@ export async function createPost(data) {
   return api.post(api.FORUM_ENDPOINTS.post, data);
 }
 
+export async function updatePost(id, data){
+  return api.put(api.FORUM_ENDPOINTS.post + id, data)
+};
+
 //======================= Comments
 
 export async function getComments(postId) {

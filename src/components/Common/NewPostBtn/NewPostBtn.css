@@ -25,11 +25,11 @@
 }
 
 .btn-cancel {
-  background-color: var(--clr-error);
-  color: var(--clr-primary);
-  border: 2px solid var(--clr-error);
+  background-color: #d08686;
+  border: 2px solid #d08686;
 }
 
 .btn-cancel:hover {
-  opacity: 0.9;
+  background-color: #d16363;
+  border: 2px solid #d16363;
 }

@@ -72,13 +72,12 @@ const Comment = ({ post, updateComments }) => {
             placeholder={`Comment here ${user.username}...`}
             onFocus={() => setFocused(true)}
           ></textarea>
-          {focused && 
-            <button
-              className='forum-btn btn-blue comment-btn'
-              type='submit'
-            >
-            COMMENT
-            </button>}
+          {focused && (
+            <button className='forum-btn btn-blue comment-btn' type='submit'>
+              <i className='fa-solid fa-plus'></i>
+              COMMENT
+            </button>
+          )}
 
           <div className='arrow-left'></div>
         </form>

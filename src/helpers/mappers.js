@@ -37,10 +37,10 @@ export const mapDate = (rawDate) => {
   });
   const time = formatDate.toLocaleTimeString('en-GB');
 
-  return {
+  return [
     date,
     time,
-  };
+  ];
 };
 
 export const filterToGen = (data, gen) => {

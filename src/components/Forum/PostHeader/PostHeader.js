@@ -5,7 +5,7 @@ import { mapCategories, mapDate, mapIcons } from '../../../helpers/mappers';
 import './PostHeader.css';
 
 const PostHeader = ({ post, comments }) => {
-  const { date } = mapDate(post.createdAt);
+  const [ date ] = mapDate(post.createdAt);
   const icon = mapIcons(post.category);
   const category = mapCategories(post.category);
 
@@ -28,8 +28,10 @@ const PostHeader = ({ post, comments }) => {
               </Link>
             </li>
             <li>
-              <span className='post-header__date'> {date}, </span>
+              Posted: 
+              <span className='post-header__date'> {date}</span>
             </li>
+              in
             <li>
               <Link to={'/categories/' + post.category} className='post-header__category'> {category}</Link>
             </li>

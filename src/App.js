@@ -21,6 +21,7 @@ import Search from './components/Forum/Search';
 import ForumCategory from './components/Forum/ForumCategory';
 import ForumPost from './components/Forum/ForumPost';
 import ForumNewPost from './components/Forum/ForumNewPost';
+import ForumEditPost from './components/Forum/ForumEditPost';
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           <Route path='/search' element={<Search />} />
           <Route path='/categories/:category' element={<ForumCategory />} />
           <Route path='/forum/new-post' element={<ForumNewPost />} />
+          <Route path='/forum/edit-post/:id' element={<ForumEditPost />} />
         </Route>
 
         <Route path='*' element={<NotFound />} />

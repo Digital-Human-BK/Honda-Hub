@@ -1,0 +1,10 @@
+.edit-form {
+  height: 523px;
+}
+
+.edit-form__img {
+  width: 300px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background: url('/public/img/forum-civic-back.jpg') no-repeat center center/cover;
+}

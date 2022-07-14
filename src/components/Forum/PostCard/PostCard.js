@@ -5,7 +5,7 @@ import { mapCategories, mapDate, mapIcons } from '../../../helpers/mappers';
 import './PostCard.css';
 
 const PostCard = ({ data }) => {
-  const {date, time} = mapDate(data.createdAt);
+  const [date, time] = mapDate(data.createdAt);
   const category = mapCategories(data.category);
 
   return (
