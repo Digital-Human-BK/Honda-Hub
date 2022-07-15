@@ -6,7 +6,13 @@ import useAuthContext from '../../../hooks/useAuthContext';
 
 import './Post.css';
 import { validateComment } from '../../../helpers/validator';
-import { getComments, updateComment } from '../../../services/forumService';
+import {
+  deleteComments,
+  deletePost,
+  deleteComment,
+  getComments,
+  updateComment,
+} from '../../../services/forumService';
 import LoadingSpinner from '../../Common/LoadingSpinner';
 
 const Post = ({ post, updateComments }) => {
@@ -54,6 +60,45 @@ const Post = ({ post, updateComments }) => {
     }
   };
 
+  const deleteHandler = () => {
+    if (post.title) {
+      deletePostAndComments();
+    } else {
+      deleteCommentOnly();
+    }
+  };
+
+  const deletePostAndComments = async () => {
+    try {
+      setIsLoading(true);
+      setError(null);
+      await Promise.all([deletePost(post._id), deleteComments(post._id)]);
+      navigate('/forum');
+    } catch (err) {
+      console.log(err);
+      const errors = mapErrors(err);
+      setError(errors);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const deleteCommentOnly = async () => {
+    try {
+      setIsLoading(true);
+      setError(null);
+      await deleteComment(post._id);
+      const comments = await getComments(post.postId);
+      updateComments(comments);
+    } catch (err) {
+      console.log(err);
+      const errors = mapErrors(err);
+      setError(errors);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const defaultView = (
     <>
       <p className='post__text'>{post.text}</p>
@@ -69,7 +114,7 @@ const Post = ({ post, updateComments }) => {
               <i className='fa-solid fa-pen-to-square'></i> Edit
             </button>
 
-            <button className='controls-btn delete-btn'>
+            <button className='controls-btn delete-btn' onClick={deleteHandler}>
               <i className='fa-solid fa-trash-can'></i> Delete
             </button>
           </>
