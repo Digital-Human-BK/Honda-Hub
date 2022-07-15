@@ -22,9 +22,9 @@ const ForumPost = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const updateComments = (updatedComments) =>{
+  const updateComments = (updatedComments) => {
     setComments(updatedComments);
-  }
+  };
 
   useEffect(() => {
     const fetchPostAndComments = async () => {
@@ -65,11 +65,15 @@ const ForumPost = () => {
             <>
               <PostHeader post={post} comments={comments.length} />
               <Post post={post} />
-              {comments.map((comment, i) => <Post key={i} post={comment} />)}
+              {comments.map((comment, i) => (
+                <Post key={i} post={comment} updateComments={updateComments} />
+              ))}
             </>
           )}
 
-          {!isLoading && !error && <Comment post={post} updateComments={updateComments}/>}
+          {!isLoading && !error && (
+            <Comment post={post} updateComments={updateComments} />
+          )}
         </div>
       </section>
     </>

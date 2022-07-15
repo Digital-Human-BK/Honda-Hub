@@ -12,7 +12,7 @@ export const FORUM_ENDPOINTS = {
   categories: '/categories/', //+ category
   post: '/posts/', //+ postId
   postComments: '/post-comments/', //+ postId
-  comments: '/comments',
+  comments: '/comments/', //+ commentId
 };
 
 export async function get(url) {

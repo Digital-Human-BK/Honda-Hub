@@ -34,6 +34,10 @@ export async function createComment(data) {
   return api.post(api.FORUM_ENDPOINTS.comments, data);
 }
 
+export async function updateComment(id, data){
+  return api.put(api.FORUM_ENDPOINTS.comments + id, data);
+};
+
 //======================= Old Code
 
 // export async function getPostsCount() {

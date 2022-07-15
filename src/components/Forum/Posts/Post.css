@@ -128,7 +128,8 @@
   border: none;
   outline: none;
   width: 100%;
-  min-height: 115px;
+  min-height: 110px;
+  height: auto;
   max-height: 300px;
   resize: vertical;
   padding: 1rem;
