@@ -19,11 +19,19 @@ const ForumPost = () => {
 
   const [post, setPost] = useState();
   const [comments, setComments] = useState();
+  const [quote, setQuote] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const updateComments = (updatedComments) => {
     setComments(updatedComments);
+    if(quote) {
+      setQuote('');
+    }
+  };
+
+  const quoteComment = (quoteText) => {
+    setQuote(quoteText);
   };
 
   useEffect(() => {
@@ -58,25 +66,32 @@ const ForumPost = () => {
       <Header />
       <section id='forum-post'>
         <div className='inner-width'>
-          {!error && <div className='post-buttons'>
-            <NewCommentBtn />
-            <NewPostBtn />
-          </div>}
+          {!error && (
+            <div className='post-buttons'>
+              <NewCommentBtn />
+              <NewPostBtn />
+            </div>
+          )}
           {isLoading && <LoadingSpinner />}
           {error && <Notification>{error}</Notification>}
 
           {!isLoading && !error && (
             <>
               <PostHeader post={post} comments={comments.length} />
-              <Post post={post} />
+              <Post post={post} quoteComment={quoteComment} />
               {comments.map((comment, i) => (
-                <Post key={i} post={comment} updateComments={updateComments} />
+                <Post
+                  key={i}
+                  post={comment}
+                  updateComments={updateComments}
+                  quoteComment={quoteComment}
+                />
               ))}
             </>
           )}
 
           {!isLoading && !error && (
-            <Comment post={post} updateComments={updateComments} />
+            <Comment post={post} quote={quote} updateComments={updateComments} />
           )}
         </div>
       </section>

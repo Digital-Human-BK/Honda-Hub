@@ -1,10 +1,9 @@
-import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { HashLink } from 'react-router-hash-link';
+import { Link, useNavigate } from 'react-router-dom';
 
-import { mapDate, mapErrors } from '../../../helpers/mappers';
 import useAuthContext from '../../../hooks/useAuthContext';
-
-import './Post.css';
+import { formatQuote, mapDate, mapErrors } from '../../../helpers/mappers';
 import { validateComment } from '../../../helpers/validator';
 import {
   deleteComments,
@@ -13,9 +12,11 @@ import {
   getComments,
   updateComment,
 } from '../../../services/forumService';
+
+import './Post.css';
 import LoadingSpinner from '../../Common/LoadingSpinner';
 
-const Post = ({ post, updateComments }) => {
+const Post = ({ post, updateComments, quoteComment }) => {
   const navigate = useNavigate();
   const { user } = useAuthContext();
 
@@ -99,6 +100,11 @@ const Post = ({ post, updateComments }) => {
     }
   };
 
+  const quoteHandler = () => {
+    const quote = formatQuote(post.text, post.author.username, updatedDate, updatedTime);
+    quoteComment(quote);
+  };
+
   const defaultView = (
     <>
       <p className='post__text'>{post.text}</p>
@@ -120,12 +126,16 @@ const Post = ({ post, updateComments }) => {
           </>
         ) : (
           <>
-            <button className='controls-btn'>
+            <HashLink
+              to='#comment'
+              className='controls-btn'
+              onClick={quoteHandler}
+            >
               <i className='fa-solid fa-quote-left'></i> Quote
-            </button>
+            </HashLink>
 
             <button className='controls-btn heat-btn'>
-            <i className="fa-solid fa-fire-flame-curved"></i> Heat Up
+              <i className='fa-solid fa-fire-flame-curved'></i> Heat Up
             </button>
           </>
         )}

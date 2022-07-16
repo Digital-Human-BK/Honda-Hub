@@ -8,7 +8,7 @@ import './Comment.css';
 import { mapErrors } from '../../../helpers/mappers';
 import LoadingSpinner from '../../Common/LoadingSpinner';
 
-const Comment = ({ post, updateComments }) => {
+const Comment = ({ post, updateComments, quote }) => {
   const { user } = useAuthContext();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -37,9 +37,9 @@ const Comment = ({ post, updateComments }) => {
       await createComment(data);
 
       const updatedComments = await getComments(post._id);
-      updateComments(updatedComments);
-
       ev.target.reset();
+
+      updateComments(updatedComments);
     } catch (err) {
       console.log(err);
       const errors = mapErrors(err);
@@ -68,11 +68,12 @@ const Comment = ({ post, updateComments }) => {
         <form onSubmit={submitHandler} className='comment-form' method='POST'>
           <textarea
             name='text'
-            className={`comment-text ${focused && 'expand-text'}`}
+            className={`comment-text ${(focused || quote) && 'expand-text'}`}
             placeholder={`Comment here ${user.username}...`}
             onFocus={() => setFocused(true)}
+            defaultValue={quote ? quote : ''}
           ></textarea>
-          {focused && (
+          {(focused || quote) && (
             <button className='forum-btn btn-blue comment-btn' type='submit'>
               <i className='fa-solid fa-plus'></i>
               COMMENT

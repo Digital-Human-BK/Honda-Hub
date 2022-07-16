@@ -37,10 +37,15 @@ export const mapDate = (rawDate) => {
   });
   const time = formatDate.toLocaleTimeString('en-GB');
 
-  return [
-    date,
-    time,
-  ];
+  return [date, time];
+};
+
+export const formatQuote = (text, author, date, time) => {
+  if (text.length > 300) {
+    return `"${text.slice(0,300)}..."\n ~Posted by: ${author} at ${date}, ${time}~\n\n`;
+  }
+
+  return `"${text}"\n ~Posted by: ${author} at ${date}, ${time}~\n\n`;
 };
 
 export const filterToGen = (data, gen) => {
