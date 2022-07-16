@@ -8,9 +8,8 @@ const NotFound = () => {
       <div className='inner-width'>
         <div className='content'>
           <h1>404</h1>
-          <p>Dude! Where's my page?</p>
+          <p>This page does not exist</p>
           <div className='buttons'>
-            <Link to={-1}>Go Back</Link>
             <Link to='/'>Go Home</Link>
           </div>
         </div>

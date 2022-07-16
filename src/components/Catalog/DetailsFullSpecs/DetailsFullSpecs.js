@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 
 import './DetailsFullSpecs.css';
 
-import useFetch from '../../../hooks/useFecth';
+import useFetch from '../../../hooks/useFetch';
 import { filterToEngine } from '../../../helpers/mappers';
 
 import DarkHeader from '../../Common/DarkHeader';
@@ -15,6 +15,7 @@ import DrivetrainBrakesSuspensionTable from './DrivetrainBrakesWheelsTable';
 import QuickRefNav from './QuickRefNav';
 import Loader from '../../Common/Loader';
 import Error from '../../Error';
+import NotFound from '../../NotFound/NotFound';
 
 const DetailsFullSpecs = () => {
   const { model, gen, engine } = useParams();
@@ -28,6 +29,10 @@ const DetailsFullSpecs = () => {
     return <Loader />;
   }
 
+  if (!data) {
+    return <NotFound/>;
+  }
+
   const engineData = filterToEngine(data, gen, engine);
 
   return (
@@ -39,7 +44,10 @@ const DetailsFullSpecs = () => {
             <div id='side-content'>
               <img
                 src={`/img/catalog-${model}.jpg`}
-                onError={(e)=>{e.target.onerror = null; e.target.src='/img/noImg.jpg'}}
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = '/img/noImg.jpg';
+                }}
                 className='details-pic'
                 alt={model}
               />

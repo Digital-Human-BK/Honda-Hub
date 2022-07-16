@@ -2,12 +2,13 @@ import { useParams } from 'react-router-dom';
 
 import './DetailsByModel.css';
 
-import useFetch from '../../../hooks/useFecth';
+import useFetch from '../../../hooks/useFetch';
 
 import DarkHeader from '../../Common/DarkHeader';
 import GenCard from './GenCard';
 import Loader from '../../Common/Loader';
 import Error from '../../Error';
+import NotFound from '../../NotFound/NotFound';
 
 const DetailsByModel = () => {
   const { model } = useParams();
@@ -19,6 +20,10 @@ const DetailsByModel = () => {
 
   if (isLoading) {
     return <Loader />;
+  }
+
+  if(!data) {
+     return <NotFound/>
   }
 
   return (
@@ -39,7 +44,7 @@ const DetailsByModel = () => {
               additional specifications.
             </h2>
             <br />
-            {data.generations?.map((generation) => (
+            {data && data.generations?.map((generation) => (
               <GenCard
                 key={generation.id}
                 model={model}

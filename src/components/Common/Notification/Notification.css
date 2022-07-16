@@ -1,11 +1,12 @@
 .inline-notification{
-  width: 70%;
-  font-size: 24px;
-  background-color: var(--clr-error);
-  border-radius: 6px;
-  padding: 10px;
-  margin: auto;
-  margin-bottom: 20px;
-  color: var(--clr-primary);
+  margin: 1.5rem auto;
+  padding: 2rem 3rem;
+  font-size: 1.5rem;
   text-align: center;
+  color: var(--clr-font-gray);
+}
+
+.inline-notification i {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
 }

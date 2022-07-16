@@ -32,7 +32,7 @@ const Navbar = () => {
   const userNav = (
     <>
       <Link to='/profile'><i className="fa-solid fa-user-ninja"></i> {user.username}</Link>
-      <Link to='#' onClick={onLogout}>Logout</Link>
+      <Link to='/' onClick={onLogout}>Logout</Link>
     </>
   );
 

@@ -41,7 +41,11 @@ const ForumPost = () => {
       } catch (err) {
         console.log(err);
         const errors = mapErrors(err);
-        setError(errors[0].msg);
+        if (errors[0].msg.includes('Cast to')) {
+          setError('404 Resource not found ');
+        } else {
+          setError(errors[0].msg);
+        }
       } finally {
         setIsLoading(false);
       }
@@ -54,10 +58,10 @@ const ForumPost = () => {
       <Header />
       <section id='forum-post'>
         <div className='inner-width'>
-          <div className='post-buttons'>
+          {!error && <div className='post-buttons'>
             <NewCommentBtn />
             <NewPostBtn />
-          </div>
+          </div>}
           {isLoading && <LoadingSpinner />}
           {error && <Notification>{error}</Notification>}
 

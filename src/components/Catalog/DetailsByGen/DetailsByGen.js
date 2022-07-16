@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 
 import './DetailsByGen.css';
 
-import useFetch from '../../../hooks/useFecth';
+import useFetch from '../../../hooks/useFetch';
 import { filterToGen } from '../../../helpers/mappers';
 
 import DarkHeader from '../../Common/DarkHeader';
@@ -10,6 +10,7 @@ import EngineCard from './EngineCard';
 import Loader from '../../Common/Loader';
 import Notification from '../../Common/Notification';
 import Error from '../../Error';
+import NotFound from '../../NotFound/NotFound';
 
 const DetailsByGen = () => {
   const { model, gen } = useParams();
@@ -23,6 +24,10 @@ const DetailsByGen = () => {
     return <Loader />;
   }
 
+  if (!data) {
+    return <NotFound />;
+  }
+
   const generationData = filterToGen(data, gen);
 
   return (
@@ -33,7 +38,10 @@ const DetailsByGen = () => {
           <h1 className='section-title'>{generationData.name}</h1>
           <img
             src={`/img/catalog-${model}.jpg`}
-            onError={(e)=>{e.target.onerror = null; e.target.src='/img/noImg.jpg'}}
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = '/img/noImg.jpg';
+            }}
             className='about-pic'
             alt={model}
           />

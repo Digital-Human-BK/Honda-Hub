@@ -87,10 +87,10 @@
 }
 
 .post__controls {
+  display: flex;
   padding: 1rem 0;
   border-top: 1px solid #d5d5d5;
   border-bottom: 1px solid #d5d5d5;
-  display: flex;
 }
 
 .controls-btn {
@@ -121,6 +121,16 @@
 .update-btn:hover {
   background-color: #d0d0da;
   border: 2px solid #d0d0da;
+}
+
+.heat-btn {
+  margin-left: auto;
+  margin-right: unset;
+  background-color: #ffc165;
+}
+
+.heat-btn:hover {
+  background-color: #ffa726;
 }
 
 .inline-edit__area {

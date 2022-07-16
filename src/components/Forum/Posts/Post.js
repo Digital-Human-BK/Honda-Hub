@@ -119,9 +119,15 @@ const Post = ({ post, updateComments }) => {
             </button>
           </>
         ) : (
-          <button className='controls-btn'>
-            <i className='fa-solid fa-quote-left'></i> Quote
-          </button>
+          <>
+            <button className='controls-btn'>
+              <i className='fa-solid fa-quote-left'></i> Quote
+            </button>
+
+            <button className='controls-btn heat-btn'>
+            <i className="fa-solid fa-fire-flame-curved"></i> Heat Up
+            </button>
+          </>
         )}
       </div>
     </>
