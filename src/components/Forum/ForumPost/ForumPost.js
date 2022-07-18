@@ -79,9 +79,9 @@ const ForumPost = () => {
             <>
               <PostHeader post={post} comments={comments.length} />
               <Post post={post} quoteComment={quoteComment} />
-              {comments.map((comment, i) => (
+              {comments.map(comment => (
                 <Post
-                  key={i}
+                  key={comment._id}
                   post={comment}
                   updateComments={updateComments}
                   quoteComment={quoteComment}

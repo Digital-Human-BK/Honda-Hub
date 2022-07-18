@@ -5,7 +5,7 @@ import { createComment, getComments } from '../../../services/forumService';
 import { validateComment } from '../../../helpers/validator';
 
 import './Comment.css';
-import { mapErrors } from '../../../helpers/mappers';
+import { mapErrors, shortenQuote } from '../../../helpers/mappers';
 import LoadingSpinner from '../../Common/LoadingSpinner';
 
 const Comment = ({ post, updateComments, quote }) => {
@@ -25,10 +25,11 @@ const Comment = ({ post, updateComments, quote }) => {
 
     const data = {
       text,
+      quote,
       author,
       postId,
     };
-
+    
     try {
       setIsLoading(true);
       setError(null);
@@ -66,12 +67,24 @@ const Comment = ({ post, updateComments, quote }) => {
           </div>
         </div>
         <form onSubmit={submitHandler} className='comment-form' method='POST'>
+          {quote && (
+            <textarea
+              name='quote'
+              defaultValue={shortenQuote(quote)}
+              className='quote-text'
+              readOnly
+            ></textarea>
+          )}
+
           <textarea
             name='text'
-            className={`comment-text ${(focused || quote) && 'expand-text'}`}
+            className={
+              `comment-text ${(focused || quote) && 'expand-text'} ${
+              quote && 'merge'
+            }`
+            }
             placeholder={`Comment here ${user.username}...`}
             onFocus={() => setFocused(true)}
-            defaultValue={quote ? quote : ''}
           ></textarea>
           {(focused || quote) && (
             <button className='forum-btn btn-blue comment-btn' type='submit'>

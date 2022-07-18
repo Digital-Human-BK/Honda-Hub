@@ -41,11 +41,17 @@ export const mapDate = (rawDate) => {
 };
 
 export const formatQuote = (text, author, date, time) => {
-  if (text.length > 300) {
-    return `"${text.slice(0,300)}..."\n ~Posted by: ${author} at ${date}, ${time}~\n\n`;
-  }
+  return `"${text}"\n~Posted by: ${author} at ${date}, ${time}~`;
+};
 
-  return `"${text}"\n ~Posted by: ${author} at ${date}, ${time}~\n\n`;
+export const shortenQuote = (quote) => {
+  let result = quote;
+
+  if (quote.length > 350) {
+    const [text, author] = quote.split('\n~Posted by: ');
+    result = `${text.slice(0, 300)}..."\n\n~Posted by: ${author}`;
+  }
+  return result;
 };
 
 export const filterToGen = (data, gen) => {

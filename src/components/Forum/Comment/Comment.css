@@ -17,12 +17,25 @@
 .arrow-left {
   position: absolute;
   top: 20px;
-  left: -25px;
+  left: -24px;
   width: 0;
   height: 0;
   border-top: 25px solid transparent;
   border-bottom: 25px solid transparent;
   border-right: 25px solid var(--clr-primary);
+}
+
+.quote-text {
+  resize: none;
+  outline: none;
+  border: none;
+  overflow: hidden;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  padding: 1rem 0.5rem;
+  min-height: 115px;
+  font-style: italic;
+  color: var(--clr-font-gray);
 }
 
 .comment-text {
@@ -40,6 +53,11 @@
   min-height: 200px;
   max-height: 600px;
   resize: vertical;
+}
+
+.merge {
+  border-top-left-radius: unset;
+  border-top-right-radius: unset;
 }
 
 .comment-btn {

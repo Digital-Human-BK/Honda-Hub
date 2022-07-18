@@ -81,10 +81,16 @@
   font-size: 0.9rem;
 }
 
-.post__text {
+.post__text, .post__quote {
   line-height: 1.5;
   margin-bottom: 0.25rem;
   white-space: pre-wrap;
+}
+
+.post__quote {
+  margin-bottom: 1rem;
+  color: var(--clr-font-gray);
+  font-style: italic;
 }
 
 .post__controls {

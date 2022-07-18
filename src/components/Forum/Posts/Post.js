@@ -107,6 +107,7 @@ const Post = ({ post, updateComments, quoteComment }) => {
 
   const defaultView = (
     <>
+      {post.quote && <p className='post__quote'>{post.quote}</p>}
       <p className='post__text'>{post.text}</p>
       {postedTime !== updatedTime && (
         <p className='post__update-date'>
