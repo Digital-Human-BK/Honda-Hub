@@ -1,0 +1,45 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  width: 30%;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 6px;
+  background-color: var(--clr-bg);
+}
+
+.modal>i {
+  font-size: 4rem;
+  padding-bottom: 0.5rem;
+}
+
+.warning__desc {
+  color: var(--clr-font-gray);
+  padding-bottom: 0.5rem;
+}
+
+.delete-controls {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.delete-controls > button {
+  margin: 0;
+}
+
+.cancel-del {
+  background-color: #d8d8ea;
+}

@@ -14,6 +14,7 @@ import {
 } from '../../../services/forumService';
 
 import './Post.css';
+import DeleteModal from '../../Common/DeleteModal';
 import LoadingSpinner from '../../Common/LoadingSpinner';
 
 const Post = ({ post, updateComments, quoteComment }) => {
@@ -21,6 +22,7 @@ const Post = ({ post, updateComments, quoteComment }) => {
   const { user } = useAuthContext();
 
   const [editState, setEditState] = useState(false);
+  const [deleteState, setDeleteState] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -100,8 +102,17 @@ const Post = ({ post, updateComments, quoteComment }) => {
     }
   };
 
+  const cancelDelete = () => {
+    setDeleteState(false);
+  };
+
   const quoteHandler = () => {
-    const quote = formatQuote(post.text, post.author.username, updatedDate, updatedTime);
+    const quote = formatQuote(
+      post.text,
+      post.author.username,
+      updatedDate,
+      updatedTime
+    );
     quoteComment(quote);
   };
 
@@ -121,7 +132,10 @@ const Post = ({ post, updateComments, quoteComment }) => {
               <i className='fa-solid fa-pen-to-square'></i> Edit
             </button>
 
-            <button className='controls-btn delete-btn' onClick={deleteHandler}>
+            <button
+              className='controls-btn delete-btn'
+              onClick={() => setDeleteState(true)}
+            >
               <i className='fa-solid fa-trash-can'></i> Delete
             </button>
           </>
@@ -178,6 +192,12 @@ const Post = ({ post, updateComments, quoteComment }) => {
             <li key={i}>{e.msg}</li>
           ))}
         </ul>
+      )}
+      {deleteState && (
+        <DeleteModal
+          deleteHandler={deleteHandler}
+          cancelDelete={cancelDelete}
+        />
       )}
       <div className='post'>
         <div className='post__user'>
