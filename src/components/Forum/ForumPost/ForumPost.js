@@ -25,10 +25,14 @@ const ForumPost = () => {
 
   const updateComments = (updatedComments) => {
     setComments(updatedComments);
-    if(quote) {
+    if (quote) {
       setQuote('');
     }
   };
+
+  const updatePost = (updatedPost) => {
+    setPost(updatedPost);
+  }
 
   const quoteComment = (quoteText) => {
     setQuote(quoteText);
@@ -78,8 +82,12 @@ const ForumPost = () => {
           {!isLoading && !error && (
             <>
               <PostHeader post={post} comments={comments.length} />
-              <Post post={post} quoteComment={quoteComment} />
-              {comments.map(comment => (
+              <Post
+                post={post}
+                quoteComment={quoteComment}
+                updatePost={updatePost}
+              />
+              {comments.map((comment) => (
                 <Post
                   key={comment._id}
                   post={comment}
@@ -91,7 +99,11 @@ const ForumPost = () => {
           )}
 
           {!isLoading && !error && (
-            <Comment post={post} quote={quote} updateComments={updateComments} />
+            <Comment
+              post={post}
+              quote={quote}
+              updateComments={updateComments}
+            />
           )}
         </div>
       </section>

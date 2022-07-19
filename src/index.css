@@ -23,11 +23,11 @@
 
   --box-shadow: 5px 5px 15px 3px #d1d1d1;
 
-  font-size: 16px;
 }
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 ::selection {

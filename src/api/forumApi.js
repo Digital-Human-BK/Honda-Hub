@@ -13,6 +13,8 @@ export const FORUM_ENDPOINTS = {
   post: '/posts/', //+ postId
   postComments: '/post-comments/', //+ postId
   comments: '/comments/', //+ commentId
+  postVote: '/post-vote/', //+ postId
+  commentVote: '/comment-vote/' //+commentId
 };
 
 export async function get(url) {

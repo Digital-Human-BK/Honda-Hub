@@ -11,13 +11,16 @@ import {
   deleteComment,
   getComments,
   updateComment,
+  voteForPost,
+  voteForComment,
+  getPost,
 } from '../../../services/forumService';
 
 import './Post.css';
 import DeleteModal from '../../Common/DeleteModal';
 import LoadingSpinner from '../../Common/LoadingSpinner';
 
-const Post = ({ post, updateComments, quoteComment }) => {
+const Post = ({ post, updateComments, updatePost, quoteComment }) => {
   const navigate = useNavigate();
   const { user } = useAuthContext();
 
@@ -116,11 +119,36 @@ const Post = ({ post, updateComments, quoteComment }) => {
     quoteComment(quote);
   };
 
+  const voteHandler = async (value) => {
+    try {
+      setError(null);
+      if (post.title) {
+        await voteForPost(post._id, { userId: user._id, value });
+        const updatedPost = await getPost(post._id);
+        updatePost(updatedPost);
+      } else {
+        await voteForComment(post._id, { userId: user._id, value });
+        const comments = await getComments(post.postId);
+        updateComments(comments);
+      }
+    } catch (err) {
+      console.log(err);
+      const errors = mapErrors(err);
+      setError(errors);
+    }
+  };
+
+  if (error) {
+    setTimeout(() => {
+      setError(false);
+    }, 3000);
+  }
+
   const defaultView = (
     <>
       {post.quote && <p className='post__quote'>{post.quote}</p>}
       <p className='post__text'>{post.text}</p>
-      {postedTime !== updatedTime && (
+      {post.updated && (
         <p className='post__update-date'>
           Updated: {updatedDate} at {updatedTime}
         </p>
@@ -129,15 +157,24 @@ const Post = ({ post, updateComments, quoteComment }) => {
         {user._id === post.author._id ? (
           <>
             <button className='controls-btn edit-btn' onClick={editHandler}>
-              <i className='fa-solid fa-pen-to-square'></i> Edit
+              <i className='fa-solid fa-pen-to-square' /> Edit
             </button>
 
             <button
               className='controls-btn delete-btn'
               onClick={() => setDeleteState(true)}
             >
-              <i className='fa-solid fa-trash-can'></i> Delete
+              <i className='fa-solid fa-trash-can' /> Delete
             </button>
+
+            <span
+              className={`vote 
+                ${post.votes > 0 ? 'votes__up' : 'votes__down'}
+                ${post.votes === 0 ? 'votes__neutral' : ''}
+                `}
+            >
+              Votes: {post.votes > 0 ? `+${post.votes}` : post.votes}
+            </span>
           </>
         ) : (
           <>
@@ -146,12 +183,41 @@ const Post = ({ post, updateComments, quoteComment }) => {
               className='controls-btn'
               onClick={quoteHandler}
             >
-              <i className='fa-solid fa-quote-left'></i> Quote
+              <i className='fa-solid fa-quote-left' /> Quote
             </HashLink>
 
-            <button className='controls-btn heat-btn'>
-              <i className='fa-solid fa-fire-flame-curved'></i> Heat Up
-            </button>
+            {post.voters.includes(user._id) && (
+              <span
+                className={`vote 
+                ${post.votes > 0 ? 'votes__up' : 'votes__down'}
+                ${post.votes === 0 ? 'votes__neutral' : ''}
+                `}
+              >
+                Votes: {post.votes > 0 ? `+${post.votes}` : post.votes}
+              </span>
+            )}
+
+            {post.voters.includes(user._id) === false && (
+              <div className='vote'>
+                <button
+                  className='vote__btn up'
+                  onClick={() => voteHandler(1)}
+                  title='Up Vote'
+                >
+                  <i className='fa-solid fa-plus' />
+                </button>
+
+                <span className='temperature'>{post.votes}</span>
+
+                <button
+                  className='vote__btn down'
+                  onClick={() => voteHandler(-1)}
+                  title='Down Vote'
+                >
+                  <i className='fa-solid fa-minus' />
+                </button>
+              </div>
+            )}
           </>
         )}
       </div>
@@ -173,15 +239,18 @@ const Post = ({ post, updateComments, quoteComment }) => {
             className='forum-btn btn-cancel'
             onClick={() => setEditState((prev) => !prev)}
           >
-            <i className='fa-solid fa-rectangle-xmark'></i>CANCEL
+            <i className='fa-solid fa-rectangle-xmark' />
+            CANCEL
           </button>
           <button type='submit' className='forum-btn update-btn'>
-            <i className='fa-solid fa-square-check'></i>UPDATE
+            <i className='fa-solid fa-square-check' />
+            UPDATE
           </button>
         </div>
       </form>
     </>
   );
+  console.log(post.author.reputation);
 
   return (
     <>
@@ -201,19 +270,35 @@ const Post = ({ post, updateComments, quoteComment }) => {
       )}
       <div className='post'>
         <div className='post__user'>
-          <Link to='/' className='user__username'>
+          <Link
+            to='/'
+            className='user__username'
+            title='View User&lsquo;s profile'
+          >
             {post.author.username}
           </Link>
           <p className='user__role'>{post.author.role}</p>
           <div className='user__avatar-wrapper'>
             <img className='user__avatar' src='/img/avatar.png' alt='avatar' />
           </div>
-          <p className='user__level'>{post.author.rank}</p>
-          <button className='user__respect positive'>
-            <i className='fa-solid fa-circle-plus'></i> {post.author.reputation}
+          <p className='user__level' title='Rank depends on posts count'>
+            {post.author.rank}
+          </p>
+          <button
+            className={`user__reputation ${
+              post.author.reputation > 0 ? 'positive' : ''
+            }`}
+            title='User&lsquo;s reputation level'
+          >
+            {post.author.reputation > 0 && (
+              <i className='fa-solid fa-circle-plus' />
+            )}{' '}
+            {post.author.reputation}
           </button>
           <p className='user__posts'>Posts: {post.author.posts}</p>
-          <p className='user__rides'>Drives: {post.author.drives}</p>
+          <p className='user__rides' title='Tell others what vehicles you got'>
+            Drives: {post.author.drives}
+          </p>
         </div>
 
         <div className='post__content'>

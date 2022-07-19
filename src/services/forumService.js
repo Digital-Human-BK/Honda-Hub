@@ -28,6 +28,10 @@ export async function deletePost(id) {
   return api.del(api.FORUM_ENDPOINTS.post + id);
 }
 
+export async function voteForPost(id, data) {
+  return api.put(api.FORUM_ENDPOINTS.postVote + id, data);
+}
+
 //======================= Comments
 
 export async function getComments(postId) {
@@ -46,6 +50,10 @@ export async function updateComment(id, data) {
   return api.put(api.FORUM_ENDPOINTS.comments + id, data);
 }
 
-export async function deleteComment(id){
+export async function deleteComment(id) {
   return api.del(api.FORUM_ENDPOINTS.comments + id);
-};
+}
+
+export async function voteForComment(id, data) {
+  return api.put(api.FORUM_ENDPOINTS.commentVote + id, data);
+}
