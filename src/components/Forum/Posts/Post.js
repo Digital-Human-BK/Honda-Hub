@@ -120,14 +120,17 @@ const Post = ({ post, updateComments, updatePost, quoteComment }) => {
   };
 
   const voteHandler = async (value) => {
+    const postId = post._id;
+    const userId = user._id;
+    const authorId = post.author._id;
     try {
       setError(null);
       if (post.title) {
-        await voteForPost(post._id, { userId: user._id, value });
+        await voteForPost(postId, { userId, authorId, value });
         const updatedPost = await getPost(post._id);
         updatePost(updatedPost);
       } else {
-        await voteForComment(post._id, { userId: user._id, value });
+        await voteForComment(postId, { userId, authorId, value });
         const comments = await getComments(post.postId);
         updateComments(comments);
       }
@@ -167,14 +170,17 @@ const Post = ({ post, updateComments, updatePost, quoteComment }) => {
               <i className='fa-solid fa-trash-can' /> Delete
             </button>
 
-            <span
-              className={`vote 
+            <div className='votes-wrapper'>
+              <span className='votes votes__title'>Votes:</span>
+              <span
+                className={`votes  
                 ${post.votes > 0 ? 'votes__up' : 'votes__down'}
                 ${post.votes === 0 ? 'votes__neutral' : ''}
                 `}
-            >
-              Votes: {post.votes > 0 ? `+${post.votes}` : post.votes}
-            </span>
+              >
+                {post.votes > 0 ? `+${post.votes}` : post.votes}
+              </span>
+            </div>
           </>
         ) : (
           <>
@@ -187,14 +193,17 @@ const Post = ({ post, updateComments, updatePost, quoteComment }) => {
             </HashLink>
 
             {post.voters.includes(user._id) && (
-              <span
-                className={`vote 
+              <div className='votes-wrapper'>
+                <span className='votes votes__title'>Votes:</span>
+                <span
+                  className={`votes  
                 ${post.votes > 0 ? 'votes__up' : 'votes__down'}
                 ${post.votes === 0 ? 'votes__neutral' : ''}
                 `}
-              >
-                Votes: {post.votes > 0 ? `+${post.votes}` : post.votes}
-              </span>
+                >
+                  {post.votes > 0 ? `+${post.votes}` : post.votes}
+                </span>
+              </div>
             )}
 
             {post.voters.includes(user._id) === false && (
