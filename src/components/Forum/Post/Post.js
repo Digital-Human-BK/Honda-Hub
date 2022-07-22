@@ -171,12 +171,11 @@ const Post = ({ post, updateComments, updatePost, quoteComment }) => {
             </button>
 
             <div className='votes-wrapper'>
-              <span className='votes votes__title'>Votes:</span>
+              <span className='votes votes__title'>Rating:</span>
               <span
-                className={`votes  
-                ${post.votes > 0 ? 'votes__up' : 'votes__down'}
-                ${post.votes === 0 ? 'votes__neutral' : ''}
-                `}
+                className={`votes ${
+                  post.votes > 0 ? 'votes__up' : 'votes__down'
+                } ${post.votes === 0 ? 'votes__neutral' : ''}`}
               >
                 {post.votes > 0 ? `+${post.votes}` : post.votes}
               </span>
@@ -194,7 +193,7 @@ const Post = ({ post, updateComments, updatePost, quoteComment }) => {
 
             {post.voters.includes(user._id) && (
               <div className='votes-wrapper'>
-                <span className='votes votes__title'>Votes:</span>
+                <span className='votes votes__title'>Rating:</span>
                 <span
                   className={`votes  
                 ${post.votes > 0 ? 'votes__up' : 'votes__down'}
@@ -245,13 +244,13 @@ const Post = ({ post, updateComments, updatePost, quoteComment }) => {
         <div className='form-buttons'>
           <button
             type='button'
-            className='forum-btn btn-cancel'
+            className='forum-btn btn-cancel medium-btn'
             onClick={() => setEditState((prev) => !prev)}
           >
             <i className='fa-solid fa-rectangle-xmark' />
             CANCEL
           </button>
-          <button type='submit' className='forum-btn update-btn'>
+          <button type='submit' className='forum-btn update-btn medium-btn'>
             <i className='fa-solid fa-square-check' />
             UPDATE
           </button>
@@ -259,7 +258,6 @@ const Post = ({ post, updateComments, updatePost, quoteComment }) => {
       </form>
     </>
   );
-  console.log(post.author.reputation);
 
   return (
     <>
@@ -309,7 +307,9 @@ const Post = ({ post, updateComments, updatePost, quoteComment }) => {
             Drives: {post.author.drives}
           </p>
         </div>
-
+        {post.votes > 3 && <div className='popular-flag' title='Popular opinion'>
+          <i className='fa-solid fa-heart' />
+        </div>}
         <div className='post__content'>
           <p className='post__date'>
             Posted: {postedDate} at {postedTime}

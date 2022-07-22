@@ -1,7 +1,7 @@
-import './ForumHeading.css';
+import './Heading.css';
 import NewPostBtn from '../../Common/NewPostBtn';
 
-const ForumHeading = ({ title }) => {
+const Heading = ({ title }) => {
   return (
     <div className='forum-page-heading'>
       <h2 className='forum-page-title'>{title}</h2>
@@ -10,4 +10,4 @@ const ForumHeading = ({ title }) => {
   );
 };
 
-export default ForumHeading;
+export default Heading;

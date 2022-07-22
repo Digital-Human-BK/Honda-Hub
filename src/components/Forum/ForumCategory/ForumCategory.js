@@ -5,7 +5,7 @@ import { mapCategories, mapErrors } from '../../../helpers/mappers';
 import { getCategoryPosts } from '../../../services/forumService';
 
 import './ForumCategory.css';
-import ForumHeading from '../ForumHeading';
+import Heading from '../Heading';
 import Header from '../Header';
 import PostCard from '../PostCard';
 import LoadingSpinner from '../../Common/LoadingSpinner';
@@ -41,7 +41,7 @@ const ForumCategory = () => {
       <Header />
       <section id='category'>
         <div className='inner-width'>
-          <ForumHeading title={mapCategories(category)} />
+          <Heading title={mapCategories(category)} />
           {isLoading && <LoadingSpinner />}
           <ul className='posts-list'>
             {

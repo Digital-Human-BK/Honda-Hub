@@ -7,7 +7,7 @@ import { getComments, getPost } from '../../../services/forumService';
 import './ForumPost.css';
 import Header from '../Header';
 import PostHeader from '../PostHeader';
-import Post from '../Posts';
+import Post from '../Post/Post';
 import Comment from '../Comment';
 import LoadingSpinner from '../../Common/LoadingSpinner';
 import Notification from '../../Common/Notification';

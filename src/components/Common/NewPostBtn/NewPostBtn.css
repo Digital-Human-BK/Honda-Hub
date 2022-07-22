@@ -33,3 +33,8 @@
   background-color: #d16363;
   border: 2px solid #d16363;
 }
+
+.medium-btn {
+  padding: 0.5rem 1rem;
+  width: 9rem;
+}

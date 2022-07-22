@@ -6,7 +6,7 @@ import { mapErrors } from '../../../helpers/mappers';
 
 import './Search.css';
 import Header from '../Header';
-import ForumHeading from '../ForumHeading';
+import Heading from '../Heading';
 import PostCard from '../PostCard';
 import LoadingSpinner from '../../Common/LoadingSpinner';
 import Notification from '../../Common/Notification';
@@ -49,7 +49,7 @@ const Search = () => {
       <Header value={query} />
       <section id='search'>
         <div className='inner-width'>
-          <ForumHeading title={'Search results'} />
+          <Heading title={'Search results'} />
           {isLoading && <LoadingSpinner />}
           <ul className='posts-list'>
             {

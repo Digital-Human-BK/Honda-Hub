@@ -5,7 +5,7 @@ import { getPostsCount } from '../../services/forumService';
 
 import './Forum.css';
 import Header from './Header';
-import ForumHeading from './ForumHeading';
+import Heading from './Heading';
 
 const Forum = () => {
   const [categoryCount, setCategoryCount] = useState({
@@ -31,7 +31,7 @@ const Forum = () => {
       <Header />
       <section id='forum'>
         <div className='inner-width'>
-          <ForumHeading title={'Categories'} />
+          <Heading title={'Categories'} />
           <ul className='categories'>
             <li>
               <Link to='/categories/general' className='categories__item'>

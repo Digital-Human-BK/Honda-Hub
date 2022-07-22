@@ -7,7 +7,6 @@ import Home from './components/Home';
 import Footer from './components/Footer';
 import Login from './components/Login';
 import Register from './components/Register';
-import Error from './components/Error';
 import NotFound from './components/NotFound';
 
 import Catalog from './components/Catalog';
@@ -17,7 +16,7 @@ import DetailsFullSpecs from './components/Catalog/DetailsFullSpecs';
 
 import RequireAuth from './components/RequireAuth';
 import Forum from './components/Forum';
-import Search from './components/Forum/Search';
+import Search from './components/Forum/ForumSearch';
 import ForumCategory from './components/Forum/ForumCategory';
 import ForumPost from './components/Forum/ForumPost';
 import ForumNewPost from './components/Forum/ForumNewPost';
@@ -35,7 +34,6 @@ function App() {
         <Route path='/catalog/:model/:gen/:engine' element={<DetailsFullSpecs />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/error' element={<Error/>}/>
         
         <Route element={<RequireAuth/>}>
           <Route path='/forum' element={<Forum />} />
