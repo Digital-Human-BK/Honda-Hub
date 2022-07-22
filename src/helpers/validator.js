@@ -112,27 +112,6 @@ export const validatePost = (data) => {
 
 export const validateComment = (data) => {
   const text = data.text.trim();
-  const author = data.author;
-
-  const errors = [];
-
-  if (text === '') {
-    errors.push({ msg: 'Content required' });
-  }
-  if (text.length > 1000) {
-    errors.push({ msg: 'Comment must be 1 to 1000 characters long' });
-  }
-  if (author === '') {
-    errors.push({ msg: 'No user' });
-  }
-
-  if (errors.length > 0) {
-    throw errors;
-  }
-};
-
-export const validateCommentUpdate = (data) => {
-  const text = data.text.trim();
 
   const errors = [];
 

@@ -1,27 +1,16 @@
 import { useState } from 'react';
-import { HashLink } from 'react-router-hash-link';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import useAuthContext from '../../../hooks/useAuthContext';
-import { formatQuote, mapDate, mapErrors } from '../../../helpers/mappers';
-import { validateComment } from '../../../helpers/validator';
-import {
-  deleteComments,
-  deletePost,
-  deleteComment,
-  getComments,
-  updateComment,
-  voteForPost,
-  voteForComment,
-  getPost,
-} from '../../../services/forumService';
+import { mapDate } from '../../../helpers/mappers';
 
 import './Post.css';
-import DeleteModal from '../../Common/DeleteModal';
+import DeleteModal from './DeleteModal';
 import LoadingSpinner from '../../Common/LoadingSpinner';
+import PostDefaultView from './PostDefaultView';
+import PostEditView from './PostEditView';
 
-const Post = ({ post, updateComments, updatePost, quoteComment }) => {
-  const navigate = useNavigate();
+const Post = ({ post, updateCommentsState, updatePostState, quoteCommentState }) => {
   const { user } = useAuthContext();
 
   const [editState, setEditState] = useState(false);
@@ -30,116 +19,23 @@ const Post = ({ post, updateComments, updatePost, quoteComment }) => {
   const [error, setError] = useState(null);
 
   const [postedDate, postedTime] = mapDate(post.createdAt);
-  const [updatedDate, updatedTime] = mapDate(post.updatedAt);
 
-  const editHandler = () => {
-    if (post.title) {
-      navigate('/forum/edit-post/' + post._id);
-      return;
-    }
-    setEditState((prev) => !prev);
+  const toggleEdit = () => {
+    setEditState(prev => !prev);
+  }
+
+  const toggleDelete = (ev) => {
+    ev.stopPropagation();
+    setDeleteState((prev) => !prev);
   };
 
-  const updateHandler = async (ev) => {
-    ev.preventDefault();
-    const formData = new FormData(ev.target);
-    const text = formData.get('text').trim();
-
-    try {
-      setIsLoading(true);
-      setError(null);
-
-      validateComment({ text });
-      await updateComment(post._id, { text });
-
-      const updatedComments = await getComments(post.postId);
-      setEditState((prev) => !prev);
-      updateComments(updatedComments);
-
-      ev.target.reset();
-    } catch (err) {
-      console.log(err);
-      const errors = mapErrors(err);
-      setError(errors);
-    } finally {
-      setIsLoading(false);
-    }
+  const toggleError = (err) => {
+    setError(err);
   };
 
-  const deleteHandler = () => {
-    if (post.title) {
-      deletePostAndComments();
-    } else {
-      deleteCommentOnly();
-    }
-  };
-
-  const deletePostAndComments = async () => {
-    try {
-      setIsLoading(true);
-      setError(null);
-      await Promise.all([deletePost(post._id), deleteComments(post._id)]);
-      navigate('/forum');
-    } catch (err) {
-      console.log(err);
-      const errors = mapErrors(err);
-      setError(errors);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const deleteCommentOnly = async () => {
-    try {
-      setIsLoading(true);
-      setError(null);
-      await deleteComment(post._id);
-      const comments = await getComments(post.postId);
-      updateComments(comments);
-    } catch (err) {
-      console.log(err);
-      const errors = mapErrors(err);
-      setError(errors);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const cancelDelete = () => {
-    setDeleteState(false);
-  };
-
-  const quoteHandler = () => {
-    const quote = formatQuote(
-      post.text,
-      post.author.username,
-      updatedDate,
-      updatedTime
-    );
-    quoteComment(quote);
-  };
-
-  const voteHandler = async (value) => {
-    const postId = post._id;
-    const userId = user._id;
-    const authorId = post.author._id;
-    try {
-      setError(null);
-      if (post.title) {
-        await voteForPost(postId, { userId, authorId, value });
-        const updatedPost = await getPost(post._id);
-        updatePost(updatedPost);
-      } else {
-        await voteForComment(postId, { userId, authorId, value });
-        const comments = await getComments(post.postId);
-        updateComments(comments);
-      }
-    } catch (err) {
-      console.log(err);
-      const errors = mapErrors(err);
-      setError(errors);
-    }
-  };
+  const toggleLoading = (value) => {
+    setIsLoading(value)
+  }
 
   if (error) {
     setTimeout(() => {
@@ -147,132 +43,17 @@ const Post = ({ post, updateComments, updatePost, quoteComment }) => {
     }, 3000);
   }
 
-  const defaultView = (
-    <>
-      {post.quote && <p className='post__quote'>{post.quote}</p>}
-      <p className='post__text'>{post.text}</p>
-      {post.updated && (
-        <p className='post__update-date'>
-          Updated: {updatedDate} at {updatedTime}
-        </p>
-      )}
-      <div className='post__controls'>
-        {user._id === post.author._id ? (
-          <>
-            <button className='controls-btn edit-btn' onClick={editHandler}>
-              <i className='fa-solid fa-pen-to-square' /> Edit
-            </button>
-
-            <button
-              className='controls-btn delete-btn'
-              onClick={() => setDeleteState(true)}
-            >
-              <i className='fa-solid fa-trash-can' /> Delete
-            </button>
-
-            <div className='votes-wrapper'>
-              <span className='votes votes__title'>Rating:</span>
-              <span
-                className={`votes ${
-                  post.votes > 0 ? 'votes__up' : 'votes__down'
-                } ${post.votes === 0 ? 'votes__neutral' : ''}`}
-              >
-                {post.votes > 0 ? `+${post.votes}` : post.votes}
-              </span>
-            </div>
-          </>
-        ) : (
-          <>
-            <HashLink
-              to='#comment'
-              className='controls-btn'
-              onClick={quoteHandler}
-            >
-              <i className='fa-solid fa-quote-left' /> Quote
-            </HashLink>
-
-            {post.voters.includes(user._id) && (
-              <div className='votes-wrapper'>
-                <span className='votes votes__title'>Rating:</span>
-                <span
-                  className={`votes  
-                ${post.votes > 0 ? 'votes__up' : 'votes__down'}
-                ${post.votes === 0 ? 'votes__neutral' : ''}
-                `}
-                >
-                  {post.votes > 0 ? `+${post.votes}` : post.votes}
-                </span>
-              </div>
-            )}
-
-            {post.voters.includes(user._id) === false && (
-              <div className='vote'>
-                <button
-                  className='vote__btn up'
-                  onClick={() => voteHandler(1)}
-                  title='Up Vote'
-                >
-                  <i className='fa-solid fa-plus' />
-                </button>
-
-                <span className='temperature'>{post.votes}</span>
-
-                <button
-                  className='vote__btn down'
-                  onClick={() => voteHandler(-1)}
-                  title='Down Vote'
-                >
-                  <i className='fa-solid fa-minus' />
-                </button>
-              </div>
-            )}
-          </>
-        )}
-      </div>
-    </>
-  );
-
-  const editView = (
-    <>
-      <form method='Post' className='inline-edit' onSubmit={updateHandler}>
-        <textarea
-          name='text'
-          className='inline-edit__area'
-          maxLength='1000'
-          defaultValue={post.text}
-        ></textarea>
-        <div className='form-buttons'>
-          <button
-            type='button'
-            className='forum-btn btn-cancel medium-btn'
-            onClick={() => setEditState((prev) => !prev)}
-          >
-            <i className='fa-solid fa-rectangle-xmark' />
-            CANCEL
-          </button>
-          <button type='submit' className='forum-btn update-btn medium-btn'>
-            <i className='fa-solid fa-square-check' />
-            UPDATE
-          </button>
-        </div>
-      </form>
-    </>
-  );
-
   return (
     <>
       {isLoading && <LoadingSpinner />}
-      {error && (
-        <ul className='error-list'>
-          {error.map((e, i) => (
-            <li key={i}>{e.msg}</li>
-          ))}
-        </ul>
-      )}
+      {error && <ul className='error-list'>{error.map((e, i) =><li key={i}>{e.msg}</li>)}</ul>}
       {deleteState && (
         <DeleteModal
-          deleteHandler={deleteHandler}
-          cancelDelete={cancelDelete}
+          post={post}
+          toggleError={toggleError}
+          toggleDelete={toggleDelete}
+          toggleLoading={toggleLoading}
+          updateCommentsState={updateCommentsState}
         />
       )}
       <div className='post'>
@@ -307,14 +88,35 @@ const Post = ({ post, updateComments, updatePost, quoteComment }) => {
             Drives: {post.author.drives}
           </p>
         </div>
-        {post.votes > 3 && <div className='popular-flag' title='Popular opinion'>
-          <i className='fa-solid fa-heart' />
-        </div>}
+        {post.votes > 3 && (
+          <div className='popular-flag' title='Popular opinion'>
+            <i className='fa-solid fa-heart' />
+          </div>
+        )}
         <div className='post__content'>
           <p className='post__date'>
             Posted: {postedDate} at {postedTime}
           </p>
-          {editState ? editView : defaultView}
+
+          {editState ? (
+            <PostEditView 
+              post={post} 
+              toggleEdit={toggleEdit} 
+              toggleError={toggleError} 
+              toggleLoading={toggleLoading} 
+              updateCommentsState={updateCommentsState}/>
+          ) : (
+            <PostDefaultView
+              post={post}
+              userId={user._id}
+              toggleEdit={toggleEdit}
+              toggleError={toggleError}
+              toggleDelete={toggleDelete}
+              updatePostState={updatePostState}
+              updateCommentsState={updateCommentsState}
+              quoteCommentState={quoteCommentState}
+            />
+          )}
         </div>
       </div>
     </>
