@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import Login from './components/Login';
 import Register from './components/Register';
 import NotFound from './components/NotFound';
+import ScrollToTop from './components/ScrollToTop';
 
 import Catalog from './components/Catalog';
 import DetailsByModel from './components/Catalog/DetailsByModel';
@@ -25,7 +26,10 @@ import ForumEditPost from './components/Forum/ForumEditPost';
 function App() {
   return (
     <AuthProvider>
+
+      <ScrollToTop/>
       <Navbar />
+
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/catalog' element={<Catalog />} />
@@ -46,7 +50,9 @@ function App() {
 
         <Route path='*' element={<NotFound />} />
       </Routes>
+
       <Footer />
+      
     </AuthProvider>
   );
 }
