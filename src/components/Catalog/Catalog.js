@@ -42,7 +42,7 @@ const Catalog = () => {
   return (
     <>
       <DarkHeader />
-      <section id='catalog'>
+      <section className='section-bg'>
         <div className='inner-width'>
           <h1 className='section-title'>Models</h1>
           <div className='catalog-cars'>

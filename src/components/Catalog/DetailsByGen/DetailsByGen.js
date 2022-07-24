@@ -1,7 +1,5 @@
 import { useParams } from 'react-router-dom';
 
-import './DetailsByGen.css';
-
 import useFetch from '../../../hooks/useFetch';
 import { filterToGen } from '../../../helpers/mappers';
 
@@ -33,7 +31,7 @@ const DetailsByGen = () => {
   return (
     <>
       <DarkHeader />
-      <section id='gen-details'>
+      <section className='section-bg'>
         <div className='inner-width'>
           <h1 className='section-title'>{generationData.name}</h1>
           <img
@@ -42,7 +40,7 @@ const DetailsByGen = () => {
               e.target.onerror = null;
               e.target.src = '/img/noImg.jpg';
             }}
-            className='about-pic'
+            className='about-pic details-img'
             alt={model}
           />
           <div className='about-text'>

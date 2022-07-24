@@ -2,6 +2,8 @@ import { mapErrors } from '../../../../helpers/mappers';
 import { validateComment } from '../../../../helpers/validator';
 import { getComments, updateComment } from '../../../../services/forumService';
 
+import './PostEditView.css';
+
 const PostEditView = ({
   post,
   toggleEdit,

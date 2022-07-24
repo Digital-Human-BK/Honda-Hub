@@ -7,7 +7,7 @@ const Button = ({ value, handler, disabled }) => {
       disabled={disabled}
       onClick={handler}
     >
-      {value}
+      <i className='fa-solid fa-angle-down'/> {value}
     </button>
   );
 };

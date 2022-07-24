@@ -38,7 +38,7 @@ const DetailsFullSpecs = () => {
   return (
     <>
       <DarkHeader />
-      <section id='full-specs'>
+      <section className='section-bg'>
         <div className='inner-width'>
           <div className='details-content'>
             <div id='side-content'>

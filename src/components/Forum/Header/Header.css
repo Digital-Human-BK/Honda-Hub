@@ -10,9 +10,11 @@
 
 .forum-title {
   color: var(--clr-primary);
-  font-size: 3rem;
+  font-size: 2.7rem;
   margin: 1rem;
   text-align: center;
+  text-transform: uppercase;
+  font-style: italic;
   letter-spacing: 1px;
   text-shadow: 2px 2px 4px #1e1e1e;
 }

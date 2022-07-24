@@ -9,6 +9,8 @@ import {
   voteForComment,
 } from '../../../../services/forumService';
 
+import './PostDefaultView.css';
+
 const PostDefaultView = ({
   post,
   userId,

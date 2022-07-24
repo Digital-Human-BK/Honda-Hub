@@ -2,27 +2,37 @@
   width: calc(33% - 20px);
   text-align: center;
   border-radius: 6px; 
-  background-color: #353b48;
-  color: var(--clr-primary);
+  color: var(--clr-secondary);
+  background-color: var(--clr-primary);
+  box-shadow: 5px 5px 10px 5px #d1d1d1;
   cursor: pointer;
   margin-bottom: 1.8rem;
   transition: 0.2s linear;
 }
 
-.catalog-card img {
+.catalog-card__img {
   border-radius: 6px 6px 0 0;
   width: 100%;
 }
 
 .catalog-card h4{
-  text-align: center;
+  text-align: left;
+  text-transform: uppercase;
   margin-top: 0.65rem;
-  margin-bottom: 1rem;
   font-size: 1.5rem;
 }
 
 .catalog-card:hover{
-  color: var(--clr-accent);
   transform: scale(1.05);
-  opacity: 95%;
+  color: var(--clr-bg-dark);
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+  text-align: right;
+  padding: 0 2rem;
 }

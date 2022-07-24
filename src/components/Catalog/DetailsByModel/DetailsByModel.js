@@ -29,13 +29,13 @@ const DetailsByModel = () => {
   return (
     <>
       <DarkHeader />
-      <section id='model-details'>
+      <section className='section-bg'>
         <div className='inner-width'>
           <h1 className='section-title'>Honda {model}</h1>
           <img
             src={`/img/catalog-${model}.jpg`}
             onError={(e)=>{e.target.onerror = null; e.target.src='/img/noImg.jpg'}}
-            className='about-pic'
+            className='about-pic details-img'
             alt={model}
           />
           <div className='about-text'>

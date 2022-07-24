@@ -19,7 +19,8 @@
 }
 
 #home .content h1 {
-  font-size: 4rem;
+  font-size: 3rem;
+  font-style: italic;
   margin-bottom: 3.75rem;
   text-shadow: 2px 2px 4px var(--clr-secondary);
 }

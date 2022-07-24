@@ -53,13 +53,9 @@ const Comment = ({ post, updateComments, quote }) => {
   return (
     <>
       {isLoading && <LoadingSpinner />}
-      {error && (
-        <ul className='error-list'>
-          {error.map((e, i) => (
-            <li key={i}>{e.msg}</li>
-          ))}
-        </ul>
-      )}
+      {error &&
+       <ul className='error-list'>{error.map((e, i) =><li key={i}>{e.msg}</li>)}</ul>
+      }
       <div id='comment' className='forum-inputs'>
         <div className='post__user'>
           <div className='user__avatar-wrapper'>

@@ -1,0 +1,21 @@
+.update-btn {
+  border: 2px solid #e9e9ed;
+}
+.update-btn:hover {
+  background-color: #d0d0da;
+  border: 2px solid #d0d0da;
+}
+
+.inline-edit__area {
+  background-color: var(--clr-bg);
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  width: 100%;
+  min-height: 130px;
+  height: auto;
+  max-height: 300px;
+  resize: vertical;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}

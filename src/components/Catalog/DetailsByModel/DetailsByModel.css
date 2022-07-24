@@ -1,13 +1,9 @@
-#model-details {
-  background: url(/public/img/risingsun.png) no-repeat center center/cover ;
+.view-message{
+  margin: 0.5rem 0;
+  text-align: center;
+  font-size: 1.3rem;
 }
 
-.view-message{
-  width: 100%;
-  background-color: var(--clr-catalog-item);
-  font-size: 1.2rem;
-  border: 2px solid var(--clr-bg-dark);
-  border-radius: 3px;
-  padding: 5px 10px;
-  margin-top: 5px;
+.details-img {
+  border-radius: 6px;
 }

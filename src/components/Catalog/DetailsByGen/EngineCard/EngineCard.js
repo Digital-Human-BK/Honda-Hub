@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
 
-import './EngineCard.css';
-
 const EngineCard = ({ engine, model, gen }) => {
   return (
     <Link

@@ -3,20 +3,19 @@
   width: 11.5rem;
   font-size: 1.1rem;
   font-weight: 500;
-  background-color: var(--clr-bg-dark);
-  border: 2px solid var(--clr-bg-dark);
+  background-color: var(--clr-secondary);
+  border: 2px solid var(--clr-secondary);
   border-radius: 6px;
   padding: 0.875rem 0;
-  margin: auto;
+  margin: 0 auto;
   color: var(--clr-primary);
   cursor: pointer;
 }
 
 .disable-btn{
-  opacity: 40%;
+  opacity: 0.4;
 }
 
 .common-btn:hover{
-  color: var(--clr-accent);
-  opacity: 90%;
+  opacity: 0.85;
 }

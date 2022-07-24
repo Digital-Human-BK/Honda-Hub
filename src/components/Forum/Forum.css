@@ -5,11 +5,9 @@
 
 .categories {
   margin: 3rem 0;
-  width: 100%;
 }
 
 .categories__item {
-  width: 100%;
   height: 10rem;
   display: flex;
   align-items: center;

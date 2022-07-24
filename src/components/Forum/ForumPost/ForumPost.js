@@ -85,7 +85,7 @@ const ForumPost = () => {
               <Post
                 post={post}
                 quoteCommentState={quoteCommentState}
-                updatePost={updatePostState}
+                updatePostState={updatePostState}
               />
               {comments.map((comment) => (
                 <Post

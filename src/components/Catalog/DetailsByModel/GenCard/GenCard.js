@@ -13,12 +13,13 @@ const GenCard = ({ generation, model }) => {
         {generation.name} <i className='fa-solid fa-car'></i>
       </h4>
       <p className='prod-years'>
+        Produced: {' '}
         {generation.yearsOfProduction.start} -{' '}
         {generation.yearsOfProduction.end || 'Present'}
         <strong>{generation.type}</strong>
       </p>
       <hr />
-      <p>
+      <p className='power-info'>
         {generation.power.value &&
           `Power: ${generation.power.value}${generation.power.unit}`}
         {generation.power.min?.value &&

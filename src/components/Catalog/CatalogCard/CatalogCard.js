@@ -6,12 +6,20 @@ const CatalogCard = ({ model }) => {
   return (
     <Link to={'/catalog/' + model} className='catalog-card'>
       <img
-        className='carImage'
+        className='catalog-card__img'
         src={`/img/catalog-${model}.jpg`}
-        onError={(e)=>{e.target.onerror = null; e.target.src='/img/noImg.jpg'}}
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = '/img/noImg.jpg';
+        }}
         alt={model}
       />
-      <h4>{model} </h4>
+      <div className='card-info'>
+        <h4>{model}</h4>
+        <p>
+          More details <i className='fa-solid fa-angle-right' />
+        </p>
+      </div>
     </Link>
   );
 };
