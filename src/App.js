@@ -8,7 +8,6 @@ import Footer from './components/Footer';
 import Login from './components/Login';
 import Register from './components/Register';
 import NotFound from './components/NotFound';
-import ScrollToTop from './components/ScrollToTop';
 
 import Catalog from './components/Catalog';
 import DetailsByModel from './components/Catalog/DetailsByModel';
@@ -27,7 +26,6 @@ function App() {
   return (
     <AuthProvider>
 
-      <ScrollToTop/>
       <Navbar />
 
       <Routes>
