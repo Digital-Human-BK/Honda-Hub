@@ -9,39 +9,39 @@ const QuickRefNav = () => {
   return (
     <aside className='quick-ref'>
       <p>
-        Quick reference <i className="fa-solid fa-circle-chevron-down"></i>
+        Quick reference <i className="fa-solid fa-circle-chevron-down"/>
       </p>
       <ul>
         <li>
           <HashLink to={location.pathname + '#general-specs'}>
-            <i className="fa-solid fa-chevron-right"></i> General
+            <i className="fa-solid fa-chevron-right"/> General
             information
           </HashLink>
         </li>
         <li>
           <HashLink to={location.pathname + '#performance-specs'}>
-            <i className="fa-solid fa-chevron-right"></i> Performance specs
+            <i className="fa-solid fa-chevron-right"/> Performance specs
           </HashLink>
         </li>
         <li>
           <HashLink to={location.pathname + '#engine-specs'}>
-            <i className="fa-solid fa-chevron-right"></i> Engine Specs
+            <i className="fa-solid fa-chevron-right"/> Engine Specs
           </HashLink>
         </li>
         <li>
           <HashLink to={location.pathname + '#weight-specs'}>
-            <i className="fa-solid fa-chevron-right"></i> Space, Volume and
+            <i className="fa-solid fa-chevron-right"/> Space, Volume and
             Weights
           </HashLink>
         </li>
         <li>
           <HashLink to={location.pathname + '#dimensions-specs'}>
-            <i className="fa-solid fa-chevron-right"></i> Dimensions
+            <i className="fa-solid fa-chevron-right"/> Dimensions
           </HashLink>
         </li>
         <li>
           <HashLink to={location.pathname + '#dbs-specs'}>
-            <i className="fa-solid fa-chevron-right"></i> Drivetrain,
+            <i className="fa-solid fa-chevron-right"/> Drivetrain,
             Brakes and Suspension specs
           </HashLink>
         </li>

@@ -40,7 +40,7 @@ const PostHeader = ({ post, comments }) => {
       </div>
 
       <div className='post-header__icon'>
-        <i className={icon}></i>
+        <i className={icon}/>
       </div>
     </div>
   );

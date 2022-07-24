@@ -33,7 +33,7 @@ const Header = ({value}) => {
           defaultValue={value}
         />
         <button className='search-btn'>
-          <i className='fa-solid fa-magnifying-glass'></i>
+          <i className='fa-solid fa-magnifying-glass'/>
         </button>
       </form>
     </header>

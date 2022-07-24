@@ -19,7 +19,7 @@ const Footer = () => {
             target='_blank'
             rel='noreferrer noopener'
           >
-            Biser Karadzhov <i className="fa-brands fa-react"></i>
+            Biser Karadzhov <i className="fa-brands fa-react"/>
           </a>
         </div>
         <div className='sm'>
@@ -28,21 +28,21 @@ const Footer = () => {
             target='_blank'
             rel='noreferrer noopener'
           >
-            <i className='fa-brands fa-github'></i>
+            <i className='fa-brands fa-github'/>
           </a>
           <a
             href='https://www.linkedin.com/in/biser-karadzhov-b03594238/'
             target='_blank'
             rel='noreferrer noopener'
           >
-            <i className='fab fa-linkedin'></i>
+            <i className='fab fa-linkedin'/>
           </a>
           <a
             href='https://stackoverflow.com/users/19087435/digital-human'
             target='_blank'
             rel='noreferrer noopener'
           >
-            <i className='fa-brands fa-stack-overflow'></i>
+            <i className='fa-brands fa-stack-overflow'/>
           </a>
         </div>
       </div>

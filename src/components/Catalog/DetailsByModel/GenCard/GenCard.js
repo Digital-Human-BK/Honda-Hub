@@ -10,7 +10,7 @@ const GenCard = ({ generation, model }) => {
       title='Technical specifications, Fuel consumption, Dimensions'
     >
       <h4>
-        {generation.name} <i className='fa-solid fa-car'></i>
+        {generation.name} <i className='fa-solid fa-car'/>
       </h4>
       <p className='prod-years'>
         Produced: {' '}

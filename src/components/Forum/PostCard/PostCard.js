@@ -12,7 +12,7 @@ const PostCard = ({ data }) => {
     <li>
       <Link to={`/forum/` + data._id} className='post-card'>
         <div className='post-card__icon'>
-          <i className={mapIcons(data.category)}></i>
+          <i className={mapIcons(data.category)}/>
         </div>
         <div className='post-card__info'>
           <h3 className='post-card__title'>{data.title}</h3>

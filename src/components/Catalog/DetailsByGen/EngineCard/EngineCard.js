@@ -7,7 +7,7 @@ const EngineCard = ({ engine, model, gen }) => {
       className='sub-model'
       title='Full techical specs of a model with certain engine modification'
     >
-      <h4>{engine.modification_engine} <i className="fa-solid fa-circle-arrow-right"></i></h4>
+      <h4>{engine.modification_engine} <i className='fa-solid fa-gauge-high'/></h4>
       <p className='prod-years'>
         Produced: {engine.general_information?.start_of_production} -{' '}
         {engine.general_information?.end_of_production || 'Present'}

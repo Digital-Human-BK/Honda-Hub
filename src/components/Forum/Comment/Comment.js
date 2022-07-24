@@ -84,7 +84,7 @@ const Comment = ({ post, updateComments, quote }) => {
           ></textarea>
           {(focused || quote) && (
             <button className='forum-btn btn-blue comment-btn' type='submit'>
-              <i className='fa-solid fa-plus'></i>
+              <i className='fa-solid fa-plus'/>
               COMMENT
             </button>
           )}

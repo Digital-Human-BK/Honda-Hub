@@ -36,7 +36,7 @@ const Forum = () => {
             <li>
               <Link to='/categories/general' className='categories__item'>
                 <div className='item__icon'>
-                  <i className='fa-solid fa-comments'></i>
+                  <i className='fa-solid fa-comments'/>
                 </div>
                 <div className='item__info'>
                   <h3 className='item__title'>General Discussions</h3>
@@ -53,7 +53,7 @@ const Forum = () => {
             <li>
               <Link to='/categories/problems' className='categories__item'>
                 <div className='item__icon'>
-                  <i className='fa-solid fa-car-burst'></i>
+                  <i className='fa-solid fa-car-burst'/>
                 </div>
                 <div className='item__info'>
                   <h3 className='item__title'>Technical Problems</h3>
@@ -71,7 +71,7 @@ const Forum = () => {
             <li>
               <Link to='/categories/events' className='categories__item'>
                 <div className='item__icon'>
-                  <i className='fa-solid fa-users'></i>
+                  <i className='fa-solid fa-users'/>
                 </div>
                 <div className='item__info'>
                   <h3 className='item__title'>Meetings and Events</h3>
