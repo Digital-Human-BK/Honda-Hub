@@ -12,17 +12,17 @@ import NotFound from '../../NotFound/NotFound';
 
 const DetailsByModel = () => {
   const { model } = useParams();
-  const { data, isLoading, error } = useFetch(model);
+  const { hondata, isLoading, error } = useFetch(model);
 
   if (error) {
     return <Error>{error.message}</Error>;
   }
 
-  if (isLoading) {
+  if (isLoading || hondata[model] === undefined) {
     return <Loader />;
   }
 
-  if(!data) {
+  if(!hondata) {
      return <NotFound/>
   }
 
@@ -44,7 +44,7 @@ const DetailsByModel = () => {
               additional specifications.
             </h2>
             <br />
-            {data && data.generations?.map((generation) => (
+            {hondata[model] && hondata[model].generations.map((generation) => (
               <GenCard
                 key={generation.id}
                 model={model}

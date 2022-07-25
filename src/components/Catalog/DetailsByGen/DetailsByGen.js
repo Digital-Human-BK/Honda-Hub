@@ -12,21 +12,21 @@ import NotFound from '../../NotFound/NotFound';
 
 const DetailsByGen = () => {
   const { model, gen } = useParams();
-  const { data, isLoading, error } = useFetch(model);
+  const { hondata, isLoading, error } = useFetch(model);
 
   if (error) {
     return <Error>{error.message}</Error>;
   }
 
-  if (isLoading || data.generations === undefined) {
+  if (isLoading || hondata[model]?.generations === undefined) {
     return <Loader />;
   }
 
-  if (!data) {
+  if (!hondata) {
     return <NotFound />;
   }
 
-  const generationData = filterToGen(data, gen);
+  const generationData = filterToGen(hondata[model], gen);
 
   return (
     <>

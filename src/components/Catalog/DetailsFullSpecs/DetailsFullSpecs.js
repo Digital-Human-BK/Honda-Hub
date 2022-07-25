@@ -19,21 +19,27 @@ import NotFound from '../../NotFound/NotFound';
 
 const DetailsFullSpecs = () => {
   const { model, gen, engine } = useParams();
-  const { data, isLoading, error } = useFetch(model);
+  const { hondata, isLoading, error } = useFetch(model);
 
   if (error) {
     return <Error>{error.message}</Error>;
   }
 
-  if (isLoading || data.generations === undefined) {
+  if (isLoading || hondata[model]?.generations === undefined) {
     return <Loader />;
   }
 
-  if (!data) {
-    return <NotFound/>;
+  if (!hondata) {
+    return <NotFound />;
   }
 
-  const engineData = filterToEngine(data, gen, engine);
+  const engineData = filterToEngine(hondata[model], gen, engine);
+
+  const scrollTop = () => {
+    window.scrollTo(0, 0);
+  };
+
+  scrollTop();
 
   return (
     <>

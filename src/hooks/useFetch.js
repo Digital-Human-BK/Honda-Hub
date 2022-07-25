@@ -1,17 +1,23 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { modelUrl, options } from '../api/carApi';
+import { HondataContext } from '../contexts/HondataProvider';
 
-const useFetch = (id) => {
-  const [data, setData] = useState({});
+const useFetch = (model) => {
+  const { hondata, onFetch } = useContext(HondataContext);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    if (hondata[model]) {
+      setIsLoading(false);
+      return;
+    }
+
     const fetchData = async () => {
       setIsLoading(true);
       setError(null);
       try {
-        const response = await fetch(modelUrl + id, options);
+        const response = await fetch(modelUrl + model, options);
         if (response.status === 429) {
           const errResponse = await response.json();
           console.error(errResponse.message);
@@ -25,7 +31,8 @@ const useFetch = (id) => {
           console.error(jsonData.msg);
           throw new Error('Something went wrong. Please try again later.');
         }
-        setData(jsonData.data);
+
+        onFetch({ ...hondata, [model]: jsonData.data });
       } catch (err) {
         setError(err);
       } finally {
@@ -33,9 +40,9 @@ const useFetch = (id) => {
       }
     };
     fetchData();
-  }, [id]);
+  }, [model, hondata, onFetch]);
 
-  return { data, isLoading, error };
+  return { hondata, isLoading, error };
 };
 
 export default useFetch;

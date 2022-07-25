@@ -41,7 +41,7 @@ const ForumCategory = () => {
       <Header />
       <section id='category'>
         <div className='inner-width'>
-          <Heading title={mapCategories(category)} />
+          {!error &&<Heading title={mapCategories(category)} />}
           {isLoading && <LoadingSpinner />}
           <ul className='posts-list'>
             {

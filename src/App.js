@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
 import { AuthProvider } from './contexts/AuthProvider';
+import { HondataProvider } from './contexts/HondataProvider';
 
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -25,32 +26,32 @@ import ForumEditPost from './components/Forum/ForumEditPost';
 function App() {
   return (
     <AuthProvider>
+      <HondataProvider>
+        <Navbar />
 
-      <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/catalog' element={<Catalog />} />
+          <Route path='/catalog/:model' element={<DetailsByModel />} />
+          <Route path='/catalog/:model/:gen' element={<DetailsByGen />} />
+          <Route path='/catalog/:model/:gen/:engine' element={<DetailsFullSpecs />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
 
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/catalog' element={<Catalog />} />
-        <Route path='/catalog/:model' element={<DetailsByModel />} />
-        <Route path='/catalog/:model/:gen' element={<DetailsByGen />} />
-        <Route path='/catalog/:model/:gen/:engine' element={<DetailsFullSpecs />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
-        
-        <Route element={<RequireAuth/>}>
-          <Route path='/forum' element={<Forum />} />
-          <Route path='/forum/:id' element={<ForumPost />} />
-          <Route path='/search' element={<Search />} />
-          <Route path='/categories/:category' element={<ForumCategory />} />
-          <Route path='/forum/new-post' element={<ForumNewPost />} />
-          <Route path='/forum/edit-post/:id' element={<ForumEditPost />} />
-        </Route>
+          <Route element={<RequireAuth />}>
+            <Route path='/forum' element={<Forum />} />
+            <Route path='/forum/:id' element={<ForumPost />} />
+            <Route path='/search' element={<Search />} />
+            <Route path='/categories/:category' element={<ForumCategory />} />
+            <Route path='/forum/new-post' element={<ForumNewPost />} />
+            <Route path='/forum/edit-post/:id' element={<ForumEditPost />} />
+          </Route>
 
-        <Route path='*' element={<NotFound />} />
-      </Routes>
+          <Route path='*' element={<NotFound />} />
+        </Routes>
 
-      <Footer />
-      
+      </HondataProvider>
+      <Footer />    
     </AuthProvider>
   );
 }
