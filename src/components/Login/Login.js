@@ -1,11 +1,12 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
-import './Login.css';
 import useAuthContext from '../../hooks/useAuthContext';
 import { login } from '../../services/authService';
-import { validateLogin } from '../../helpers/validator';
 import { mapErrors } from '../../helpers/mappers';
+import { validateLogin } from '../../helpers/validator';
+
+import './Login.css';
 
 const Login = () => {
   const navigate = useNavigate();

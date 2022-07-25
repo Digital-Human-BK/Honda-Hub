@@ -3,9 +3,9 @@ import { useState } from 'react';
 import useAuthContext from '../../../hooks/useAuthContext';
 import { createComment, getComments } from '../../../services/forumService';
 import { validateComment } from '../../../helpers/validator';
+import { mapErrors, shortenQuote } from '../../../helpers/mappers';
 
 import './Comment.css';
-import { mapErrors, shortenQuote } from '../../../helpers/mappers';
 import LoadingSpinner from '../../Common/LoadingSpinner';
 
 const Comment = ({ post, updateComments, quote }) => {

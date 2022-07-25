@@ -6,9 +6,9 @@ import { mapDate } from '../../../helpers/mappers';
 
 import './Post.css';
 import DeleteModal from './DeleteModal';
-import LoadingSpinner from '../../Common/LoadingSpinner';
-import PostDefaultView from './PostDefaultView';
 import PostEditView from './PostEditView';
+import PostDefaultView from './PostDefaultView';
+import LoadingSpinner from '../../Common/LoadingSpinner';
 
 const Post = ({ post, updateCommentsState, updatePostState, quoteCommentState }) => {
   const { user } = useAuthContext();

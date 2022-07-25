@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
+
 import { modelUrl, options } from '../api/carApi';
 import { HondataContext } from '../contexts/HondataProvider';
 
@@ -29,7 +30,7 @@ const useFetch = (model) => {
         const jsonData = await response.json();
         if (jsonData.msg) {
           console.error(jsonData.msg);
-          throw new Error('Something went wrong. Please try again later.');
+          throw new Error(jsonData.msg);
         }
 
         onFetch({ ...hondata, [model]: jsonData.data });

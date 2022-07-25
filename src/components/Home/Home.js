@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 
+import useAuthContext from '../../hooks/useAuthContext';
+
 import './Home.css';
 import About from './About';
 import Quotes from './Quotes';
 import Timeline from './Timeline';
-import useAuthContext from '../../hooks/useAuthContext';
 
 const Home = () => {
   const { user } = useAuthContext();

@@ -1,11 +1,12 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-import './Register.css';
 import useAuthContext from '../../hooks/useAuthContext';
 import { register } from '../../services/authService';
 import { validateRegister } from '../../helpers/validator';
 import { mapErrors } from '../../helpers/mappers';
+
+import './Register.css';
 
 const Register = () => {
   const navigate = useNavigate();

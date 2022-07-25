@@ -1,13 +1,13 @@
-import { useNavigate, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import useAuthContext from '../../../hooks/useAuthContext';
 import { getPost, updatePost } from '../../../services/forumService';
+import { mapErrors } from '../../../helpers/mappers';
 
 import './ForumEditPost.css';
 import DarkHeader from '../../Common/DarkHeader';
 import LoadingSpinner from '../../Common/LoadingSpinner';
-import { mapErrors } from '../../../helpers/mappers';
 import Error from '../../Error';
 
 const ForumEditPost = () => {
