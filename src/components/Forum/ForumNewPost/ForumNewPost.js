@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import useAuthContext from '../../../hooks/useAuthContext';
 import { createPost } from '../../../services/forumService';
 import { mapErrors } from '../../../helpers/mappers';
-import { validatePost } from '../../../helpers/validator';
+import { validatePost } from '../../../helpers/validators';
 
 import './ForumNewPost.css';
 import DarkHeader from '../../Common/DarkHeader';

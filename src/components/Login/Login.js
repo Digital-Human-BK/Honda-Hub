@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuthContext from '../../hooks/useAuthContext';
 import { login } from '../../services/authService';
 import { mapErrors } from '../../helpers/mappers';
-import { validateLogin } from '../../helpers/validator';
+import { validateLogin } from '../../helpers/validators';
 
 import './Login.css';
 

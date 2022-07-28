@@ -1,0 +1,37 @@
+.profile-modal {
+  width: 50%;
+  background-color: var(--clr-primary);
+  padding-bottom: 2rem;
+}
+
+.user-edit__title {
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(70deg, #d0d0da 15ch, var(--clr-bg) 15.05ch);
+}
+
+.user-edit__form {
+  padding: 0 2rem;
+}
+.edit-cars {
+  margin-top: 1rem;
+}
+
+.edit-cars,
+.edit-sign,
+.edit-about {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  color: var(--clr-secondary);
+  background-color: var(--clr-bg);
+  margin-bottom: 2rem;
+}
+
+.edit-sign, .edit-about {
+  resize: none;
+  height: 6rem;
+}

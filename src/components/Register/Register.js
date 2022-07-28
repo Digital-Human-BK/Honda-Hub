@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import useAuthContext from '../../hooks/useAuthContext';
 import { register } from '../../services/authService';
-import { validateRegister } from '../../helpers/validator';
+import { validateRegister } from '../../helpers/validators';
 import { mapErrors } from '../../helpers/mappers';
 
 import './Register.css';

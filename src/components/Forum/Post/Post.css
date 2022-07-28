@@ -65,7 +65,7 @@
   color: #8bc34a;
 }
 
-.user__rides {
+.user__cars {
   text-align: center;
   color: var(--clr-font-gray);
 }
@@ -80,6 +80,12 @@
   color: var(--clr-font-gray);
   margin-bottom: 1.5rem;
   font-size: 0.9rem;
+}
+
+.post__sign {
+  margin-top: 2rem;
+  font-weight: 500;
+  color: var(--clr-font-gray);
 }
 
 .popular-flag {

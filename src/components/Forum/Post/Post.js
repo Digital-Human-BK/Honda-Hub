@@ -24,8 +24,7 @@ const Post = ({ post, updateCommentsState, updatePostState, quoteCommentState })
     setEditState(prev => !prev);
   }
 
-  const toggleDelete = (ev) => {
-    ev.stopPropagation();
+  const toggleDelete = () => {
     setDeleteState((prev) => !prev);
   };
 
@@ -59,7 +58,7 @@ const Post = ({ post, updateCommentsState, updatePostState, quoteCommentState })
       <div className='post'>
         <div className='post__user'>
           <Link
-            to='/'
+            to={'/profile/' + post.author._id}
             className='user__username'
             title='View User&lsquo;s profile'
           >
@@ -84,15 +83,18 @@ const Post = ({ post, updateCommentsState, updatePostState, quoteCommentState })
             {post.author.reputation}
           </button>
           <p className='user__posts'>Posts: {post.author.posts}</p>
-          <p className='user__rides' title='Tell others what vehicles you got'>
-            Drives: {post.author.drives}
+          <p className='user__cars' title='Tell others what vehicles you got'>
+            Cars: {post.author.cars}
           </p>
+
         </div>
-        {post.votes > 3 && (
+
+        {post.votes > 5 && (
           <div className='popular-flag' title='Popular opinion'>
             <i className='fa-solid fa-heart' />
           </div>
         )}
+
         <div className='post__content'>
           <p className='post__date'>
             Posted: {postedDate} at {postedTime}

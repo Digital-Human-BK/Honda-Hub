@@ -4,16 +4,18 @@ export const AUTH_ENDPOINTS = {
   register: '/register',
   login: '/login',
   logout: '/logout',
+  updateUser: '/update-user/', //+ userId
 };
 
 export const FORUM_ENDPOINTS = {
   postsCount: '/posts-count',
   searchPosts: '/search',
-  categories: '/categories/', //+ category
   post: '/posts/', //+ postId
   postComments: '/post-comments/', //+ postId
-  comments: '/comments/', //+ commentId
   postVote: '/post-vote/', //+ postId
+  userPosts: '/user-posts/', //+ userId
+  categories: '/categories/', //+ category
+  comments: '/comments/', //+ commentId
   commentVote: '/comment-vote/' //+commentId
 };
 

@@ -1,0 +1,55 @@
+.profile-header {
+  width: 100%;
+}
+
+.profile-hero {
+  width: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.user-info-bar {
+  height: 6rem;
+  background-color: var(--clr-bg-dark);
+}
+
+.inner-width-bar {
+  height: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.edit-profile-btn {
+  margin-left: auto;
+  background: transparent;
+  color: var(--clr-accent);
+  font-size: 1.1rem;
+  font-weight: 500;
+  width: 11.5rem;
+  border: 2px solid var(--clr-accent);
+  border-radius: 6px;
+  padding: 0.875rem 0;
+  transition: 0.2s linear;
+  cursor: pointer;
+}
+
+.edit-profile-btn:hover {
+  color: var(--clr-primary);
+  background-color: var(--clr-accent);
+}
+
+.user-img {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  border: 5px solid var(--clr-bg-dark);
+}
+
+.user-username {
+  color: var(--clr-primary);
+}

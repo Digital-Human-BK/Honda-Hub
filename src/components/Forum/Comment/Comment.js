@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import useAuthContext from '../../../hooks/useAuthContext';
 import { createComment, getComments } from '../../../services/forumService';
-import { validateComment } from '../../../helpers/validator';
+import { validateComment } from '../../../helpers/validators';
 import { mapErrors, shortenQuote } from '../../../helpers/mappers';
 
 import './Comment.css';

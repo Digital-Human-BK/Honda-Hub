@@ -16,6 +16,7 @@ import DetailsByGen from './components/Catalog/DetailsByGen';
 import DetailsFullSpecs from './components/Catalog/DetailsFullSpecs';
 
 import RequireAuth from './components/RequireAuth';
+import UserProfile from './components/UserProfile';
 import Forum from './components/Forum';
 import Search from './components/Forum/ForumSearch';
 import ForumCategory from './components/Forum/ForumCategory';
@@ -39,6 +40,8 @@ function App() {
           <Route path='/register' element={<Register />} />
 
           <Route element={<RequireAuth />}>
+            <Route path='profile/:userId' element={<UserProfile />} />
+
             <Route path='/forum' element={<Forum />} />
             <Route path='/forum/:id' element={<ForumPost />} />
             <Route path='/search' element={<Search />} />

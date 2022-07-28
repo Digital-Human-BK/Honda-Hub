@@ -15,7 +15,7 @@
 }
 
 #error-page .content {
-  width: 100%;
+  width: 50%;
   color: var(--clr-primary);
 }
 
@@ -24,7 +24,7 @@
 }
 
 #error-page .buttons {
-  margin-top: 60px;
+  margin-top: 3.5rem;
 }
 
 #error-page .buttons a {

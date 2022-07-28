@@ -27,6 +27,10 @@
   border-radius: 4px;
 }
 
+.no-border {
+  border-radius: unset;
+}
+
 .error-list li {
   padding: 2px 20px;
 }

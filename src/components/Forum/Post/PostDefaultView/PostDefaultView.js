@@ -22,7 +22,7 @@ const PostDefaultView = ({
   toggleDelete,
 }) => {
   const navigate = useNavigate();
-  
+
   const [updatedDate, updatedTime] = mapDate(post.updatedAt);
 
   const editHandler = () => {
@@ -67,12 +67,15 @@ const PostDefaultView = ({
   return (
     <>
       {post.quote && <p className='post__quote'>{post.quote}</p>}
+
       <p className='post__text'>{post.text}</p>
+
       {post.updated && (
         <p className='post__update-date'>
           Updated: {updatedDate} at {updatedTime}
         </p>
       )}
+
       <div className='post__controls'>
         {userId === post.author._id ? (
           <>
@@ -128,7 +131,7 @@ const PostDefaultView = ({
                 >
                   <i className='fa-solid fa-minus' />
                 </button>
-                
+
                 <span>{post.votes}</span>
 
                 <button
@@ -143,6 +146,11 @@ const PostDefaultView = ({
           </>
         )}
       </div>
+      {post.author.sign && (
+        <p className='post__sign'>
+          <i className='fa-brands fa-js' /> {post.author.sign}
+        </p>
+      )}
     </>
   );
 };

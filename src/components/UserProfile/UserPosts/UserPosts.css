@@ -1,0 +1,29 @@
+.user-posts {
+  padding: 1rem 2rem;
+  min-height: 350px;
+  background-color: rgba(205, 205, 205, 0.5);
+}
+
+.user-posts__title {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #d1d1d1;
+}
+
+.user-posts__no-posts {
+  text-align: center;
+  margin-top: 6rem;
+}
+
+.no-posts__title {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.no-posts__link {
+  color: var(--clr-bg-dark);
+  transition: .2s linear;
+}
+
+.no-posts__link:hover {
+  color: var(--clr-accent);
+}

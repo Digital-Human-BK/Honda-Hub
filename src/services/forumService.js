@@ -12,6 +12,10 @@ export async function getCategoryPosts(category) {
   return api.get(api.FORUM_ENDPOINTS.categories + category);
 }
 
+export async function getUserData(userId){
+  return api.get(api.FORUM_ENDPOINTS.userPosts + userId);
+};
+
 export async function getPost(postId) {
   return api.get(api.FORUM_ENDPOINTS.post + postId);
 }
@@ -57,3 +61,9 @@ export async function deleteComment(id) {
 export async function voteForComment(id, data) {
   return api.put(api.FORUM_ENDPOINTS.commentVote + id, data);
 }
+
+//======================= User
+
+export async function updateUser(userId, data){
+  return api.put(api.AUTH_ENDPOINTS.updateUser + userId, data);
+};

@@ -1,5 +1,5 @@
 import { mapErrors } from '../../../../helpers/mappers';
-import { validateComment } from '../../../../helpers/validator';
+import { validateComment } from '../../../../helpers/validators';
 import { getComments, updateComment } from '../../../../services/forumService';
 
 import './PostEditView.css';
