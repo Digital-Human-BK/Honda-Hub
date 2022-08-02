@@ -7,7 +7,7 @@
 .user-info__heading {
   padding: 1rem;
   color: var(--clr-primary);
-  background: linear-gradient(70deg, var(--clr-bg-dark) 20ch, var(--clr-bg) 20.05ch);
+  background: linear-gradient(70deg, var(--clr-bg-dark) 15rem, var(--clr-bg) 15.05rem);
   border-radius: 20px 20px 0 0;
 }
 
@@ -57,6 +57,6 @@
   text-align: right;
   color: var(--clr-primary);
   padding: 1rem 2rem;
-  background: linear-gradient(70deg, var(--clr-bg) 25ch,var(--clr-bg-dark)  25.05ch);
+  background: linear-gradient(70deg, var(--clr-bg) 22rem,var(--clr-bg-dark)  22.05rem);
   border-radius: 0 0 20px 20px;
 }

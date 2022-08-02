@@ -27,6 +27,10 @@ const UserProfile = () => {
     setUserData(updatedData);
   };
 
+  const updateUserAvatar = (updatedData) => {
+    setUserData(updatedData);
+  }
+
   useEffect(() => {
     const fetchUserData = async () => {
       try {
@@ -60,6 +64,7 @@ const UserProfile = () => {
         isOwner={isOwner}
         userData={userData}
         updateUserData={updateUserData}
+        updateUserAvatar={updateUserAvatar}
       />
 
       <section className='user-profile section-bg'>

@@ -1,6 +1,8 @@
 const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const USER_REGEX = /^\w+$/;
 const PWD_REGEX = /^[A-Za-z0-9]{5,20}$/;
+const FILE_EXTENSION_REGEX = /\.(jpg|jpeg|png|gif)$/;
+const IMAGE_URL_REGEX = /^https?:\/\/.+\.(jpg|jpeg|png|gif)$/;
 
 export const validateRegister = (body) => {
   const username = body.username.trim();
@@ -154,3 +156,19 @@ export const validateComment = (data) => {
     throw errors;
   }
 };
+
+export const validateImageUpload = (file) => {
+  if (!file) {
+    throw new Error('Please select image');
+  }
+
+  if (!FILE_EXTENSION_REGEX.test(file.name)) {
+    throw new Error('Supported file types: .jpg .jpeg .png .gif')
+  }
+}
+
+export const validateImageUrl = (imageUrl) => {
+  if(IMAGE_URL_REGEX.test(imageUrl) === false) {
+    throw new Error('Invalid Image URL');
+  }
+}

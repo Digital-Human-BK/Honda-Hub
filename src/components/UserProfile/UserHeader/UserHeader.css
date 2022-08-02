@@ -43,11 +43,37 @@
   background-color: var(--clr-accent);
 }
 
+.user-avatar__wrapper {
+  position: relative;
+}
+
 .user-img {
   width: 12rem;
   height: 12rem;
   border-radius: 50%;
   border: 5px solid var(--clr-bg-dark);
+  object-fit: cover;
+  background-color: var(--clr-bg);
+}
+
+.user-upload-img {
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 50%;
+  background-color: #d0d0da;
+  text-align: center;
+  cursor: pointer;
+
+  position: absolute;
+  bottom: 2rem;
+  right: 0;
+  transition: .2s linear;
+}
+
+.user-upload-img:hover{
+  transform: scale(1.2);
 }
 
 .user-username {

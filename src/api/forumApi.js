@@ -5,6 +5,7 @@ export const AUTH_ENDPOINTS = {
   login: '/login',
   logout: '/logout',
   updateUser: '/update-user/', //+ userId
+  updateUserImage: '/update-image/' //+ userId
 };
 
 export const FORUM_ENDPOINTS = {

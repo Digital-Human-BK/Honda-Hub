@@ -1,15 +1,3 @@
-.profile-modal {
-  width: 50%;
-  background-color: var(--clr-primary);
-  padding-bottom: 2rem;
-}
-
-.user-edit__title {
-  padding: 1rem 2rem;
-  margin-bottom: 1rem;
-  background: linear-gradient(70deg, #d0d0da 15ch, var(--clr-bg) 15.05ch);
-}
-
 .user-edit__form {
   padding: 0 2rem;
 }

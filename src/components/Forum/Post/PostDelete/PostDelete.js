@@ -7,10 +7,11 @@ import {
   deleteComment,
   getComments,
 } from '../../../../services/forumService';
+import Modal from '../../../Common/Modal';
 
-import './DeleteModal.css';
+import './PostDelete.css';
 
-const DeleteModal = ({
+const PostDelete = ({
   post,
   toggleDelete,
   toggleError,
@@ -59,28 +60,22 @@ const DeleteModal = ({
   };
 
   return (
-    <>
-      <div className='backdrop' onClick={toggleDelete} />
-      <div className='modal delete-modal'>
-        <div className='delete-modal__title'>
-          <i className='fa-solid fa-trash-can' /> Delete post
-        </div>
-        <i className='fa-solid fa-triangle-exclamation' />
-        <h3 className='warning'>You are about to delete this post!</h3>
-        <p className='warning__desc'>
-          Deleting will permanently remove the post from database.
-        </p>
-        <div className='delete-controls'>
-          <button className='controls-btn cancel-del' onClick={toggleDelete}>
-            <i className='fa-solid fa-circle-xmark' /> Cancel
-          </button>
-          <button className='controls-btn delete-btn' onClick={deleteHandler}>
-            <i className='fa-solid fa-trash-can' /> Delete
-          </button>
-        </div>
+    <Modal title={'Delete Post'} toggleHandler={toggleDelete}>
+      <i className='fa-solid fa-triangle-exclamation' />
+      <h3 className='warning'>You are about to delete this post!</h3>
+      <p className='warning__desc'>
+        Deleting will permanently remove the post from database.
+      </p>
+      <div className='delete-controls'>
+        <button className='controls-btn cancel-del' onClick={toggleDelete}>
+          <i className='fa-solid fa-circle-xmark' /> Cancel
+        </button>
+        <button className='controls-btn delete-btn' onClick={deleteHandler}>
+          <i className='fa-solid fa-trash-can' /> Delete
+        </button>
       </div>
-    </>
+    </Modal>
   );
 };
 
-export default DeleteModal;
+export default PostDelete;

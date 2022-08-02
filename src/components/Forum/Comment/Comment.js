@@ -8,7 +8,7 @@ import { mapErrors, shortenQuote } from '../../../helpers/mappers';
 import './Comment.css';
 import LoadingSpinner from '../../Common/LoadingSpinner';
 
-const Comment = ({ post, updateComments, quote }) => {
+const Comment = ({ postId, updateComments, quote }) => {
   const { user } = useAuthContext();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -21,7 +21,6 @@ const Comment = ({ post, updateComments, quote }) => {
 
     const text = formData.get('text').trim();
     const author = user._id;
-    const postId = post._id;
 
     const data = {
       text,
@@ -37,7 +36,7 @@ const Comment = ({ post, updateComments, quote }) => {
       validateComment(data);
       await createComment(data);
 
-      const updatedComments = await getComments(post._id);
+      const updatedComments = await getComments(postId);
       ev.target.reset();
 
       updateComments(updatedComments);
@@ -58,9 +57,17 @@ const Comment = ({ post, updateComments, quote }) => {
       }
       <div id='comment' className='forum-inputs'>
         <div className='post__user'>
-          <div className='user__avatar-wrapper'>
-            <img className='user__avatar' src='/img/avatar.png' alt='avatar' />
-          </div>
+
+        <img 
+          className='user__avatar'
+          src={user.imageUrl}
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = '/img/default-avatar.jpg';
+          }}
+          alt={'User'}
+        />
+
         </div>
         <form onSubmit={submitHandler} className='comment-form' method='POST'>
           {quote && (

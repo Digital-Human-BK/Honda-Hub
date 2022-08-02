@@ -34,17 +34,10 @@
   color: var(--clr-bg-dark);
 }
 
-.user__avatar-wrapper {
-  background-color: var(--clr-bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
+.user__avatar {
   width: 90px;
   height: 90px;
-}
-
-.user__avatar {
+  border-radius: 50%;
   object-fit: cover;
 }
 

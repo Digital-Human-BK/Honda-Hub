@@ -1,0 +1,52 @@
+.upload-wrapper {
+  padding: 0 2rem;
+}
+
+.upload-options-title {
+  font-size: 1.3rem;
+  color: var(--clr-font-gray);
+  margin-bottom: 0.5rem;
+}
+
+.upload-options {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.upload-options input {
+  cursor: pointer;
+}
+
+.image-upload__btn,
+.image-upload__url {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.image-upload__btn {
+  color: var(--clr-primary);
+  background-color: var(--clr-bg-dark);
+  padding: 0.5rem;
+}
+
+.image-upload__url {
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  color: var(--clr-secondary);
+  background-color: var(--clr-bg);
+}
+
+.image-upload__remove {
+  display: none;
+}
+
+.right-btn {
+  display: block;
+  margin-left: auto;
+}

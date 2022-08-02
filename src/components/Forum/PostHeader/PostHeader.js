@@ -22,7 +22,7 @@ const PostHeader = ({ post, comments }) => {
           <ul className='post-header__desc'>
             <li>
               Author:
-              <Link to='/' className='post-header__author'>
+              <Link to={'/profile/' + post.author._id} className='post-header__author'>
                 {' '}
                 {post.author.username}, 
               </Link>

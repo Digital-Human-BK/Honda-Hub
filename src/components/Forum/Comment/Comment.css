@@ -33,6 +33,7 @@
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   padding: 1rem 0.5rem;
+  font-size: 1rem;
   min-height: 115px;
   font-style: italic;
   color: var(--clr-font-gray);

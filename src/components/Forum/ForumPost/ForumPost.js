@@ -100,7 +100,7 @@ const ForumPost = () => {
 
           {!isLoading && !error && (
             <Comment
-              post={post}
+              postId={post._id}
               quote={quote}
               updateComments={updateCommentsState}
             />

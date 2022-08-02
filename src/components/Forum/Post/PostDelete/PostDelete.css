@@ -1,0 +1,29 @@
+.modal>i {
+  font-size: 5rem;
+  margin: 1rem 0 0.5rem 0;
+  color: var(--clr-bg-dark);
+}
+
+.warning {
+  font-size: 2rem;
+}
+
+.warning__desc {
+  color: var(--clr-font-gray);
+  padding-bottom: 1rem;
+}
+
+.delete-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.delete-controls > button {
+  margin: 0;
+}
+
+.cancel-del {
+  background-color: #d8d8ea;
+}

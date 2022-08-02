@@ -2,12 +2,18 @@ import { useState } from 'react';
 
 import './UserHeader.css';
 import UserEdit from '../UserEdit';
+import UserImageUpload from '../UserImageUpload';
 
 const UserHeader = ({ isOwner, userData, updateUserData }) => {
   const [editState, setEditState] = useState(false);
+  const [imgUploadState, setImgUploadState] = useState(false);
 
   const toggleEdit = () => {
     setEditState((prev) => !prev);
+  };
+
+  const toggleImageUpload = () => {
+    setImgUploadState((prev) => !prev);
   };
 
   return (
@@ -19,22 +25,36 @@ const UserHeader = ({ isOwner, userData, updateUserData }) => {
           updateUserData={updateUserData}
         />
       )}
-      <img
-        className='profile-hero'
-        src='/img/user-cover.jpg'
-        alt='cover img'
-      />
+      {imgUploadState && (
+        <UserImageUpload
+          userData={userData}
+          toggleImageUpload={toggleImageUpload}
+          updateUserData={updateUserData}
+        />
+      )}
+      <img className='profile-hero' src='/img/user-cover.jpg' alt='cover img' />
       <div className='user-info-bar'>
         <div className='inner-width-bar'>
-          <img
-            className='user-img'
-            src='/img/itachi.jpg'
-            onError={(e) => {
-              e.target.onerror = null;
-              e.target.src = '/img/noImg.jpg';
-            }}
-            alt={'User'}
-          />
+          <div className='user-avatar__wrapper'>
+            <img
+              className='user-img'
+              src={userData.imageUrl}
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = '/img/default-avatar.jpg';
+              }}
+              alt={'User'}
+            />
+            {isOwner && (
+              <button
+                onClick={toggleImageUpload}
+                className='user-upload-img'
+                title='Upload image'
+              >
+                <i className='fa-solid fa-camera' />
+              </button>
+            )}
+          </div>
           <h1 className='user-username'>{userData.username}</h1>
           {isOwner && (
             <button onClick={toggleEdit} className='edit-profile-btn'>

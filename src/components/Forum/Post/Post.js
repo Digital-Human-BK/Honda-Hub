@@ -5,12 +5,17 @@ import useAuthContext from '../../../hooks/useAuthContext';
 import { mapDate } from '../../../helpers/mappers';
 
 import './Post.css';
-import DeleteModal from './DeleteModal';
+import PostDelete from './PostDelete';
 import PostEditView from './PostEditView';
 import PostDefaultView from './PostDefaultView';
 import LoadingSpinner from '../../Common/LoadingSpinner';
 
-const Post = ({ post, updateCommentsState, updatePostState, quoteCommentState }) => {
+const Post = ({
+  post,
+  updateCommentsState,
+  updatePostState,
+  quoteCommentState,
+}) => {
   const { user } = useAuthContext();
 
   const [editState, setEditState] = useState(false);
@@ -21,8 +26,8 @@ const Post = ({ post, updateCommentsState, updatePostState, quoteCommentState })
   const [postedDate, postedTime] = mapDate(post.createdAt);
 
   const toggleEdit = () => {
-    setEditState(prev => !prev);
-  }
+    setEditState((prev) => !prev);
+  };
 
   const toggleDelete = () => {
     setDeleteState((prev) => !prev);
@@ -33,8 +38,8 @@ const Post = ({ post, updateCommentsState, updatePostState, quoteCommentState })
   };
 
   const toggleLoading = (value) => {
-    setIsLoading(value)
-  }
+    setIsLoading(value);
+  };
 
   if (error) {
     setTimeout(() => {
@@ -45,9 +50,15 @@ const Post = ({ post, updateCommentsState, updatePostState, quoteCommentState })
   return (
     <>
       {isLoading && <LoadingSpinner />}
-      {error && <ul className='error-list'>{error.map((e, i) =><li key={i}>{e.msg}</li>)}</ul>}
+      {error && (
+        <ul className='error-list'>
+          {error.map((e, i) => (
+            <li key={i}>{e.msg}</li>
+          ))}
+        </ul>
+      )}
       {deleteState && (
-        <DeleteModal
+        <PostDelete
           post={post}
           toggleError={toggleError}
           toggleDelete={toggleDelete}
@@ -65,9 +76,17 @@ const Post = ({ post, updateCommentsState, updatePostState, quoteCommentState })
             {post.author.username}
           </Link>
           <p className='user__role'>{post.author.role}</p>
-          <div className='user__avatar-wrapper'>
-            <img className='user__avatar' src='/img/avatar.png' alt='avatar' />
-          </div>
+
+          <img
+            className='user__avatar'
+            src={post.author.imageUrl}
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = '/img/default-avatar.jpg';
+            }}
+            alt={'User'}
+          />
+
           <p className='user__level' title='Rank depends on posts count'>
             {post.author.rank}
           </p>
@@ -84,9 +103,8 @@ const Post = ({ post, updateCommentsState, updatePostState, quoteCommentState })
           </button>
           <p className='user__posts'>Posts: {post.author.posts}</p>
           <p className='user__cars' title='Tell others what vehicles you got'>
-            Cars: {post.author.cars}
+            Cars: {post.author.cars || 'Unknown'}
           </p>
-
         </div>
 
         {post.votes > 5 && (
@@ -101,12 +119,13 @@ const Post = ({ post, updateCommentsState, updatePostState, quoteCommentState })
           </p>
 
           {editState ? (
-            <PostEditView 
-              post={post} 
-              toggleEdit={toggleEdit} 
-              toggleError={toggleError} 
-              toggleLoading={toggleLoading} 
-              updateCommentsState={updateCommentsState}/>
+            <PostEditView
+              post={post}
+              toggleEdit={toggleEdit}
+              toggleError={toggleError}
+              toggleLoading={toggleLoading}
+              updateCommentsState={updateCommentsState}
+            />
           ) : (
             <PostDefaultView
               post={post}
