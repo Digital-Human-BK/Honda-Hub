@@ -36,7 +36,7 @@
   font-size: 1rem;
   font-weight: 500;
   width: 11.5rem;
-  border: 1px solid var(--clr-accent);
+  border: 2px solid var(--clr-accent);
   border-radius: 6px;
   padding: 0.875rem 0;
   transition: .2s linear;
@@ -46,4 +46,12 @@
 #not-found .buttons a:nth-child(2){
   background: var(--clr-accent);
   color: var(--clr-primary);
+}
+
+@media screen and (max-width: 768px) {
+  #not-found {
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.1)),
+      url(/public/img/NSXv1-phone.jpg) no-repeat center center/cover;
+    background-attachment: fixed;
+  }
 }

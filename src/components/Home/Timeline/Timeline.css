@@ -1,14 +1,14 @@
 #timeline {
-  background: url(/public/img/risingsun.png) no-repeat center center/cover ;
+  background: url(/public/img/risingsun.png) no-repeat center center/cover;
 }
 
-.time-line{
+.time-line {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.block{
+.block {
   width: calc(50% - 20px);
   background: rgba(255, 255, 255, 0.6);
   border: 1px solid #ddd;
@@ -18,8 +18,8 @@
   position: relative;
 }
 
-.block::before{
-  content: "";
+.block::before {
+  content: '';
   position: absolute;
   width: 1px;
   height: 120%;
@@ -29,8 +29,8 @@
   transform: translateY(-50%);
 }
 
-.block::after{
-  content: "";
+.block::after {
+  content: '';
   position: absolute;
   width: 16px;
   height: 16px;
@@ -40,13 +40,20 @@
   border-radius: 50%;
 }
 
-.block h4{
+.block h4 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
-.block p{
+.block p {
   font-weight: 500;
   color: var(--clr-font-gray);
   line-height: 1.4;
+}
+
+@media screen and (max-width: 970px) {
+  .block {
+    width: calc(100% - 20px);
+    margin-left: auto;
+  }
 }

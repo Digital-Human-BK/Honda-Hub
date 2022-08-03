@@ -41,3 +41,7 @@
   cursor: pointer;
   border-left: 0.75rem solid var(--clr-accent);
 }
+
+.prod-years {
+  border-bottom: 2px solid #d1d1d1;
+}

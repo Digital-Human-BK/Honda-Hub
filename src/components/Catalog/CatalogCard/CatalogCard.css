@@ -36,3 +36,17 @@
   text-align: right;
   padding: 0 2rem;
 }
+
+@media screen and (max-width: 970px) {
+  .catalog-card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .catalog-card {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+}

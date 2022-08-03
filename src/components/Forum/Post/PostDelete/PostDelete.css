@@ -6,11 +6,16 @@
 
 .warning {
   font-size: 2rem;
+  line-height: 1;
+  padding: 0 2rem;
+  margin-bottom: 0.25rem;
 }
 
 .warning__desc {
+  line-height: 1;
   color: var(--clr-font-gray);
-  padding-bottom: 1rem;
+  padding: 0 2rem;
+  margin-bottom: 1rem;
 }
 
 .delete-controls {

@@ -7,6 +7,7 @@ import { validateRegister } from '../../helpers/validators';
 import { mapErrors } from '../../helpers/mappers';
 
 import './Register.css';
+import ErrorList from '../Common/ErrorList';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -41,14 +42,10 @@ const Register = () => {
 
   return (
     <section id='register' className='dark'>
-      <div className='sign'>
-        <h1 className='sign-title'>REGISTER</h1>
-        {error &&
-          <ul className='error-list'>
-            {error.map((e, i) => <li key={i}>{e.msg}</li>)}
-          </ul>
-        }
-        <form className='contact-form' onSubmit={registerHandler}>
+      <div className='auth'>
+        <h1 className='auth__title'>REGISTER</h1>
+        {error && <ErrorList error={error} />}
+        <form className='auth__form' onSubmit={registerHandler}>
           <input
             type='text'
             name='username'

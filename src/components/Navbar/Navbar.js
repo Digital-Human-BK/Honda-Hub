@@ -9,6 +9,7 @@ import './Navbar.css';
 const Navbar = () => {
   const { user, onLogout } = useAuthContext();
   const [navStyle, setNavStyle] = useState('navbar');
+  const [active, setActive] = useState(false);
 
   const navbarChange = () => {
     if (window.scrollY > 20) {
@@ -32,7 +33,7 @@ const Navbar = () => {
 
   const userNav = (
     <>
-      <Link to={'/profile/' + user._id}><i className='fa-solid fa-user-ninja'/> {user.username}</Link>
+      <Link to={'/profile/' + user._id}>{user.username}</Link>
       <Link to='/' onClick={onLogout}>Logout</Link>
     </>
   );
@@ -41,12 +42,15 @@ const Navbar = () => {
     <nav className={navStyle}>
       <div className='inner-width'>
         <HashLink to='/#home' className='logo'></HashLink>
-        <button className='menu-toggler active'>
+        <button
+          onClick={() => setActive((prev) => !prev)}
+          className={`menu-toggler ${active ? 'active' : ''}`}
+        >
           <span></span>
           <span></span>
           <span></span>
         </button>
-        <div className='navbar-menu active'>
+        <div className={`navbar-menu ${active ? 'active' : ''}`}>
           <HashLink to='/#home'>Home</HashLink>
           <HashLink to='/#about'>About</HashLink>
           <HashLink to='/#quotes'>Quotes</HashLink>

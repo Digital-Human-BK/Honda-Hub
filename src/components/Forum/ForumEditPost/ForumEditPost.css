@@ -8,3 +8,19 @@
   border-bottom-right-radius: 6px;
   background: url('/public/img/forum-civic-back.jpg') no-repeat center center/cover;
 }
+
+@media screen and (max-width: 768px) {
+  .edit-form {
+    height: unset;
+  }
+
+  .edit-form__img {
+    display: none;
+  }  
+}
+
+@media screen and (max-width: 600px) {
+  .form-buttons {
+    justify-content: space-between;
+  }
+}

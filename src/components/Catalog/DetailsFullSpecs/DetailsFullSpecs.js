@@ -47,7 +47,7 @@ const DetailsFullSpecs = () => {
       <section className='section-bg'>
         <div className='inner-width'>
           <div className='details-content'>
-            <div id='side-content'>
+            <div className='side-content'>
               <img
                 src={`/img/catalog-${model}.jpg`}
                 onError={(e) => {

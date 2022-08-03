@@ -33,7 +33,7 @@
   color: var(--clr-primary);
   font-size: 1.6rem;
   margin: 0 10px;
-  transition: .2s linear;
+  transition: 0.2s linear;
 }
 
 .sm a:hover {
@@ -61,4 +61,11 @@
 #home .buttons a:nth-child(2) {
   background: var(--clr-accent);
   color: var(--clr-primary);
+}
+
+@media screen and (max-width: 768px) {
+  #home {
+    background: url(/public/img/integra-phone.jpg) no-repeat center center/cover;
+    background-attachment: fixed;
+  }
 }

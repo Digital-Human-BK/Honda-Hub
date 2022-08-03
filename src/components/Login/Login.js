@@ -7,12 +7,14 @@ import { mapErrors } from '../../helpers/mappers';
 import { validateLogin } from '../../helpers/validators';
 
 import './Login.css';
+import ErrorList from '../Common/ErrorList';
 
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const from = (location.state?.from?.pathname + location.state?.from?.search) || '/';
+  const from =
+    location.state?.from?.pathname + location.state?.from?.search || '/';
 
   const { onAuth } = useAuthContext();
   const [error, setError] = useState(null);
@@ -43,14 +45,10 @@ const Login = () => {
 
   return (
     <section id='login' className='dark'>
-      <div className='sign'>
-        <h1 className='sign-title'>LOGIN</h1>
-        { error &&
-          <ul className='error-list'>
-            {error.map((e, i) => <li key={i}>{e.msg}</li>)}
-          </ul>
-        }
-        <form className='contact-form' onSubmit={loginHandler}>
+      <div className='auth'>
+        <h1 className='auth__title'>LOGIN</h1>
+        {error && <ErrorList error={error} />}
+        <form className='auth__form' onSubmit={loginHandler}>
           <input
             type='email'
             className='field'

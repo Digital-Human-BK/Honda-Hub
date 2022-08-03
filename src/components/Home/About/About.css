@@ -2,18 +2,18 @@
   background: url(/public/img/risingsun.png) no-repeat center center/cover;
 }
 
-.about-content{
+.about-content {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.about-pic{
+.about-pic {
   width: 300px;
   margin-right: 100px;
 }
 
-.about-text{
+.about-text {
   flex: 1;
 }
 
@@ -23,8 +23,8 @@
 }
 
 .about-text h3 span:nth-child(1):after,
-.about-text h3 span:nth-child(2):after{
-  content: "";
+.about-text h3 span:nth-child(2):after {
+  content: '';
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -33,7 +33,7 @@
   margin: 0 14px;
 }
 
-.about-text p{
+.about-text p {
   font-size: 1.3rem;
   line-height: 1.5rem;
   margin-bottom: 1rem;
@@ -72,4 +72,15 @@
   background-color: transparent;
   margin-left: auto;
   cursor: pointer;
+}
+
+@media screen and (max-width: 970px) {
+  .about-pic {
+    margin: 0 auto;
+  }
+
+  .about-text {
+    flex: 100%;
+    text-align: center;
+  }
 }

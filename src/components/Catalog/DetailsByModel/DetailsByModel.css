@@ -7,3 +7,10 @@
 .details-img {
   border-radius: 6px;
 }
+
+@media screen and (max-width: 600px) {
+  .details-img {
+    width: 80%;
+    display: block;
+  }
+}

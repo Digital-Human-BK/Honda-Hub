@@ -32,7 +32,7 @@ const UserHeader = ({ isOwner, userData, updateUserData }) => {
           updateUserData={updateUserData}
         />
       )}
-      <img className='profile-hero' src='/img/user-cover.jpg' alt='cover img' />
+      <img className='profile-hero' src='/img/hero-nsx-user.jpg' alt='cover img' />
       <div className='user-info-bar'>
         <div className='inner-width-bar'>
           <div className='user-avatar__wrapper'>

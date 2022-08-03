@@ -6,6 +6,7 @@ import { validateComment } from '../../../helpers/validators';
 import { mapErrors, shortenQuote } from '../../../helpers/mappers';
 
 import './Comment.css';
+import ErrorList from '../../Common/ErrorList';
 import LoadingSpinner from '../../Common/LoadingSpinner';
 
 const Comment = ({ postId, updateComments, quote }) => {
@@ -28,7 +29,7 @@ const Comment = ({ postId, updateComments, quote }) => {
       author,
       postId,
     };
-    
+
     try {
       setIsLoading(true);
       setError(null);
@@ -52,22 +53,18 @@ const Comment = ({ postId, updateComments, quote }) => {
   return (
     <>
       {isLoading && <LoadingSpinner />}
-      {error &&
-       <ul className='error-list'>{error.map((e, i) =><li key={i}>{e.msg}</li>)}</ul>
-      }
+      {error && <ErrorList error={error} />}
       <div id='comment' className='forum-inputs'>
         <div className='post__user'>
-
-        <img 
-          className='user__avatar'
-          src={user.imageUrl}
-          onError={(e) => {
-            e.target.onerror = null;
-            e.target.src = '/img/default-avatar.jpg';
-          }}
-          alt={'User'}
-        />
-
+          <img
+            className='user__avatar'
+            src={user.imageUrl}
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = '/img/default-avatar.jpg';
+            }}
+            alt={'User'}
+          />
         </div>
         <form onSubmit={submitHandler} className='comment-form' method='POST'>
           {quote && (
@@ -81,17 +78,18 @@ const Comment = ({ postId, updateComments, quote }) => {
 
           <textarea
             name='text'
-            className={
-              `comment-text ${(focused || quote) && 'expand-text'} ${
+            className={`comment-text ${(focused || quote) && 'expand-text'} ${
               quote && 'merge'
-            }`
-            }
+            }`}
             placeholder={`Comment here ${user.username}...`}
             onFocus={() => setFocused(true)}
           ></textarea>
           {(focused || quote) && (
-            <button className='forum-btn btn-blue comment-btn' type='submit'>
-              <i className='fa-solid fa-plus'/>
+            <button
+              className='forum-btn btn-blue comment-btn responsive-btn'
+              type='submit'
+            >
+              <i className='fa-solid fa-plus' />
               COMMENT
             </button>
           )}

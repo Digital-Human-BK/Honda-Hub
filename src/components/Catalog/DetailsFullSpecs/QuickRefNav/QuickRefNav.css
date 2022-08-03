@@ -1,9 +1,9 @@
 .quick-ref {
-  padding: 10px;
-  color: #48dbfb;
+  padding: 1rem;
+  color: var(--clr-accent);
   line-height: 1.5rem;
-  background-color: #353b48;  
-  border-radius: 5px;
+  background-color: var(--clr-bg-dark);  
+  border-radius: 6px;
   width: 400px;
   margin:20px 50px 20px 0;
 }
@@ -23,9 +23,23 @@
 }
 
 .quick-ref i{
-  color: #48dbfb;
+  color: var(--clr-accent);
 }
 
 .quick-ref a:hover{
-  color: #48dbfb;
+  color: var(--clr-accent);
+}
+
+@media screen and (max-width: 970px) {
+  .quick-ref {
+    width: 65%;
+    margin: 2rem auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .quick-ref {
+    width: 100%;
+    margin: 2rem auto;
+  }
 }

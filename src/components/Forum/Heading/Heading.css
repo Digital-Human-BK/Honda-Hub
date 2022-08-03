@@ -8,3 +8,11 @@
   font-size: 2.5rem;
   color: var(--clr-bg-dark);
 }
+
+@media screen and (max-width: 500px) {
+  .forum-page-heading {
+    flex-direction: column-reverse;
+    gap: 2rem;
+    text-align: center;
+  } 
+}

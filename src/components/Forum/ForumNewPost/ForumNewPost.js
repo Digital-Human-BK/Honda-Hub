@@ -7,6 +7,7 @@ import { mapErrors } from '../../../helpers/mappers';
 import { validatePost } from '../../../helpers/validators';
 
 import './ForumNewPost.css';
+import ErrorList from '../../Common/ErrorList';
 import DarkHeader from '../../Common/DarkHeader';
 import LoadingSpinner from '../../Common/LoadingSpinner';
 
@@ -56,11 +57,7 @@ const ForumNewPost = () => {
         <div className='inner-width'>
           <h1 className='section-title'>Create new Post</h1>
 
-          {error && (
-            <ul className='error-list large'>
-              {error && error.map((e, i) => <li key={i}>{e.msg}</li>)}
-            </ul>
-          )}
+          {error && <ErrorList error={error} classes={'large'}/>}
           {isLoading && <LoadingSpinner />}
 
           <form
@@ -95,12 +92,14 @@ const ForumNewPost = () => {
               <div className='form-buttons'>
                 <button
                   type='button'
-                  className='forum-btn btn-cancel'
+                  className='forum-btn btn-cancel responsive-btn'
                   onClick={() => navigate(-1)}
                 >
+                  <i className='fa-solid fa-rectangle-xmark' />
                   CANCEL
                 </button>
-                <button type='submit' className='forum-btn btn-blue'>
+                <button type='submit' className='forum-btn btn-blue responsive-btn'>
+                  <i className='fa-solid fa-square-check' />
                   POST
                 </button>
               </div>

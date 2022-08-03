@@ -18,7 +18,6 @@ const GenCard = ({ generation, model }) => {
         {generation.yearsOfProduction.end || 'Present'}
         <strong>{generation.type}</strong>
       </p>
-      <hr />
       <p className='power-info'>
         {generation.power.value &&
           `Power: ${generation.power.value}${generation.power.unit}`}

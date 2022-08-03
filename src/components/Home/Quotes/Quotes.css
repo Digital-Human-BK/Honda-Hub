@@ -36,3 +36,15 @@
   background: var(--clr-accent);
   transform: scale(1.05);
 }
+
+@media screen and (max-width: 970px) {
+  .quote {
+    width: calc(50% - 20px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .quote {
+    width: 100%;
+  }
+}

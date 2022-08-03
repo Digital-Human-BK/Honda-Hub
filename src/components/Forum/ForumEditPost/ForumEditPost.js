@@ -6,9 +6,10 @@ import { getPost, updatePost } from '../../../services/forumService';
 import { mapErrors } from '../../../helpers/mappers';
 
 import './ForumEditPost.css';
+import Error from '../../Error';
+import ErrorList from '../../Common/ErrorList';
 import DarkHeader from '../../Common/DarkHeader';
 import LoadingSpinner from '../../Common/LoadingSpinner';
-import Error from '../../Error';
 
 const ForumEditPost = () => {
   const navigate = useNavigate();
@@ -63,8 +64,8 @@ const ForumEditPost = () => {
     fetchPost();
   }, [id]);
 
-  if(!isLoading && user._id !== post.author._id) {
-    return <Error>Unauthorized</Error>
+  if (!isLoading && user._id !== post.author._id) {
+    return <Error>Unauthorized</Error>;
   }
 
   return (
@@ -74,11 +75,7 @@ const ForumEditPost = () => {
         <div className='inner-width'>
           <h1 className='section-title'>Edit Post</h1>
 
-          {error && (
-            <ul className='error-list large'>
-              {error && error.map((e, i) => <li key={i}>{e.msg}</li>)}
-            </ul>
-          )}
+          {error && <ErrorList error={error} classes={'large'}/>}
           {isLoading && <LoadingSpinner />}
 
           <form
@@ -107,12 +104,14 @@ const ForumEditPost = () => {
               <div className='form-buttons edit__form-buttons'>
                 <button
                   type='button'
-                  className='forum-btn btn-cancel'
+                  className='forum-btn btn-cancel responsive-btn'
                   onClick={() => navigate(-1)}
                 >
+                  <i className='fa-solid fa-rectangle-xmark' />
                   CANCEL
                 </button>
-                <button type='submit' className='forum-btn btn-blue'>
+                <button type='submit' className='forum-btn btn-blue responsive-btn'>
+                  <i className='fa-solid fa-square-check' />
                   UPDATE
                 </button>
               </div>

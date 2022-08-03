@@ -41,7 +41,7 @@ const UserProfile = () => {
       } catch (err) {
         const errors = mapErrors(err);
         console.log(errors);
-        setError('Something went wrong. Please try again later...');
+        setError('Something went wrong.');
       } finally {
         setIsLoading(false);
       }

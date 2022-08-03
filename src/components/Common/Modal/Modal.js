@@ -1,4 +1,5 @@
 import './Modal.css';
+import ErrorList from '../ErrorList';
 import LoadingSpinner from '../LoadingSpinner';
 
 const Modal = ({ children, title, isLoading, error, toggleHandler }) => {
@@ -22,13 +23,7 @@ const Modal = ({ children, title, isLoading, error, toggleHandler }) => {
           </button>
         </div>
         {isLoading && <LoadingSpinner />}
-        {error && (
-          <ul className='error-list no-border'>
-            {error.map((e, i) => (
-              <li key={i}>{e.msg}</li>
-            ))}
-          </ul>
-        )}
+        {error && <ErrorList error={error} classes={'no-border'}/>}
         {children}
       </div>
     </>

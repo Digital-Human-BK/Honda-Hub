@@ -1,0 +1,19 @@
+.error-list {
+  background-color: var(--clr-error);
+  opacity: 80%;
+  color: var(--clr-primary);
+  border-radius: 4px;
+}
+
+.error-list li {
+  padding: 3px 20px;
+}
+
+.no-border {
+  border-radius: unset;
+}
+
+.large {
+  padding-left: 1rem;
+  font-size: 1.2rem;
+}

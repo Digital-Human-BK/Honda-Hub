@@ -14,7 +14,6 @@ const EngineCard = ({ engine, model, gen }) => {
         <strong>{engine.engine_specs?.engine_model_code}</strong>
         <strong>{engine.engine_specs?.valvetrain}</strong>
       </p>
-      <hr />
     </Link>
   );
 };

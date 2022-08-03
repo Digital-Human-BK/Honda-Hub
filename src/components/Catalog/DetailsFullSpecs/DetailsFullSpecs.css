@@ -54,3 +54,35 @@ tr:nth-child(even) {
 #dbs-specs {
   scroll-margin-top: 130px;
 }
+
+
+@media screen and (max-width: 970px) {
+  .details-content {
+    flex-direction: column;
+  }
+
+  .side-content {
+    width: 100%;
+  }
+
+  .details-pic {
+    width: 65%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .details-text {
+    width: 100%;
+  }
+
+  .details-text h2, .details-text h3 {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .details-pic {
+    width: 100%;
+    margin: 2rem auto;
+  }
+}

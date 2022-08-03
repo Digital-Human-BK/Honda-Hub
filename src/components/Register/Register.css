@@ -1,38 +1,22 @@
 #register {
   height: 100vh;
   min-height: 500px;
-  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.1)), 
-  url(/public/img/s2000v3.jpg) no-repeat center center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.1)),
+    url(/public/img/s2000v3.jpg) no-repeat center center/cover;
   background-attachment: fixed;
 }
 
-.sign {
+.auth {
   max-width: 500px;
   margin: auto;
   text-align: center;
 }
 
-.sign-title {
+.auth__title {
   color: var(--clr-primary);
-  font-size: 40px;
+  font-size: 2.5rem;
   margin-top: 140px;
   text-shadow: 2px 2px 4px var(--clr-secondary);
-}
-
-
-.error-list {
-  background-color: var(--clr-error);
-  opacity: 80%;
-  color: var(--clr-primary);
-  border-radius: 4px;
-}
-
-.no-border {
-  border-radius: unset;
-}
-
-.error-list li {
-  padding: 2px 20px;
 }
 
 .already {
@@ -48,45 +32,14 @@
   font-weight: 500;
 }
 
-/* Common form styles */
-/* to be moved when Contact-Info page is created */
-.contact-info {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-bottom: 60px;
-}
-
-.contact-info .item {
-  width: calc(33% - 20px);
-  height: 160px;
-  background-color: var(--clr-bg-dark);
-  color: var(--clr-primary);
-  text-align: center;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: 0.3s linear;
-}
-
-.contact-info i {
-  display: block;
-  font-size: 40px;
-  line-height: 120px;
-  height: 100px;
-}
-
-.contact-info .item:hover {
-  background-color: var(--clr-accent);
-}
-
-.contact-form {
+.auth__form {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.contact-form input,
-.contact-form textarea {
+.auth__form input,
+.auth__form textarea {
   width: 100%;
   height: 3.2rem;
   margin: 10px 0;
@@ -99,27 +52,9 @@
   color: var(--clr-accent);
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
+.auth__form input:focus,
+.auth__form textarea:focus {
   border: 2px solid var(--clr-accent);
-}
-
-::-webkit-input-placeholder {
-  color: var(--clr-accent);
-}
-:focus::-webkit-input-placeholder {
-  color: var(--clr-accent);
-  opacity: 0.7;
-}
-
-::-moz-placeholder {
-  color: var(--clr-accent);
-  opacity: 1;
-}
-
-:focus::-moz-placeholder {
-  color: var(--clr-accent);
-  opacity: 0.7;
 }
 
 .field {
@@ -138,7 +73,7 @@
   max-height: 1000px;
 }
 
-.contact-form .btn {
+.auth__form .btn {
   width: 11.5rem;
   font-size: 1.2rem;
   font-weight: 500;
@@ -151,7 +86,28 @@
   transition: 0.3s linear;
 }
 
-.contact-form .btn:hover {
+.auth__form .btn:hover {
   background-color: var(--clr-accent);
   color: var(--clr-primary);
+}
+
+@media screen and (max-width: 768px) {
+  #register {
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.1)),
+      url(/public/img/s2000v1-phone.jpg) no-repeat center center/cover;
+    background-attachment: fixed;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .auth {
+    max-width: 330px;
+  }
+
+  .nameField,
+  .emailField,
+  .halfField {
+    max-width: 100%;
+  }
 }

@@ -8,6 +8,7 @@ import './Post.css';
 import PostDelete from './PostDelete';
 import PostEditView from './PostEditView';
 import PostDefaultView from './PostDefaultView';
+import ErrorList from '../../Common/ErrorList';
 import LoadingSpinner from '../../Common/LoadingSpinner';
 
 const Post = ({
@@ -50,13 +51,7 @@ const Post = ({
   return (
     <>
       {isLoading && <LoadingSpinner />}
-      {error && (
-        <ul className='error-list'>
-          {error.map((e, i) => (
-            <li key={i}>{e.msg}</li>
-          ))}
-        </ul>
-      )}
+      {error && <ErrorList error={error}/>}
       {deleteState && (
         <PostDelete
           post={post}

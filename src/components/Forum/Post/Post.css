@@ -23,6 +23,7 @@
 .user__username {
   color: var(--clr-secondary);
   font-weight: bold;
+  word-break: break-all;
   transition: 0.2s linear;
 }
 
@@ -61,6 +62,7 @@
 .user__cars {
   text-align: center;
   color: var(--clr-font-gray);
+  word-break: break-all;
 }
 
 .post__content {
@@ -110,4 +112,16 @@
 
 .popular-flag i {
   margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .post__user {
+    gap: 0.5rem;
+    flex: 0 0 5rem;
+  }
+
+  .user__avatar {
+    width: 60px;
+    height: 60px;
+  }
 }

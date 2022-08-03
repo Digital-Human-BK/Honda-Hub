@@ -8,7 +8,7 @@
 }
 
 .categories__item {
-  height: 10rem;
+  /* height: 10rem; */
   display: flex;
   align-items: center;
   background-color: var(--clr-primary);
@@ -30,6 +30,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
   color: var(--clr-accent);
   border-radius: 6px;
   background-color: var(--clr-bg-dark);
@@ -63,6 +64,7 @@
   align-items: center;
   justify-content: center;
   flex-basis: 6rem;
+  flex-shrink: 0;
   height: 6rem;
   border-radius: 6px;
   background-color: var(--clr-bg-dark);
@@ -80,4 +82,10 @@
   font-size: 1.2rem;
   letter-spacing: 1px;
   font-weight: 500;
+}
+
+@media screen and (max-width: 500px) {
+  .item__icon {
+    display: none;
+  }
 }

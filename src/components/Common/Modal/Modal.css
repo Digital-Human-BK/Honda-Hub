@@ -19,7 +19,7 @@
 }
 
 .profile-modal {
-  width: 50%;
+  width: 60%;
   background-color: var(--clr-primary);
   padding-bottom: 2rem;
 }
@@ -53,4 +53,24 @@
 
 .modal__cancel-btn:hover {
   background-color: #d0d0da;
+}
+
+@media screen and (max-width: 970px) {
+  .profile-modal {
+    width: 70%;
+  }
+
+  .delete-modal {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .profile-modal {
+    width: 80%;
+  }
+
+  .delete-modal {
+    width: 80%;
+  }
 }

@@ -1,5 +1,5 @@
 .user-info {
-  min-height: 250px; 
+  min-height: 250px;
   background-color: var(--clr-primary);
   box-shadow: 5px 5px 15px 5px #d1d1d1;
 }
@@ -7,7 +7,11 @@
 .user-info__heading {
   padding: 1rem;
   color: var(--clr-primary);
-  background: linear-gradient(70deg, var(--clr-bg-dark) 15rem, var(--clr-bg) 15.05rem);
+  background: linear-gradient(
+    70deg,
+    var(--clr-bg-dark) 15rem,
+    var(--clr-bg) 15.05rem
+  );
   border-radius: 20px 20px 0 0;
 }
 
@@ -37,7 +41,6 @@
   color: var(--clr-secondary);
 }
 
-
 .user-info__details {
   margin: 2rem 2rem;
   font-size: 1.3rem;
@@ -57,6 +60,25 @@
   text-align: right;
   color: var(--clr-primary);
   padding: 1rem 2rem;
-  background: linear-gradient(70deg, var(--clr-bg) 22rem,var(--clr-bg-dark)  22.05rem);
+  background: var(--clr-bg-dark);
   border-radius: 0 0 20px 20px;
+}
+
+@media screen and (max-width: 500px) {
+  .user-info__stats {
+    flex-direction: column;
+  }
+
+  .info-stats {
+    padding: 0.5rem 0;
+  }
+
+  .info-stats:nth-child(even) {
+    width: 100%;
+    background-color: var(--clr-bg);
+  }
+
+  .stats__title {
+    margin-bottom: unset;
+  }
 }

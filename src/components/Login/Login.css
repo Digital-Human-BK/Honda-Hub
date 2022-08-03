@@ -6,15 +6,10 @@
   background-attachment: fixed;
 }
 
-.sign {
-  max-width: 500px;
-  margin: auto;
-  text-align: center;
-}
-
-.sign-title {
-  color: var(--clr-primary);
-  font-size: 40px;
-  margin-top: 180px;
-  text-shadow: 2px 2px 4px var(--clr-secondary);
+@media screen and (max-width: 768px) {
+  #login {
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.1)),
+      url(/public/img/s2000v1-phone.jpg) no-repeat center center/cover;
+    background-attachment: fixed;
+  }
 }
