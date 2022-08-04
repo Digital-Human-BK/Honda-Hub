@@ -44,16 +44,6 @@ export const formatQuote = (text, author, date, time) => {
   return `"${text}"\n~Posted by: ${author} at ${date}, ${time}~`;
 };
 
-export const shortenQuote = (quote) => {
-  let result = quote;
-
-  if (quote.length > 350) {
-    const [text, author] = quote.split('\n~Posted by: ');
-    result = `${text.slice(0, 300)}..."\n\n~Posted by: ${author}`;
-  }
-  return result;
-};
-
 export const filterToGen = (data, gen) => {
   return data.generations.filter((g) => g.id.replace(/_/g, '-') === gen)[0];
 };

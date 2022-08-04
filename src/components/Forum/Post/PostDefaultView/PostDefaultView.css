@@ -82,6 +82,7 @@
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   border: 1px solid #d0d0da;
+  border-right: none;
 }
 
 .votes__up {
@@ -120,4 +121,10 @@
 .down:hover {
   color: var(--clr-primary);
   background-color: #2596be;
+}
+
+@media screen and (max-width: 400px) {
+  .post__controls .controls-btn i {
+    display: none;
+  }
 }

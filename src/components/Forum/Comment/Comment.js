@@ -3,7 +3,7 @@ import { useState } from 'react';
 import useAuthContext from '../../../hooks/useAuthContext';
 import { createComment, getComments } from '../../../services/forumService';
 import { validateComment } from '../../../helpers/validators';
-import { mapErrors, shortenQuote } from '../../../helpers/mappers';
+import { mapErrors } from '../../../helpers/mappers';
 
 import './Comment.css';
 import ErrorList from '../../Common/ErrorList';
@@ -67,14 +67,8 @@ const Comment = ({ postId, updateComments, quote }) => {
           />
         </div>
         <form onSubmit={submitHandler} className='comment-form' method='POST'>
-          {quote && (
-            <textarea
-              name='quote'
-              defaultValue={shortenQuote(quote)}
-              className='quote-text'
-              readOnly
-            ></textarea>
-          )}
+
+          {quote && <div className='quote-text'>{quote}</div>}
 
           <textarea
             name='text'

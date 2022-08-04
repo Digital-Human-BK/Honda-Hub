@@ -1,4 +1,5 @@
 .update-btn {
+  background-color: #e9e9ed;
   border: 2px solid #e9e9ed;
 }
 .update-btn:hover {
@@ -18,4 +19,12 @@
   resize: vertical;
   padding: 1rem;
   margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 400px) {
+  .inline-edit .form-buttons > button {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    width: unset;
+  }
 }
