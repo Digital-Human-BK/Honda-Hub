@@ -8,7 +8,7 @@ import './Search.css';
 import Header from '../Header';
 import Heading from '../Heading';
 import PostCard from '../PostCard';
-import LoadingSpinner from '../../Common/LoadingSpinner';
+import LoadingModal from '../../Common/LoadingModal';
 import Notification from '../../Common/Notification';
 
 const Search = () => {
@@ -50,7 +50,7 @@ const Search = () => {
       <section id='search'>
         <div className='inner-width'>
           <Heading title={'Search results'} />
-          {isLoading && <LoadingSpinner />}
+          {isLoading && <LoadingModal />}
           <ul className='posts-list'>
             {
               searchData &&

@@ -9,7 +9,7 @@ import Header from '../Header';
 import PostHeader from '../PostHeader';
 import Post from '../Post/Post';
 import Comment from '../Comment';
-import LoadingSpinner from '../../Common/LoadingSpinner';
+import LoadingModal from '../../Common/LoadingModal';
 import Notification from '../../Common/Notification';
 import NewCommentBtn from '../../Common/NewCommentBtn';
 import NewPostBtn from '../../Common/NewPostBtn';
@@ -76,7 +76,7 @@ const ForumPost = () => {
               <NewPostBtn />
             </div>
           )}
-          {isLoading && <LoadingSpinner />}
+          {isLoading && <LoadingModal />}
           {error && <Notification>{error}</Notification>}
 
           {!isLoading && !error && (

@@ -100,7 +100,7 @@
   }
 
   .user-info-bar {
-    height: 60vh;
+    height: 75vh;
     background: url(/public/img/engine.jpg) no-repeat center
       center/cover;
     padding-bottom: 2rem;

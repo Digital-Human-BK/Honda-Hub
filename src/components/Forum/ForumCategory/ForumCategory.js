@@ -8,7 +8,7 @@ import './ForumCategory.css';
 import Heading from '../Heading';
 import Header from '../Header';
 import PostCard from '../PostCard';
-import LoadingSpinner from '../../Common/LoadingSpinner';
+import LoadingModal from '../../Common/LoadingModal';
 import Notification from '../../Common/Notification';
 
 const ForumCategory = () => {
@@ -42,7 +42,7 @@ const ForumCategory = () => {
       <section id='category'>
         <div className='inner-width'>
           {!error &&<Heading title={mapCategories(category)} />}
-          {isLoading && <LoadingSpinner />}
+          {isLoading && <LoadingModal />}
           <ul className='posts-list'>
             {
               postsData &&

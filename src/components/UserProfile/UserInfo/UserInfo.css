@@ -41,6 +41,10 @@
   color: var(--clr-secondary);
 }
 
+.admin-role {
+  color: #df2029;
+}
+
 .user-info__details {
   margin: 2rem 2rem;
   font-size: 1.3rem;

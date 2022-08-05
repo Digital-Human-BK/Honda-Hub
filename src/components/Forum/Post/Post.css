@@ -35,6 +35,11 @@
   color: var(--clr-bg-dark);
 }
 
+.admin-role {
+  color: #df2029;
+  font-weight: 500;
+}
+
 .user__avatar {
   width: 90px;
   height: 90px;

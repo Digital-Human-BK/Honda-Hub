@@ -8,11 +8,13 @@ import { mapErrors } from '../../helpers/mappers';
 
 import './Register.css';
 import ErrorList from '../Common/ErrorList';
+import LoadingModal from '../Common/LoadingModal';
 
 const Register = () => {
   const navigate = useNavigate();
   const { onAuth } = useAuthContext();
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const registerHandler = async (ev) => {
     ev.preventDefault();
@@ -26,6 +28,7 @@ const Register = () => {
 
     try {
       setError(null);
+      setIsLoading(true);
       validateRegister({ username, email, password, repass });
 
       const authData = await register({ username, email, password });
@@ -37,6 +40,8 @@ const Register = () => {
       const error = mapErrors(err);
       console.log(error);
       setError(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -45,6 +50,7 @@ const Register = () => {
       <div className='auth'>
         <h1 className='auth__title'>REGISTER</h1>
         {error && <ErrorList error={error} />}
+        {isLoading && <LoadingModal />}
         <form className='auth__form' onSubmit={registerHandler}>
           <input
             type='text'

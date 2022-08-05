@@ -9,7 +9,7 @@ import { validatePost } from '../../../helpers/validators';
 import './ForumNewPost.css';
 import ErrorList from '../../Common/ErrorList';
 import DarkHeader from '../../Common/DarkHeader';
-import LoadingSpinner from '../../Common/LoadingSpinner';
+import LoadingModal from '../../Common/LoadingModal';
 
 const ForumNewPost = () => {
   const { user } = useAuthContext();
@@ -58,7 +58,7 @@ const ForumNewPost = () => {
           <h1 className='section-title'>Create new Post</h1>
 
           {error && <ErrorList error={error} classes={'large'}/>}
-          {isLoading && <LoadingSpinner />}
+          {isLoading && <LoadingModal />}
 
           <form
             className='post-form forum-inputs'

@@ -8,6 +8,7 @@ import { validateLogin } from '../../helpers/validators';
 
 import './Login.css';
 import ErrorList from '../Common/ErrorList';
+import LoadingModal from '../Common/LoadingModal';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -18,6 +19,7 @@ const Login = () => {
 
   const { onAuth } = useAuthContext();
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const loginHandler = async (ev) => {
     ev.preventDefault();
@@ -29,6 +31,7 @@ const Login = () => {
 
     try {
       setError(null);
+      setIsLoading(true);
       validateLogin({ email, password });
 
       const authData = await login({ email, password });
@@ -40,6 +43,8 @@ const Login = () => {
       const error = mapErrors(err);
       console.log(error);
       setError(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -47,6 +52,7 @@ const Login = () => {
     <section id='login' className='dark'>
       <div className='auth'>
         <h1 className='auth__title'>LOGIN</h1>
+        {isLoading && <LoadingModal/>}
         {error && <ErrorList error={error} />}
         <form className='auth__form' onSubmit={loginHandler}>
           <input

@@ -1,6 +1,6 @@
 import './Modal.css';
 import ErrorList from '../ErrorList';
-import LoadingSpinner from '../LoadingSpinner';
+import LoadingModal from '../LoadingModal';
 
 const Modal = ({ children, title, isLoading, error, toggleHandler }) => {
   const isDelModal = title === 'Delete Post';
@@ -22,7 +22,7 @@ const Modal = ({ children, title, isLoading, error, toggleHandler }) => {
             <i className='fa-solid fa-x' />
           </button>
         </div>
-        {isLoading && <LoadingSpinner />}
+        {isLoading && <LoadingModal />}
         {error && <ErrorList error={error} classes={'no-border'}/>}
         {children}
       </div>

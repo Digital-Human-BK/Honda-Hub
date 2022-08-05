@@ -9,7 +9,7 @@ import './ForumEditPost.css';
 import Error from '../../Error';
 import ErrorList from '../../Common/ErrorList';
 import DarkHeader from '../../Common/DarkHeader';
-import LoadingSpinner from '../../Common/LoadingSpinner';
+import LoadingModal from '../../Common/LoadingModal';
 
 const ForumEditPost = () => {
   const navigate = useNavigate();
@@ -33,8 +33,7 @@ const ForumEditPost = () => {
     try {
       setIsLoading(true);
       setError(null);
-      const updatedPost = await updatePost(id, data);
-      console.log(updatedPost);
+      await updatePost(id, data);
       navigate('/forum/' + id);
     } catch (err) {
       console.log(err);
@@ -51,7 +50,6 @@ const ForumEditPost = () => {
         setIsLoading(true);
         setError(null);
         const post = await getPost(id);
-        console.log(post);
         setPost(post);
       } catch (err) {
         console.log(err);
@@ -76,7 +74,7 @@ const ForumEditPost = () => {
           <h1 className='section-title'>Edit Post</h1>
 
           {error && <ErrorList error={error} classes={'large'}/>}
-          {isLoading && <LoadingSpinner />}
+          {isLoading && <LoadingModal />}
 
           <form
             className='post-form forum-inputs edit-form'

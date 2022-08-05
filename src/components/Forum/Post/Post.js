@@ -9,7 +9,7 @@ import PostDelete from './PostDelete';
 import PostEditView from './PostEditView';
 import PostDefaultView from './PostDefaultView';
 import ErrorList from '../../Common/ErrorList';
-import LoadingSpinner from '../../Common/LoadingSpinner';
+import LoadingModal from '../../Common/LoadingModal';
 
 const Post = ({
   post,
@@ -50,8 +50,8 @@ const Post = ({
 
   return (
     <>
-      {isLoading && <LoadingSpinner />}
-      {error && <ErrorList error={error}/>}
+      {isLoading && <LoadingModal />}
+      {error && <ErrorList error={error} />}
       {deleteState && (
         <PostDelete
           post={post}
@@ -70,7 +70,13 @@ const Post = ({
           >
             {post.author.username}
           </Link>
-          <p className='user__role'>{post.author.role}</p>
+          <p
+            className={`user__role ${
+              post.author.role === 'Admin' ? 'admin-role' : ''
+            }`}
+          >
+            {post.author.role}
+          </p>
 
           <img
             className='user__avatar'

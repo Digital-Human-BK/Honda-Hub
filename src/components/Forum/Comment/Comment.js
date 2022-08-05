@@ -7,7 +7,7 @@ import { mapErrors } from '../../../helpers/mappers';
 
 import './Comment.css';
 import ErrorList from '../../Common/ErrorList';
-import LoadingSpinner from '../../Common/LoadingSpinner';
+import LoadingModal from '../../Common/LoadingModal';
 
 const Comment = ({ postId, updateComments, quote }) => {
   const { user } = useAuthContext();
@@ -52,7 +52,7 @@ const Comment = ({ postId, updateComments, quote }) => {
 
   return (
     <>
-      {isLoading && <LoadingSpinner />}
+      {isLoading && <LoadingModal />}
       {error && <ErrorList error={error} />}
       <div id='comment' className='forum-inputs'>
         <div className='post__user'>

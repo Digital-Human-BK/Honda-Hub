@@ -26,14 +26,14 @@ const Navbar = () => {
 
   const guestNav = (
     <>
-      <Link to='/login'>Login</Link>
-      <Link to='/register'>Register</Link>
+      <Link to='/login' onClick={() => setActive(false)}>Login</Link>
+      <Link to='/register' onClick={() => setActive(false)}>Register</Link>
     </>
   );
 
   const userNav = (
     <>
-      <Link to={'/profile/' + user._id}>{user.username}</Link>
+      <Link to={'/profile/' + user._id} onClick={() => setActive(false)}>{user.username}</Link>
       <Link to='/' onClick={onLogout}>Logout</Link>
     </>
   );
@@ -51,12 +51,12 @@ const Navbar = () => {
           <span></span>
         </button>
         <div className={`navbar-menu ${active ? 'active' : ''}`}>
-          <HashLink to='/#home'>Home</HashLink>
-          <HashLink to='/#about'>About</HashLink>
-          <HashLink to='/#quotes'>Quotes</HashLink>
-          <HashLink to='/#timeline'>Timeline</HashLink>
-          <Link to='/catalog'>Catalog</Link>
-          <Link to='/forum'>Forum</Link>
+          <HashLink to='/#home' onClick={() => setActive(false)}>Home</HashLink>
+          <HashLink to='/#about' onClick={() => setActive(false)}>About</HashLink>
+          <HashLink to='/#quotes' onClick={() => setActive(false)}>Quotes</HashLink>
+          <HashLink to='/#timeline' onClick={() => setActive(false)}>Timeline</HashLink>
+          <Link to='/catalog' onClick={() => setActive(false)}>Catalog</Link>
+          <Link to='/forum' onClick={() => setActive(false)}>Forum</Link>
           <span className='divider'></span>
           {user.username ? userNav : guestNav}
         </div>

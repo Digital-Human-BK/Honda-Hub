@@ -17,7 +17,13 @@ const UserInfo = ({ userData }) => {
         </li>
         <li className='info-stats'>
           <p className='stats__title'>Role</p>
-          <p className='stats__value'>{userData.role}</p>
+          <p
+            className={`stats__value ${
+              userData.role === 'Admin' ? 'admin-role' : ''
+            }`}
+          >
+            {userData.role}
+          </p>
         </li>
         <li className='info-stats'>
           <p className='stats__title'>Rank</p>
