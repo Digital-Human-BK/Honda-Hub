@@ -1,4 +1,4 @@
-export const HOST = 'http://localhost:3030';
+export const HOST = 'https://honda-hub-rest.herokuapp.com';
 
 export const AUTH_ENDPOINTS = {
   register: '/register',
