@@ -100,9 +100,10 @@
   }
 
   .user-info-bar {
-    height: 75vh;
+    height: 60vh;
     background: url(/public/img/engine.jpg) no-repeat center
       center/cover;
+    padding-bottom: 2rem;
   }
 
   .user-img {
@@ -119,6 +120,5 @@
     width: 11.5rem;
     padding: 0.875rem 0;
     margin: 0 auto;
-    margin-bottom: 2rem;
   }
 }
