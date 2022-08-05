@@ -1,4 +1,4 @@
-const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+const EMAIL_REGEX = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 const USER_REGEX = /^\w+$/;
 const PWD_REGEX = /^[A-Za-z0-9]{5,20}$/;
 const FILE_EXTENSION_REGEX = /\.(jpg|jpeg|png|gif)$/;
