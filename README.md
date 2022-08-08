@@ -1,8 +1,8 @@
 <div align="center">
-  <img src="https://res.cloudinary.com/dio4dx3uy/image/upload/v1659945524/honda-hub/demo_sglotx.jpg" alt="Logo" width="700" height="350">
+  <img src="https://res.cloudinary.com/dio4dx3uy/image/upload/v1659945524/honda-hub/demo_sglotx.jpg" alt="Logo" width="700" height="350" border-radius="25">
   </br>
   <h1 align="center">Honda Hub</h1>
-  <a align="center" href="https://honda-hub.netlify.app">View Live</a>
+  <a align="center" href="https://honda-hub.netlify.app" target="_blanc">View Live</a>
 </div>
 
 
@@ -26,7 +26,7 @@ Visit and explore the Honda Hub app live on: ***https://honda-hub.netlify.app***
 
 - HTML 5
 - CSS 3
-- [![React][React.js]]
+- React 18
 - React Router DOM v6
 - JavaScript ES6
 
@@ -35,30 +35,30 @@ Visit and explore the Honda Hub app live on: ***https://honda-hub.netlify.app***
 - Node JS
 - Express JS
 - MongoDB
-- Mongoose
-***User password is encrypted with Bcrypt***
+- Mongoose  
+- ***User password is encrypted with Bcrypt***
 
 ## Getting to know the app
 
 The App consists of two main parts:
 
-1. Public, accessible by any visitor of the app
+1. **Public, accessible by any visitor of the app**
   - Home, About, Quotes and Timeline. These pages combined in one, are informative- representational and have no dynamic data.
   - Catalog page. Uses public REST API to fetch data about any Honda car model and display it to the user.
   - Login page.
   - Register page.  
 
-2. Private, accessible only by registered users:
+2. **Private, accessible only by registered users**
   - User Profile page. Users can either see other forum users profiles, and learn more about them, or access own profile page.  
-  When accessing own profile page, users are able to add information about themself, such as:  
-   1. What car/cars the user drive.  
-   2. A quote or thought that will appear under each published post.  
-   3. Small section about interests and hobbies.  
+  When accessing own profile page, users are able to add information about themself, such as:
+  &nbsp; What car/cars the user drive.  
+  &nbsp; A quote or thought that will appear under each published post.  
+  &nbsp; Small section about interests and hobbies.  
 
-  If a user wants to upload a profile picture, few options will be available:  
-   1. Upload file from client machine. 
-   2. Upload via link.
-   3. Remove profile picture. This option will display default picture back.
+  If a user wants to upload a profile picture, few options will be available:
+  &nbsp; Upload file from client machine. 
+  &nbsp; Upload via link.
+  &nbsp; Remove profile picture. This option will display default picture back.
 
   Profile page will display user's forum posts for any visitor.  
 
@@ -68,8 +68,9 @@ The App consists of two main parts:
 
 ## Contact
 
-Email: ***biser.karadzhov@gmail.com***
-LinedIn: ***  
+Email: ***biser.karadzhov@gmail.com***  
+
+LinedIn: ***https://www.linkedin.com/in/biser-karadzhov-b03594238***
 
 ## License
 
