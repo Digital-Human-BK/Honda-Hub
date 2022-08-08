@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+<div align="center">
+  <img src="https://res.cloudinary.com/dio4dx3uy/image/upload/v1659945524/honda-hub/demo_sglotx.jpg" alt="Logo" width="700" height="350">
+  </br>
+  <h1 align="center">Honda Hub</h1>
+  <a align="center" href="https://honda-hub.netlify.app">View Live</a>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Getting Started with Honda Hub App
 
-In the project directory, you can run:
+This project has fully custom HTML, CSS and JS/JSX. No templating libraries were used, as the goal of the project is to practice everything, understand the basics, keep the dependencies as little as possible, and last but not least, to have fun :)
 
-### `npm start`
+## Live Demo:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Visit and explore the Honda Hub app live on: ***https://honda-hub.netlify.app***
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Run it locally:
 
-### `npm test`
+1. Download the repo on your machine.  
+2. In the project directory, you can run **npm start**, which runs the app in the development mode.  
+3. Open ***http://localhost:3000*** to view it in your browser.  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Learn more  
 
-### `npm run build`
+### Front-end technologies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- HTML 5
+- CSS 3
+- [![React][React.js]]
+- React Router DOM v6
+- JavaScript ES6
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Back-end technologies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Node JS
+- Express JS
+- MongoDB
+- Mongoose
+***User password is encrypted with Bcrypt***
 
-### `npm run eject`
+## Getting to know the app
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The App consists of two main parts:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Public, accessible by any visitor of the app
+  - Home, About, Quotes and Timeline. These pages combined in one, are informative- representational and have no dynamic data.
+  - Catalog page. Uses public REST API to fetch data about any Honda car model and display it to the user.
+  - Login page.
+  - Register page.  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Private, accessible only by registered users:
+  - User Profile page. Users can either see other forum users profiles, and learn more about them, or access own profile page.  
+  When accessing own profile page, users are able to add information about themself, such as:  
+   1. What car/cars the user drive.  
+   2. A quote or thought that will appear under each published post.  
+   3. Small section about interests and hobbies.  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+  If a user wants to upload a profile picture, few options will be available:  
+   1. Upload file from client machine. 
+   2. Upload via link.
+   3. Remove profile picture. This option will display default picture back.
 
-## Learn More
+  Profile page will display user's forum posts for any visitor.  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  - Forum page. This is the place where registered users can share, ask or answer questions.  
+  The forum is split in 3 main Categories: General discussions, Technical problems and Meetings and events.  
+  There is a **Search bar**, which allows users to quickly find what they are looking for (searches for a match in the post title only).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contact
 
-### Code Splitting
+Email: ***biser.karadzhov@gmail.com***
+LinedIn: ***  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## License
 
-### Analyzing the Bundle Size
+Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Last step
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Go ahead and explore.
