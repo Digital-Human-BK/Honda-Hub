@@ -43,29 +43,28 @@ Visit and explore the Honda Hub app live on: ***https://honda-hub.netlify.app***
 The App consists of two main parts:
 
 1. **Public, accessible by any visitor of the app**
-  - Home, About, Quotes and Timeline. These pages combined in one, are informative- representational and have no dynamic data.
-  - Catalog page. Uses public REST API to fetch data about any Honda car model and display it to the user.
-  - Login page.
-  - Register page.  
+    - Home, About, Quotes and Timeline. These pages combined in one, are informative- representational and have no dynamic data.
+    - Catalog page. Uses public REST API to fetch data about any Honda car model and display it to the user.
+    - Login page.
+    - Register page.  
 
 2. **Private, accessible only by registered users**
-  - User Profile page. Users can either see other forum users profiles, and learn more about them, or access own profile page.  
-  When accessing own profile page, users are able to add information about themself, such as:  
+    - User Profile page. Users can either see other forum users profiles, and learn more about them, or access own profile page.  
+    When accessing own profile page, users are able to add information about themself, such as:  
+    What car/cars the user drive.  
+    A quote or thought that will appear under each published post.  
+    Small section about interests and hobbies.  
 
-  &nbsp;&nbsp;> What car/cars the user drive.  
-  &nbsp;&nbsp;> A quote or thought that will appear under each published post.  
-  &nbsp;&nbsp;> Small section about interests and hobbies.  
+    If a user wants to upload a profile picture, few options will be available:  
 
-  &nbsp;&nbsp;&nbsp;If a user wants to upload a profile picture, few options will be available:  
-
-  &nbsp;&nbsp;> Upload file from client machine. 
-  &nbsp;&nbsp;> Upload via link.
-  &nbsp;&nbsp;> Remove profile picture. This option will display default picture back.  
-  &nbsp;&nbsp;*Profile page will display user's forum posts for any visitor.*  
+    Upload file from client machine.  
+    Upload via link.  
+    Remove profile picture. This option will display default picture back.  
+    *Profile page will display user's forum posts for any visitor.*  
   
-  - Forum page. This is the place where registered users can share, ask or answer questions.  
-  The forum is split in 3 main Categories: General discussions, Technical problems and Meetings and events.  
-  There is a **Search bar**, which allows users to quickly find what they are looking for (searches for a match in the post title only).
+    - Forum page. This is the place where registered users can share, ask or answer questions.  
+    The forum is split in 3 main Categories: General discussions, Technical problems and Meetings and events.  
+    There is a **Search bar**, which allows users to quickly find what they are looking for (searches for a match in the post title only).
 
 ## Contact
 
