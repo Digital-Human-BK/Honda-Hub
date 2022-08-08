@@ -1,8 +1,8 @@
 <div align="center">
-  <img src="https://res.cloudinary.com/dio4dx3uy/image/upload/v1659945524/honda-hub/demo_sglotx.jpg" alt="Logo" width="700" height="350" border-radius="25px">
+  <img src="https://res.cloudinary.com/dio4dx3uy/image/upload/v1659945524/honda-hub/demo_sglotx.jpg" alt="Logo" width="700" height="350" style="border-radius:25px">
   </br>
-  <h1 align="center">Honda Hub</h1>
-  <a align="center" href="https://honda-hub.netlify.app" target="_blanc">View Live</a>
+  <h1 align="center" color="#48dbfb">Honda Hub</h1>
+  <a align="center" href="https://honda-hub.netlify.app" target="_blank">View Live</a>
 </div>
 
 
@@ -50,16 +50,18 @@ The App consists of two main parts:
 
 2. **Private, accessible only by registered users**
   - User Profile page. Users can either see other forum users profiles, and learn more about them, or access own profile page.  
-  When accessing own profile page, users are able to add information about themself, such as:
-  &nbsp;> What car/cars the user drive.  
-  &nbsp;> A quote or thought that will appear under each published post.  
-  &nbsp;> Small section about interests and hobbies.  
+  When accessing own profile page, users are able to add information about themself, such as:  
 
-  If a user wants to upload a profile picture, few options will be available:
-  &nbsp;> Upload file from client machine. 
-  &nbsp;> Upload via link.
-  &nbsp;> Remove profile picture. This option will display default picture back.  
-  Profile page will display user's forum posts for any visitor.  
+  &nbsp;&nbsp;> What car/cars the user drive.  
+  &nbsp;&nbsp;> A quote or thought that will appear under each published post.  
+  &nbsp;&nbsp;> Small section about interests and hobbies.  
+
+  &nbsp;&nbsp;&nbsp;If a user wants to upload a profile picture, few options will be available:  
+
+  &nbsp;&nbsp;> Upload file from client machine. 
+  &nbsp;&nbsp;> Upload via link.
+  &nbsp;&nbsp;> Remove profile picture. This option will display default picture back.  
+  &nbsp;&nbsp;*Profile page will display user's forum posts for any visitor.*  
   
   - Forum page. This is the place where registered users can share, ask or answer questions.  
   The forum is split in 3 main Categories: General discussions, Technical problems and Meetings and events.  
