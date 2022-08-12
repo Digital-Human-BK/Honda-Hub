@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 import { getAllModels } from '../../services/catalogService';
-import './Catalog.css';
 
+import './Catalog.css';
 import CatalogCard from './CatalogCard';
 import Button from '../Common/Button';
-import LoadingSpinner from '../Common/LoadingSpinner';
+import LoadingModal from '../Common/LoadingModal';
 import DarkHeader from '../Common/DarkHeader';
 import Notification from '../Common/Notification';
 
@@ -50,7 +50,7 @@ const Catalog = () => {
               <CatalogCard key={carModel} model={carModel} />
             ))}
           </div>
-          {isLoading && <LoadingSpinner />}
+          {isLoading && <LoadingModal />}
           {error && <Notification>{error}</Notification>}
           <Button
             value={'All Models'}
