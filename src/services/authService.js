@@ -1,4 +1,4 @@
-import { HOST, AUTH_ENDPOINTS } from '../api/forumApi';
+import { HOST, AUTH_ENDPOINTS } from '../api/api';
 
 export async function register(data) {
   const response = await fetch(HOST + AUTH_ENDPOINTS.register, {

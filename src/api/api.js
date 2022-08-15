@@ -4,21 +4,26 @@ export const AUTH_ENDPOINTS = {
   register: '/register',
   login: '/login',
   logout: '/logout',
-  updateUser: '/update-user/', //+ userId
-  updateUserImage: '/update-image/' //+ userId
+  updateUser: '/update-user/', // +userId
+  updateUserImage: '/update-image/' // +userId
 };
 
 export const FORUM_ENDPOINTS = {
   postsCount: '/posts-count',
   searchPosts: '/search',
-  post: '/posts/', //+ postId
-  postComments: '/post-comments/', //+ postId
-  postVote: '/post-vote/', //+ postId
-  userPosts: '/user-posts/', //+ userId
-  categories: '/categories/', //+ category
-  comments: '/comments/', //+ commentId
-  commentVote: '/comment-vote/' //+commentId
+  post: '/posts/', // +postId
+  postComments: '/post-comments/', // +postId
+  postVote: '/post-vote/', // +postId
+  userPosts: '/user-posts/', // +userId
+  categories: '/categories/', // +category
+  comments: '/comments/', // +commentId
+  commentVote: '/comment-vote/' // +commentId
 };
+
+export const CATALOG_ENDPOINTS = {
+  allModels: '/models',
+  model: '/model/' // +modelId
+}
 
 export async function get(url) {
   return request(url, createOptions());

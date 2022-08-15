@@ -21,14 +21,10 @@ const Catalog = () => {
       setIsLoading(true);
       const modelsData = await getAllModels();
 
-      if (modelsData.data && modelsData.data.length === 0) {
-        throw new Error('Could not load data. Please try again later');
-      }
-
-      const newData = [
-        ...new Set([...defaultModels, ...modelsData.data[0].models]),
+      const allModels = [
+        ...new Set([...defaultModels, ...modelsData.models]),
       ];
-      setModels(newData);
+      setModels(allModels);
     } catch (err) {
       setError(err.message);
       setTimeout(() => {

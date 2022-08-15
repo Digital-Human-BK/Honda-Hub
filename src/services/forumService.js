@@ -1,4 +1,4 @@
-import * as api from '../api/forumApi';
+import * as api from '../api/api';
 
 export async function getPostsCount() {
   return api.get(api.FORUM_ENDPOINTS.postsCount);
