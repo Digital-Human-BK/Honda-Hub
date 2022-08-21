@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://res.cloudinary.com/dio4dx3uy/image/upload/v1659945524/honda-hub/demo_sglotx.jpg" alt="Logo" width="700" style="border-radius:25px">
+  <img src="https://res.cloudinary.com/dio4dx3uy/image/upload/v1661116566/honda-hub/HH-thumbnail_cc7aiy.png" alt="Logo" width="700" style="border-radius:25px">
   </br>
   <h1 align="center" color="#48dbfb">Honda Hub</h1>
   <a align="center" href="https://honda-hub.netlify.app">View Live</a>
@@ -21,7 +21,9 @@ Visit and explore the Honda Hub app live on: ***https://honda-hub.netlify.app***
 2. In the project directory, you can run `npm start`, which runs the app in the development mode.  
 3. Open ***http://localhost:3000*** to view it in your browser.  
 
-## Learn more  
+## Learn more
+
+MERN Stack
 
 ### Front-end technologies
 
