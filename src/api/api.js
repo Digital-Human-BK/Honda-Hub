@@ -1,4 +1,4 @@
-export const HOST = 'https://honda-hub-rest.herokuapp.com';
+export const HOST = 'https://lazy-cyan-stingray-ring.cyclic.app';
 
 export const AUTH_ENDPOINTS = {
   register: '/register',

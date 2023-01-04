@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 
 import './Header.css';
 
-const Header = ({value}) => {
+const Header = ({ value }) => {
   const navigate = useNavigate();
 
   const searchHandler = async (ev) => {
@@ -14,6 +14,11 @@ const Header = ({value}) => {
       ev.target.reset();
       return;
     }
+
+    if (term === value) {
+      return;
+    }
+    
     const encodedTerm = encodeURIComponent(term);
     navigate(`/search?term=${encodedTerm}`);
   };
@@ -33,7 +38,7 @@ const Header = ({value}) => {
           defaultValue={value}
         />
         <button className='search-btn'>
-          <i className='fa-solid fa-magnifying-glass'/>
+          <i className='fa-solid fa-magnifying-glass' />
         </button>
       </form>
     </header>
